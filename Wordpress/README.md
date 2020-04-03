@@ -1,19 +1,22 @@
-# Installation de WordPress avec Composer
-1. Renommer le dossier cloné
-2. Supprimer le `.git` avec `sudo rm -R .git`
-1. Télécharger WordPress, ses plugins, ses thèmes avec la commande `composer install`
-2. Créer la base de données
-3. Compléter dans le fichier `wp-config.php` (copie de `wp-config-sample.php`):
-   1. Les informations de connexion à la base de données
-   2. Les clés de salage
-   3. L'URL de la page d'accueil
-   4. Passer la constante `WP_DEBUG` à `true`
-   5. Sélectionner l'environnement souhaité (`production`, `development` ou `staging`)
-4. Modifier les droits des dossiers et fichiers avec les commandes
-    ```
-    sudo chown -R <user>:www-data .
-    sudo find . -type f -exec chmod 664 {} +
-    sudo find . -type d -exec chmod 775 {} +
-    sudo chmod 644 .htaccess
-    ```
-5. Installer WordPress :tada:
+# Modèle de configuration de Webpack pour WordPress
+
+## Installation
+
+1. Exécuter dans le répertoire la commande `npm install` qui va installer toute les dépendances Node.js nécessaire au bon fonctionnement de l'application.
+2. Exécuter une des commandes ci-dessous.
+
+## Commandes disponibles
+
+- `npm run start` : Démarre le serveur de développement en utilisant [Browsersync](https://www.browsersync.io/)
+- `npm run build:dev` : Génère les ressources front sans compression en vue d'une utilisation dans un environnement de développemnt
+- `npm run build:prod` : Génère les ressources front avec compression (minify, uglify) en vue d'une utilisation dans un environnement de production
+- `npm run clean` : Supprime les fichiers générés par Webpack
+- `npm run clean:all` : Supprime les fichiers générés par Webpack ainsi que le répertoire des dépendances installées avec NPM (`node_modules`)
+
+## Prérequis (à ne faire qu'une fois à la première utilisation de Webpack)
+
+1. Installer la dernière version de Node.js avec le package `n` :
+    - `sudo npm install -g n`
+    - `sudo n lts`
+2. Installer les packages `webpack`, `webpack-cli` et `webpack-dev-server` en global
+    - `sudo npm install -g webpack webpack-cli webpack-dev-server`
