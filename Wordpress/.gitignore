@@ -1,6 +1,5 @@
 /vendor
 /wp
-/node_modules
 /wp-config.php
 /content/plugins/*
 /content/themes/*
@@ -8,3 +7,5 @@
 /content/upgrade
 /content/uploads
 !/content/themes/Betecommetou
+content/themes/Betecommetou/node_modules
+content/themes/Betecommetou/public
