@@ -1,13 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack</title>
+  <title>Bêtecommetou</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-  <h1>Hello Webpack! with Font Awesome test <i class="fa fa-search"></i></h1>
+  <div class="wrapper">
+
+    <header class="header">
+      <h1 class="header__title">Bêtecommetou</h1>
+      <nav class="header__navbar--is-active">
+        <a href="" class="header__nav-link">Category 1</a>
+        <a href="" class="header__nav-link">Category 2</a>
+        <a href="" class="header__nav-link">Category 3</a>
+      </nav>
+      <button class="header__login">Mon compte</button>
+    </header>
+    <main class="main">
+      <section class="main__presentation">
+        <h2 class="main__presentation__title">Qui sommes-nous ?</h2>
+        <img src="" alt="" class="main__presentation__image">
+        <p class="main__presentation__content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione culpa
+          sint sapiente maxime similique suscipit porro tempora molestias repudiandae odit.</p>
+      </section>
+      <section class="main__articles">
+        <h2 class="main__articles__title">Articles</h2>
+        <article class="main__articles__content__first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+          soluta odit itaque amet animi deserunt quisquam tempora aut nobis voluptas?</article>
+
+        <article class="main__articles__content">
+          <h3 class="main__articles__content__title">Article 1</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae error placeat commodi repellat ipsum!
+          Blanditiis?
+        </article>
+        <article class="main__articles__content">
+          <h3 class="main__articles__content__title">Article 2</h3>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi nemo ullam iusto! Quod recusandae nulla,
+          consequatur veritatis, odio qui deserunt eos culpa corporis reprehenderit laudantium.
+        </article>
+        <article class="main__articles__content">
+          <h3 class="main__articles__content__title">Article 3</h3>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam sint repudiandae esse iusto tenetur aperiam
+          voluptate aliquid, sunt explicabo quidem.
+        </article>
+        <article class="main__articles__content">
+          <h3 class="main__articles__content__title">Article 4</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi reiciendis porro itaque repellat. Ipsam ea,
+          itaque officia quod porro totam consequatur voluptatem odit iusto dolores doloremque non debitis laudantium
+          esse.ipsum
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="contact-form--is-active">
+        <h3 class="contact-form__title">formulaire de contact</h3>
+        <input type="text" class="contact-form__input">
+        <input type="text" class="contact-form__input">
+        <input type="text" class="contact-form__input">
+        <button class="contact-form__button"><a href="#">Envoyer</a></button>
+      </div>
+
+      <div class="newsletter">
+
+        <div class="newsletter__social-nav">
+           <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+           <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+           <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+         </div>
+
+         <ul class="newsletter__list">
+          <li class="newsletter__contact"><a href="#">Contact</a></li>
+          <li class="newsletter__link"><a href="#">Newsletter</a></li>
+          <li class="newsletter__legal_mentions"><a href="#">Mentions légales</a></li>
+        </ul>
+        
+      </div>
+
+      </footer>
+  </div>
+
   <script src="js/app.js"></script>
 </body>
+
 </html>
