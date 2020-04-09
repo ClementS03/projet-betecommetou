@@ -2,15 +2,18 @@
 @charset 'UTF-8';
 
 // 1. Abstracts
-
-// 2. Vendors
-$fa-font-path: '~font-awesome/fonts';
-@import '~font-awesome/scss/font-awesome';
-
-
+@import 
+'abstracts/variables';
 // 3. Base
-
+@import 
+'base/reset',
+'base/typography';
 // 4. Layout
+@import
+'layout/header',
+'layout/main',
+'layout/footer';
+
 
 // 5. Components
 
