@@ -2,8 +2,12 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    background-color: $orange-light; 
         &__title {
-           
+            font-family: $fonts-family-title;
+            font-size: 2em;
+            color: #D57100; 
+            font-weight: bold; 
         }
         &__navbar{
             
@@ -11,4 +15,5 @@
         &__login {
           
         }
+        
 }

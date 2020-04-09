@@ -7,7 +7,8 @@
 // 3. Base
 @import 
 'base/reset',
-'base/typography';
+'base/typography',
+'base/base';
 // 4. Layout
 @import
 'layout/header',
@@ -16,5 +17,7 @@
 
 
 // 5. Components
+@import
+'components/header_button';
 
 // 6. Pages
