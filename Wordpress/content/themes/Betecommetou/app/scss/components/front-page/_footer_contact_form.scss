@@ -1,0 +1,11 @@
+.contact-form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    
+    &__title{
+        color: $orange-darken; 
+        font-size: 1.5em;
+    }
+    
+}

@@ -13,17 +13,20 @@
 @import
 'layout/header',
 'layout/main',
-'layout/footer';
+'layout/footer',
+'layout/breakpoints';
+
 // 5. Components
 @import
-'components/header_title',
-'components/header_menu_icons',
-'components/header_button',
-'components/header_nav',
-'components/main_presentation',
-'components/main_article_first',
-'components/main_articles',
-'components/footer_contact_form',
-'components/footer_newsletter';
-
+'components/front-page/header_title',
+'components/front-page/header_menu_icons',
+'components/front-page/header_button',
+'components/front-page/header_nav',
+'components/front-page/main_presentation',
+'components/front-page/main_article_first',
+'components/front-page/main_articles',
+'components/front-page/footer_contact_form',
+'components/front-page/footer_newsletter',
+'components/login/main-login',
+'components/registration/main-registration';
 

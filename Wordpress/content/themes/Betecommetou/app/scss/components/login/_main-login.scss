@@ -1,0 +1,74 @@
+
+
+.login{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    &__name{
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        background-color: $blue-light;
+        padding: 0.7rem;
+        margin: 1rem;
+        border-radius: 30px;
+        border: 1px  transparent;
+        box-shadow: 0px 2px 2px black;
+        width: 50%;
+    }
+    &__password{
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        background-color: $blue-light;
+        padding: 0.7rem;
+        margin: 1rem;
+        border-radius: 30px;
+        border: 1px transparent;
+        box-shadow: 0px 2px 2px black; 
+        width: 50%;
+    }
+
+
+    &__button{
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        background-color: $blue-light;
+        padding: 0.7rem;
+        margin: 1rem;
+        border-radius: 30px;
+        border: 1px transparent;
+        box-shadow: 0px 2px 2px black;
+        width: 20%; 
+        
+
+    }
+    &__registration{
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        background-color: $blue-light;
+        padding: 0.7rem;
+        margin: 1rem;
+        border-radius: 30px;
+        border:  1px transparent;
+        box-shadow: 0px 2px 2px black;
+        width: 20%;         
+    }
+
+    & a {
+        color: black;
+    }
+}
+.contact-form{
+    &__input{
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        background-color: white;
+        padding: 0.7rem;
+        margin: 1rem;
+        border-radius: 30px;
+        border: 2px solid $blue-light;
+        width: 50%;
+    }
+
+}
