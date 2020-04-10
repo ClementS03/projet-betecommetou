@@ -14,10 +14,8 @@
 'layout/header',
 'layout/main',
 'layout/footer';
-
-
 // 5. Components
 @import
-'components/header_button';
-
-// 6. Pages
+'components/header_title',
+'components/header_button',
+'components/header_nav';
