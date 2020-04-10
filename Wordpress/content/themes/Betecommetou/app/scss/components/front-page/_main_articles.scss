@@ -1,0 +1,25 @@
+.main__articles {
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    &__content {
+        
+        height: 50vh; 
+              
+    }
+
+    &__content:last-child{
+        border-bottom: 0px;
+    }
+    
+    &__content__title {
+        padding-bottom: 1rem;
+        color: white;
+        font-weight: bold;
+        font-size: 2em;
+    }
+   
+}

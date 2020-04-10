@@ -4,6 +4,8 @@ $fa-font-path: '~font-awesome/fonts';
 //mains colors
 $orange-light:#FFDBAE; 
 $orange-clean:#FFF7DF;
+$orange-darken: #D57100;
+$orange-brown: #AC4200;
 $purple-light: #DFE7FF;
 $yellow-light: #F1FFB8;
 $blue-light:#CDE9FF;
@@ -17,7 +19,9 @@ $normal-font-size: 15px;
 $medium-font-size: 18px;
 $large-font-size: 22px; 
 
-
+// Breakpoints
+$breakpoint-large: 768px;
+$breakpoint-xlarge:1200px;
 
 
 

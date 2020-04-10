@@ -1,0 +1,17 @@
+.main__articles__first {
+    
+    
+    text-align: center;
+    padding-bottom:1.5rem ;
+
+    &__title {
+        padding-top: 1rem;
+        padding-bottom: 1rem; 
+        color: black;
+        font-weight: bold;
+        font-size: 2em;       
+    }
+    &__content {
+        padding: 0 1rem;
+    }
+}

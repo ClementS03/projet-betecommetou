@@ -1,0 +1,58 @@
+@media screen and (min-width: $breakpoint-large){
+    .header {    
+        flex-flow: row;
+        justify-content: space-between;
+        &__navbar {
+            display: inline-block;
+            text-align: center;
+        }
+        &__login__button {
+            display: block;
+        }
+    }
+    .open-menu {
+        display: none;
+    }    
+    .main__presentation {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        .content {
+            display: flex;
+            flex-flow: row;
+            .main__presentation__image {
+                width: 50%;
+                height: 100%;
+            }
+            .main__presentation__content {
+                width: 50%;
+            }  
+        } 
+    }
+    .main__articles__first {
+        background-position: center center;
+        background-size: cover;
+        height: 50vh;
+    }
+    .main__articles {
+        display: flex;
+        flex-flow: row wrap;
+        &__content:nth-child(3n-2),&__content:nth-child(4n-3){
+            width: 40%;
+        }
+        &__content:nth-child(4n-1),&__content:nth-child(4n-2){
+            width: 60%;
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+    }
+    
+    
+    
+    
+    
+}
