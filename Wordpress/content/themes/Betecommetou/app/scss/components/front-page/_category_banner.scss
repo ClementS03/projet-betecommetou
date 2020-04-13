@@ -1,0 +1,16 @@
+.category_banner {
+    position: absolute;
+    padding: 1rem;
+    float: left;
+    transform: rotate(-45deg);
+
+}
+.evenements {
+    background-color: transparentize($orange-light, 0.4);
+}
+
+.petsitting {
+    background-color: transparentize($blue-light, 0.4);
+}
+
+
