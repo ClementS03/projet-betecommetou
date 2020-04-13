@@ -2,7 +2,8 @@
     display: flex;
     flex-flow: column wrap;
     width: 50%;
-    align-items: center;    
+    align-items: center;
+    display: none;
     &__title{
         color: $orange-darken; 
         font-size: 1.5rem;

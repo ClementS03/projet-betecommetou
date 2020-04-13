@@ -50,6 +50,9 @@
         display: flex;
         flex-flow: row;
         justify-content: space-between;
+        .contact-form {
+            display: flex;
+        }
         &__newsletter {
             align-self: flex-start;
         }
