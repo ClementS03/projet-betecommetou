@@ -1,8 +1,10 @@
 .category_banner {
-    position: absolute;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 2rem;
     padding: 1rem;
-    float: left;
-    transform: rotate(-45deg);
+    
 
 }
 .evenements {

@@ -28,19 +28,7 @@
         <span class="ui-button close-menu">
             <i class="fa fa-times-circle-o" aria-hidden="true"></i>
         </span>
-        <nav class="main-nav">
-            <ul>
-            <li class="main-nav__item">
-                <a href="#">Categorie 1</a>
-            </li>
-            <li class="main-nav__item">
-                <a href="#">Categorie 2</a>
-            </li>
-            <li class="main-nav__item">
-                <a href="#">Categorie 3</a>
-            </li>            
-            </ul>
-        </nav>
+        <?php get_template_part('template-parts/nav/nav-burger'); ?>
         </div>        
 <?php wp_footer() ?>
 </body>      

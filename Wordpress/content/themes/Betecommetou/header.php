@@ -10,13 +10,11 @@
     <div class="wrapper">    
         <header class="header">
         <h1 class="header__title">
-            <i class="fa fa-paw" aria-hidden="true"></i> Bêtecommetou <i class="fa fa-paw" aria-hidden="true"></i>
+            <i class="fa fa-paw" aria-hidden="true"></i> <?php bloginfo('title'); ?> <i class="fa fa-paw" aria-hidden="true"></i>
         </h1>     
-        <nav class="header__navbar" >
-            <a href="#" class="header__nav-link">Category 1</a>
-            <a href="#" class="header__nav-link">Category 2</a>
-            <a href="#" class="header__nav-link">Category 3</a>
-        </nav>
+
+        <?php get_template_part('template-parts/nav/nav-header'); ?>
+
         <span class="ui-button open-menu">
             <i class="fa fa-bars" aria-hidden="true"></i>
         </span>

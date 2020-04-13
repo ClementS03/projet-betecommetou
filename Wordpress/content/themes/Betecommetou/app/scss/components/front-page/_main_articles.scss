@@ -1,12 +1,23 @@
 .main__articles {
     text-align: center;
+
+    &__content__archive  {
+        height: 100vh; 
+        position: relative;
+        padding: 3em;
+        background-position: center;
+        background-size: cover;
+        z-index:10;
+        background-repeat: no-repeat;
+        width: 100%;
+    }  
     &__content {        
         height: 50vh; 
         position: relative;
         padding: 3em;
         background-position: center;
         background-size: cover;
-        z-index:10;    
+        z-index:10;
         &__title {
             font-size: 1.2rem;
             font-weight: bold;
@@ -26,12 +37,7 @@
             z-index: -1;
             transition: opacity $duration-medium;
         }    
-        // https://sass-lang.com/documentation/at-rules/control/each
-        // pour chaque item dans $posts-bg-colors
-        // on récupère l'index ($index) et la couleur ($color)
         @each $index, $color in $posts-bg-colors {
-            // on va chercher chaque enfant
-            // puis on applique la couleur correspondante à l'index en bg-color du ::after
             &:nth-child(6n + #{$index})::after {
                 background-color: $color;
             }
