@@ -20,4 +20,5 @@ if (!function_exists('betecommetou_enqueue')) {
     }
 }
 add_action('wp_enqueue_scripts', 'betecommetou_enqueue');
+
 ?>
