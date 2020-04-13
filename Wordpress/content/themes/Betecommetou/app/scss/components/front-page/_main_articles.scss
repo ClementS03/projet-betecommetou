@@ -1,25 +1,53 @@
 .main__articles {
     text-align: center;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-
-    &__content {
-        
+    &__content {        
         height: 50vh; 
-              
+        position: relative;
+        padding: 3em;
+        background-position: center;
+        background-size: cover;
+        z-index:10;    
+        &__title {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1em;
+            padding-bottom: 0.3em;
+        }    
+        &::after {
+            content: '';
+            background-color: red;
+            opacity: 0.8;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            transition: opacity $duration-medium;
+        }    
+        // https://sass-lang.com/documentation/at-rules/control/each
+        // pour chaque item dans $posts-bg-colors
+        // on récupère l'index ($index) et la couleur ($color)
+        @each $index, $color in $posts-bg-colors {
+            // on va chercher chaque enfant
+            // puis on applique la couleur correspondante à l'index en bg-color du ::after
+            &:nth-child(6n + #{$index})::after {
+                background-color: $color;
+            }
+        }    
+        &:hover::after {
+            background-color: black;
+            opacity: 0.3;
+        }
     }
-
     &__content:last-child{
         border-bottom: 0px;
-    }
-    
+    }    
     &__content__title {
         padding-bottom: 1rem;
         color: white;
         font-weight: bold;
         font-size: 2em;
     }
-   
 }

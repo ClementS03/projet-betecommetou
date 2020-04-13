@@ -48,7 +48,10 @@
     .footer {
         display: flex;
         flex-flow: row;
-        justify-content: space-around;
+        justify-content: space-between;
+        &__newsletter {
+            align-self: flex-start;
+        }
     }
     
     

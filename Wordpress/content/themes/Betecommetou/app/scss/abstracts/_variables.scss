@@ -10,6 +10,15 @@ $purple-light: #DFE7FF;
 $yellow-light: #F1FFB8;
 $blue-light:#CDE9FF;
 
+$posts-bg-colors: (
+    1:#7BC5DE,
+    2:#66737B,
+    3:#DD8F8B,
+    4:#EABA95,
+    5:#014279,
+    6:#86C3AF
+);
+
 // fonts-family
 $normal-font-family: 'arial', 'helvetica', sans-serif;
 $fonts-family-title: 'Comic Neue', cursive;
@@ -22,6 +31,11 @@ $large-font-size: 22px;
 // Breakpoints
 $breakpoint-large: 768px;
 $breakpoint-xlarge:1200px;
+
+// Animations
+$duration-slow: 1s;
+$duration-medium: 0.5s;
+$duration-fast: 0.2s;
 
 
 

@@ -1,11 +1,17 @@
 .contact-form{
     display: flex;
-    flex-flow: column;
-    align-items: center;
-    
+    flex-flow: column wrap;
+    width: 50%;
+    align-items: center;    
     &__title{
         color: $orange-darken; 
         font-size: 1.5em;
+    }
+    &__button {
+        @extend .header__login__button
+    }
+    &__input {
+        outline: none;
     }
     
 }

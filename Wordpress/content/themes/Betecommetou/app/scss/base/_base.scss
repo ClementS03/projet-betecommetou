@@ -1,7 +1,11 @@
 html {
     font-size: $normal-font-size;
 }
-* {box-sizing: border-box;}
+
+* {
+    box-sizing: border-box;
+}
+
 a {
     text-decoration: none;
     color: $orange-darken;
