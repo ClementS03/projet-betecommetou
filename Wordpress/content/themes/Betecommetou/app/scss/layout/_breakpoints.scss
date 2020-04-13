@@ -1,13 +1,14 @@
 @media screen and (min-width: $breakpoint-large){
+    .wrapper {
+        font-size: $large-font-size;
+    }
     .header {    
         flex-flow: row;
         justify-content: space-between;
-        &__navbar {
+        .header__navbar {   
+            visibility: visible;
             display: inline-block;
             text-align: center;
-        }
-        &__login__button {
-            display: block;
         }
     }
     .open-menu {

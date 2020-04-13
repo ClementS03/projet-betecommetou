@@ -1,20 +1,9 @@
-html {
-    font-size: $normal-font-size;
-}
-
 * {
     box-sizing: border-box;
+    font-size: $normal-font-size;
 }
 
 a {
     text-decoration: none;
     color: $orange-darken;
-}
-
-.is-active {
-    display: block;
-}
-
-.is-hidden {
-    display: none;
 }

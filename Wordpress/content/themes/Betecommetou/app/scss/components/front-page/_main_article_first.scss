@@ -1,7 +1,7 @@
 .main__articles__first {    
     text-align: center;
     padding-bottom:1.5rem ;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
 
     &__title {
@@ -9,9 +9,10 @@
         padding-bottom: 1rem; 
         color: black;
         font-weight: bold;
-        font-size: 2em;       
+        font-size: 2rem;       
     }
     &__content {
+        height: 30vh;
         padding: 0 1rem;
     }
 }
