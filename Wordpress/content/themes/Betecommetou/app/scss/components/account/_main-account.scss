@@ -1,0 +1,46 @@
+.account {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    &__title {
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        background-color: $blue-light;
+        padding: 0.7rem;
+        margin: 1rem;
+        border-radius: 30px;
+        border: 1px  transparent;
+        box-shadow: 0px 2px 2px black;
+        width: 50%;
+    }
+    &__info__title {
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        background-color: $blue-light;
+        padding: 0.7rem;
+        margin: 1rem;
+        border-radius: 30px;
+        border: 1px  transparent;
+        box-shadow: 0px 2px 2px black;
+        width: 50%;
+    }
+    &__infos{
+        border-radius: 20px;
+        padding: 0.7rem;
+        margin-bottom: 1em;
+        border: 2px solid $blue-light;
+    }
+}
+
+#pet-select {
+    margin: 3em;
+    padding: .5em;
+    width: 50vh;
+    background-color: white;
+    font-family: $fonts-family-title;
+    border: 2px solid $blue-light;
+    border-radius: 20px;
+    
+}

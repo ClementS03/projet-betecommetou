@@ -5,5 +5,13 @@
     align-items: center;
     background-color: $orange-light;
     border-bottom: 10px transparent black;
-    border-radius: 0 0 35% 35%
+    border-radius: 0 0 35% 35%;
+
+    &__login__button{
+        color: black;
+    }
+    &__signout__button{
+        color: black;
+    }
+
 }

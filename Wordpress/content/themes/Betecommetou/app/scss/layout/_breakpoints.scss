@@ -56,10 +56,11 @@
         &__newsletter {
             align-self: flex-start;
         }
+        ::placeholder{
+            text-align: center;
+        }
     }
-    
-    
-    
-    
+
+
     
 }
