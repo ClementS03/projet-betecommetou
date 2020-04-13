@@ -5,4 +5,12 @@
         color: $orange-darken;
         font-weight: bold;
     }
+    .content {
+        .main__presentation__content {
+            padding: 0 1.5rem;
+        }
+        img {
+            width: 100%;
+        }
+    }
 }
