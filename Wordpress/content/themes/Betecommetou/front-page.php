@@ -31,7 +31,7 @@ $args = [
         $args = [
             'posts_per_page' => 4,
             'orderby' => 'rand',
-            'category__not_in' => 2,
+            'category__not_in' => 10,
     ];
         $wpqueryArticles = new WP_Query($args);
     ?>
