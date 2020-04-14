@@ -4,7 +4,7 @@ var app = {
 
     let burgerMenuOpenButton = document.querySelector('.open-menu');
     let burgerMenuCloseButton = document.querySelector('.close-menu');
-    burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu)
+    burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu);
     burgerMenuOpenButton.addEventListener('click',app.handleOpenFrontPageMenu);
   },
   handleOpenFrontPageMenu: function () {
