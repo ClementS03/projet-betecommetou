@@ -26,12 +26,14 @@ $args = [
     <?php endwhile; endif; ?>
 
 <section class="main__articles"> 
-    
+    <?php $category = get_category_by_slug('qui-sommes-nous');
+        $id = $category->cat_ID;
+    ?>
     <?php 
         $args = [
             'posts_per_page' => 4,
             'orderby' => 'rand',
-            'category__not_in' => 10,
+            'category__not_in' => $id ,
     ];
         $wpqueryArticles = new WP_Query($args);
     ?>
