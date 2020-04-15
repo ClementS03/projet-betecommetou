@@ -1,3 +1,4 @@
+<?php custom_redirect_hook('erreur erreur'); ?>
 <?php get_header(); ?>
 
 <section class="main__articles"> 
