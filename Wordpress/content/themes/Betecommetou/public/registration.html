@@ -52,25 +52,28 @@
     <main class="main-registration">
       <div class="registration">
         <h3 class="registration__animal">Mon Animal</h3>
-        <h4 class="registration__animal__name">Nom</h4>
-        <input type="text" class="registration__animal__name__input">
-        <h4 class="registration__animal__breed">Race</h4>
-        <input type="text" class="registration__animal__breed__input">
-        <h4 class="registration__animal__type">Type</h4>
-        <input type="text" class="registration__animal__type__input">
+        <h4 id="registration__animal__name " class="registration__title">Nom</h4>
+        <input type="text" id="registration__animal__name__input" class="registration__input">
+        <h4 id="registration__animal__type" class="registration__title">Type</h4>
+        <select name="type" id="type-select" class="registration__input">
+          <option value="">Type</option>
+          <option value="">Chien</option>
+          <option value="">Chat</option>
+        </select>
 
         <h3 class="registration__owner">Moi</h3>
-        <h4 class="registration__owner__name">Nom</h4>
-        <input type="text" class="registration__owner__name__input">
-        <h4 class="registration__owner__firstname">Prénom</h4>
-        <input type="text" class="registration__owner__firstname__input">
-        <h4 class="registration__owner__name">Adresse</h4>
-        <input type="text" class="registration__owner__adress__input">
-        <h4 class="registration__owner__name">Mail</h4>
-        <input type="text" class="registration__owner__mail__input">
+        <h4 id="registration__owner__name" class="registration__title">Nom</h4>
+        <input type="text" id="registration__owner__name__input"class="registration__input">
+        <h4 id="registration__owner__firstname" class="registration__title">Prénom</h4>
+        <input type="text" id="registration__owner__firstname__input"class="registration__input">
+        <h4 id="registration__owner__name" class="registration__title">Adresse</h4>
+        <input type="text" id="registration__owner__adress__input"class="registration__input">
+        <h4 id="registration__owner__name" class="registration__title">Mail</h4>
+        <input type="text" id="registration__owner__mail__input"class="registration__input">
+        <h4 id="registration__owner__name" class="registration__title">Téléphone</h4>
+        <input type="text" id="registration__owner__phone__input"class="registration__input">
 
-
-        <button class="registration__button"><a href="#">Nous inscrire !</a></button>
+        <button class="registration__button">Nous inscrire !</button>
 
       </div>
     </main>
@@ -81,7 +84,7 @@
 
     <footer class="footer">
       <form class="contact-form">
-        <h3 class="contact-form__title">formulaire de contact</h3>
+        <h3 class="contact-form__title">Formulaire de contact</h3>
         <input type="text" class="contact-form__input" placeholder="Prénom NOM">
         <input type="text" class="contact-form__input" placeholder="Votre Email">
         <input type="text" class="contact-form__input" placeholder="Votre message">
