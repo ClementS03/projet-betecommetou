@@ -1,36 +1,28 @@
-
-
-.login{
+#loginform{
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    justify-content: center;
 
-    &__name{
+    p { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        align-self: center;
+    }
+    input {
         font-family: $fonts-family-title;
         font-weight: bold;
-        background-color: $blue-light;
+        background-color: white;
         padding: 0.7rem;
         margin: 1rem;
         border-radius: 30px;
-        border: 1px  transparent;
-        box-shadow: 0px 2px 2px black;
-        width: 50%;
-    }
-    &__password{
-        font-family: $fonts-family-title;
-        font-weight: bold;
-        background-color: $blue-light;
-        padding: 0.7rem;
-        margin: 1rem;
-        border-radius: 30px;
-        border: 1px transparent;
-        box-shadow: 0px 2px 2px black; 
-        width: 50%;
-    }
-
-
-    &__button{
+        border: 2px solid $blue-light;
+        
+    }    
+    .button-primary{
         font-family: $fonts-family-title;
         font-weight: bold;
         background-color: $blue-light;
@@ -43,26 +35,27 @@
         a{
             color: black; 
         }
-        
 
-    }
-    &__registration{
+        
+    }    
+    label {
         font-family: $fonts-family-title;
         font-weight: bold;
         background-color: $blue-light;
         padding: 0.7rem;
         margin: 1rem;
         border-radius: 30px;
-        border:  1px transparent;
+        border: 1px  transparent;
         box-shadow: 0px 2px 2px black;
+
         width: 20%;  
         a{
             color: black; 
         }      
     }
-
-    
 }
+
+
 .contact-form{
     &__input{
         font-family: $fonts-family-title;
@@ -81,5 +74,9 @@
 }
 
 }
+
+
+
+
 
 
