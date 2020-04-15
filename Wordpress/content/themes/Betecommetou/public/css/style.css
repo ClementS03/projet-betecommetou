@@ -1,7 +1,59 @@
-@import url(https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap);a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,main,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}[hidden]{display:none}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}/*!
+@import url(https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap);
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v4.0 | 20180602
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block; }
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-
  */
 /* FONT PATH
  * -------------------------- */
@@ -2621,6 +2673,8 @@ a {
     border: 1px transparent;
     box-shadow: 0px 2px 2px black;
     width: 100%; }
+    #loginform .button-primary a {
+      color: black; }
   #loginform label {
     font-family: "Comic Neue", cursive;
     font-weight: bold;
@@ -2631,6 +2685,8 @@ a {
     border: 1px  transparent;
     box-shadow: 0px 2px 2px black;
     width: 100%; }
+    #loginform label a {
+      color: black; }
 
 .contact-form__input {
   font-family: "Comic Neue", cursive;
@@ -2641,6 +2697,12 @@ a {
   border-radius: 30px;
   border: 2px solid #CDE9FF;
   width: 50%; }
+
+.contact-form__button a {
+  color: black; }
+
+.header__login__button a, .contact-form__button a {
+  color: black; }
 
 .registration {
   display: flex;
@@ -2667,6 +2729,25 @@ a {
     border: 1px transparent;
     box-shadow: 0px 2px 2px black;
     width: 50%; }
+  .registration__input {
+    margin: 1em;
+    padding: .5em;
+    width: 50vh;
+    background-color: white;
+    border: 2px solid #CDE9FF;
+    border-radius: 20px; }
+  .registration__title {
+    font-family: "Comic Neue", cursive; }
+  .registration__button {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    background-color: #CDE9FF;
+    padding: 0.7rem;
+    margin: 1rem;
+    border-radius: 30px;
+    border: 1px transparent;
+    box-shadow: 0px 2px 2px black;
+    width: 20%; }
 
 .account {
   display: flex;
@@ -2693,11 +2774,23 @@ a {
     border: 1px  transparent;
     box-shadow: 0px 2px 2px black;
     width: 50%; }
-  .account__infos {
+  .account__info {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold; }
+  .account__avatar {
     border-radius: 20px;
     padding: 0.7rem;
     margin-bottom: 1em;
     border: 2px solid #CDE9FF; }
+  .account__form__button {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    background-color: #CDE9FF;
+    padding: 0.7rem;
+    margin: 1rem;
+    border-radius: 30px;
+    border: 1px transparent;
+    box-shadow: 0px 2px 2px black; }
 
 #pet-select {
   margin: 3em;
@@ -2710,4 +2803,3 @@ a {
 
 
 /*# sourceMappingURL=style.css.map*/
-
