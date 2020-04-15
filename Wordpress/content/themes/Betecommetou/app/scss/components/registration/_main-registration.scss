@@ -1,4 +1,10 @@
-
+.header{
+    &__login__button{
+        a{
+    color: black; 
+        }
+    }
+}
 
 .registration{
     display: flex;
@@ -50,6 +56,6 @@
         border-radius: 30px;
         border: 1px transparent;
         box-shadow: 0px 2px 2px black;
-        width: 50%;
+        width: 20%;
     }
 }
