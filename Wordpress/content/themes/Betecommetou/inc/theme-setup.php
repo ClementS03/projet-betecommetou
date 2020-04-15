@@ -15,9 +15,8 @@ if (!function_exists('betecommetou_setup')) {
 
 
 // We have custom hook for user not log-in
-function custom_redirect_hook($error='') {
+function custom_redirect_hook() {
     do_action('custom_redirect_hook');
-    echo $error;
 }
 
 
