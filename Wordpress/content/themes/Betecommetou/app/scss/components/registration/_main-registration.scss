@@ -29,5 +29,27 @@
         box-shadow: 0px 2px 2px black;
         width: 50%;
     }
- 
+    &__input{
+        margin: 1em;
+        padding: .5em;
+        width: 50vh;
+        background-color: white;
+        border: 2px solid $blue-light;
+        border-radius: 20px;
+        
+    }
+    &__title{
+        font-family: $fonts-family-title;
+    }
+    &__button{
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        background-color: $blue-light;
+        padding: 0.7rem;
+        margin: 1rem;
+        border-radius: 30px;
+        border: 1px transparent;
+        box-shadow: 0px 2px 2px black;
+        width: 50%;
+    }
 }

@@ -72,13 +72,24 @@
       <h2 class="account__info__title">
         Mes infos
       </h2>
-      <textarea name="Mes infos" cols="30" rows="10" class="account__infos">Avatar/Modifier mon image de profil</textarea>
-      <input type="text" class="contact-form__input" placeholder="Prénom ">
-      <input type="text" class="contact-form__input" placeholder="Nom">
-        <input type="text" class="contact-form__input" placeholder="Email">
-        <input type="text" class="contact-form__input" placeholder="Adresse postale">
-        <input type="text" class="contact-form__input" placeholder="Numéro de téléphone">
-    
+      <form action="" class="account_contact_utils">
+       
+        <div>
+          <label for="file">Sélectionner votre image de profil</label>
+          <input type="file" id="image" name="image" class="account_input_avatar" accept="image/*" multiple>
+        </div>
+        <div>
+          <button class="account__form__button">Envoyer</button>
+        </div>
+        <input type="text" class="contact-form__input" placeholder="Prénom ">
+        <input type="text" class="contact-form__input" placeholder="Nom">
+          <input type="text" class="contact-form__input" placeholder="Email">
+          <input type="text" class="contact-form__input" placeholder="Adresse postale">
+          <input type="text" class="contact-form__input" placeholder="Numéro de téléphone">
+         <div>
+          <button class="account__form__button">Modifier</button> 
+        </div>
+      </form>
     </main>
 
 
