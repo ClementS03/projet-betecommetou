@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6d851532954ae3ca03b2";
+/******/ 	var hotCurrentHash = "5aa76d9e4d81a1537655";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -811,11 +811,11 @@
     let titleUser = document.createElement('h3');
     titleUser.className = 'user_title';
     // Target the div
-    let newTitleUserContainer = document.querySelector('.ur-form-row');
+    let newTitleUserContainer = document.querySelector('.field-text');
     // Create text in H3
     titleUser.textContent = 'Moi';
     // Write title in div
-    newTitleUserContainer.appendChild(titleUser);
+    newTitleUserContainer.prepend(titleUser);
     
     //Create h3 animal in div
     //Create h3

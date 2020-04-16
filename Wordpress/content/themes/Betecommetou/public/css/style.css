@@ -2421,10 +2421,10 @@ a {
     font-size: 22px; }
   .header {
     flex-flow: row;
-    justify-content: space-between; }
+    justify-content: space-evenly; }
     .header .header__navbar {
       visibility: visible;
-      display: inline-block;
+      display: block;
       text-align: center; }
   .open-menu {
     display: none; }
@@ -2706,6 +2706,7 @@ a {
   flex-direction: column;
   text-align: center;
   align-items: center;
+  justify-content: center;
   /*  Title of input */
   /*  Title "Moi"*/ }
   .register input {
@@ -2742,7 +2743,8 @@ a {
 .user-registration {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
   .user-registration .animal_title {
     font-family: "Comic Neue", cursive;
     font-weight: bold;

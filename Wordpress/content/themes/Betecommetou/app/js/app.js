@@ -7,11 +7,11 @@ var app = {
     let titleUser = document.createElement('h3');
     titleUser.className = 'user_title';
     // Target the div
-    let newTitleUserContainer = document.querySelector('.ur-form-row');
+    let newTitleUserContainer = document.querySelector('.field-text');
     // Create text in H3
     titleUser.textContent = 'Moi';
     // Write title in div
-    newTitleUserContainer.appendChild(titleUser);
+    newTitleUserContainer.prepend(titleUser);
     
     //Create h3 animal in div
     //Create h3

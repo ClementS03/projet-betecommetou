@@ -5,10 +5,11 @@
     
     .header {    
         flex-flow: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
+
         .header__navbar {
             visibility: visible;
-            display: inline-block;
+            display: block;
             text-align: center;
         }
     }
@@ -46,7 +47,6 @@
             width: 60%;
         }
     }
-
     .footer {
         display: flex;
         flex-flow: row;
