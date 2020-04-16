@@ -1,4 +1,3 @@
-<?php login_hook(); ?>
 <?php 
 /*
 Template Name: login
