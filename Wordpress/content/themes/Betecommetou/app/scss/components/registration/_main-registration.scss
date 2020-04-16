@@ -1,33 +1,73 @@
-
-
-.registration{
+.register{
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
 
-    &__animal{
+    input{
+        
+        display: flex;
+        background-color: white;
+        padding: 0.7rem;
+        border: 2px solid $blue-light;
+        border-radius: 30px !important;
+        align-self: center;
+    }
+    /*  Title of input */
+    label{
         font-family: $fonts-family-title;
         font-weight: bold;
+    }
+    /*  Title "Moi"*/
+    .user_title{
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 30px !important;
         background-color: $blue-light;
-        padding: 0.7rem;
-        margin: 1rem;
-        border-radius: 30px;
         border: 1px transparent;
         box-shadow: 0px 2px 2px black;
-        width: 50%;
+        width: 50vw;
+        padding: 0.7em;
+        margin-bottom: 1em;
+        align-self: center;
+        text-align: center;
     }
 
-    &__owner{
+   
+   
+   
+
+   select{
+    display: block;
+    background-color: white !important;
+    padding: 0.7rem;
+    border: 2px solid $blue-light;
+    border-radius: 30px !important;  
+   }
+
+}
+
+/*  Title "Mon animal"*/
+.user-registration {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .animal_title{
         font-family: $fonts-family-title;
         font-weight: bold;
+        font-size: 20px;
+        border-radius: 30px !important;
         background-color: $blue-light;
-        padding: 0.7rem;
-        margin: 1rem;
-        border-radius: 30px;
         border: 1px transparent;
         box-shadow: 0px 2px 2px black;
-        width: 50%;
+        width: 50vw;
+        padding: 0.7em;
+        margin-bottom: 1em;
+        text-align: center;
     }
- 
 }
+
+
