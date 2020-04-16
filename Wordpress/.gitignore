@@ -2,10 +2,12 @@
 /wp
 /wp-config.php
 /content/plugins/*
+!/content/plugins/custom-roles
 /content/themes/*
 /content/languages
 /content/upgrade
 /content/uploads
 !/content/themes/Betecommetou
-/content/themes/Betecommetou/node_modules
 /content/themes/Betecommetou/public
+/content/themes/Betecommetou/node_modules
+.htaccess

@@ -1,3 +1,4 @@
+<?php login_hook(); ?>
 <?php 
 /*
 Template Name: login
@@ -26,7 +27,10 @@ get_footer();
 		if (strpos($url,'login/?login=echec') !== false) {
 		    echo "<div class='login_failed'>Mot de passe ou nom d'utilisateur incorrect</div>";
 		}
-    ?>
+	?>
+	
+	
+
 <?php
 get_footer();
 ?>

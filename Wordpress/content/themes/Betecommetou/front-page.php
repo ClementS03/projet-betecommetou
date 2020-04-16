@@ -26,8 +26,9 @@ $args = [
     <?php endwhile; endif; ?>
 
 <section class="main__articles"> 
-    <?php $category = get_category_by_slug('qui-sommes-nous');
-        $id = $category->cat_ID;
+    <?php 
+    $category = get_category_by_slug('qui-sommes-nous');
+    $id = $category->cat_ID;
     ?>
     <?php 
         $args = [

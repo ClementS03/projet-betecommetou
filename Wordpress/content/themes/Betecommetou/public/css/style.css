@@ -2673,6 +2673,8 @@ a {
     border: 1px transparent;
     box-shadow: 0px 2px 2px black;
     width: 100%; }
+    #loginform .button-primary a {
+      color: black; }
   #loginform label {
     font-family: "Comic Neue", cursive;
     font-weight: bold;
@@ -2683,6 +2685,8 @@ a {
     border: 1px  transparent;
     box-shadow: 0px 2px 2px black;
     width: 100%; }
+    #loginform label a {
+      color: black; }
 
 .contact-form__input {
   font-family: "Comic Neue", cursive;
@@ -2695,6 +2699,7 @@ a {
   width: 50%; }
 
 .register {
+
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -2744,6 +2749,7 @@ a {
     background-color: #CDE9FF;
     border: 1px transparent;
     box-shadow: 0px 2px 2px black;
+
     width: 50vw;
     padding: 0.7em;
     margin-bottom: 1em;
@@ -2774,11 +2780,23 @@ a {
     border: 1px  transparent;
     box-shadow: 0px 2px 2px black;
     width: 50%; }
-  .account__infos {
+  .account__info {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold; }
+  .account__avatar {
     border-radius: 20px;
     padding: 0.7rem;
     margin-bottom: 1em;
     border: 2px solid #CDE9FF; }
+  .account__form__button {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    background-color: #CDE9FF;
+    padding: 0.7rem;
+    margin: 1rem;
+    border-radius: 30px;
+    border: 1px transparent;
+    box-shadow: 0px 2px 2px black; }
 
 #pet-select {
   margin: 3em;
