@@ -9,11 +9,11 @@ RewriteRule ^(.*)$ index.php/$1
 # Toute modification des directives entre ces marqueurs sera outrepassée.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /projet-betecommetou/Wordpress/
+RewriteBase /Apotheose/projet-betecommetou/Wordpress/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /projet-betecommetou/Wordpress/index.php [L]
+RewriteRule . /Apotheose/projet-betecommetou/Wordpress/index.php [L]
 </IfModule>
 
 # END WordPress
