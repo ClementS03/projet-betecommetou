@@ -9,9 +9,9 @@
 <body>
     <div class="wrapper">    
         <header class="header">
-        <h1 class="header__title">
+        <a href="<?= home_url(); ?>"><h1 class="header__title">
             <i class="fa fa-paw" aria-hidden="true"></i> <?php bloginfo('title'); ?> <i class="fa fa-paw" aria-hidden="true"></i>
-        </h1>     
+        </h1></a> 
         <?php get_template_part('template-parts/nav/nav-header'); ?>
         <span class="ui-button open-menu">
             <i class="fa fa-bars" aria-hidden="true"></i>

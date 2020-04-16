@@ -9,5 +9,6 @@ $slug = $category[0]->slug;
     <h2 class="main__articles__first__title"><?php the_title(); ?></h2>
     <article class="main__articles__first__content">
         <?php the_content(); ?>
+        <a href="<?= the_permalink(); ?>">En savoir plus !</a>  
     </article>    
 </section>
