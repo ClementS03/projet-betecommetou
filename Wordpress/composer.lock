@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e36ec06bea0252d482c1f9628e784f3",
+    "content-hash": "36d0d84e6c1ff18eb87be5cdf2bc8749",
     "packages": [
         {
             "name": "composer/installers",
@@ -332,6 +332,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/simply-show-hooks/"
+        },
+        {
+            "name": "wpackagist-plugin/user-registration",
+            "version": "1.8.2.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/user-registration/",
+                "reference": "tags/1.8.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/user-registration.1.8.2.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/user-registration/"
         },
         {
             "name": "wpackagist-plugin/what-the-file",

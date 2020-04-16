@@ -1,4 +1,3 @@
-<?php custom_redirect_hook(); ?>
 <?php get_header(); ?>
 
 <section class="main__articles"> 
