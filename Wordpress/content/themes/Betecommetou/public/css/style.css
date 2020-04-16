@@ -2698,56 +2698,62 @@ a {
   border: 2px solid #CDE9FF;
   width: 50%; }
 
-.contact-form__button a {
-  color: black; }
+.register {
 
-.header__login__button a, .contact-form__button a {
-  color: black; }
-
-.registration {
   display: flex;
   flex-direction: column;
   text-align: center;
-  align-items: center; }
-  .registration__animal {
-    font-family: "Comic Neue", cursive;
-    font-weight: bold;
-    background-color: #CDE9FF;
-    padding: 0.7rem;
-    margin: 1rem;
-    border-radius: 30px;
-    border: 1px transparent;
-    box-shadow: 0px 2px 2px black;
-    width: 50%; }
-  .registration__owner {
-    font-family: "Comic Neue", cursive;
-    font-weight: bold;
-    background-color: #CDE9FF;
-    padding: 0.7rem;
-    margin: 1rem;
-    border-radius: 30px;
-    border: 1px transparent;
-    box-shadow: 0px 2px 2px black;
-    width: 50%; }
-  .registration__input {
-    margin: 1em;
-    padding: .5em;
-    width: 50vh;
+  align-items: center;
+  /*  Title of input */
+  /*  Title "Moi"*/ }
+  .register input {
+    display: flex;
     background-color: white;
+    padding: 0.7rem;
     border: 2px solid #CDE9FF;
-    border-radius: 20px; }
-  .registration__title {
-    font-family: "Comic Neue", cursive; }
-  .registration__button {
+    border-radius: 30px !important;
+    align-self: center; }
+  .register label {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold; }
+  .register .user_title {
     font-family: "Comic Neue", cursive;
     font-weight: bold;
+    font-size: 20px;
+    border-radius: 30px !important;
     background-color: #CDE9FF;
-    padding: 0.7rem;
-    margin: 1rem;
-    border-radius: 30px;
     border: 1px transparent;
     box-shadow: 0px 2px 2px black;
-    width: 20%; }
+    width: 50vw;
+    padding: 0.7em;
+    margin-bottom: 1em;
+    align-self: center;
+    text-align: center; }
+  .register select {
+    display: block;
+    background-color: white !important;
+    padding: 0.7rem;
+    border: 2px solid #CDE9FF;
+    border-radius: 30px !important; }
+
+/*  Title "Mon animal"*/
+.user-registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .user-registration .animal_title {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 30px !important;
+    background-color: #CDE9FF;
+    border: 1px transparent;
+    box-shadow: 0px 2px 2px black;
+
+    width: 50vw;
+    padding: 0.7em;
+    margin-bottom: 1em;
+    text-align: center; }
 
 .account {
   display: flex;
