@@ -1,6 +1,6 @@
 var app = {
   init: function() {
-    console.log('init');z
+    console.log('init');
     
     // Create h3 user in div
     // Create H3
