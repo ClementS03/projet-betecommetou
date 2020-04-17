@@ -11,6 +11,4 @@
 /content/themes/Betecommetou/public
 /content/themes/Betecommetou/node_modules
 .htaccess
-content/themes/Betecommetou/page-registration.php
-content/themes/Betecommetou/inc/redirection.php
-content/themes/Betecommetou/header.php
+/content/themes/Betecommetou/page-registration.php
