@@ -5,18 +5,60 @@ var app = {
     jwtUrl: "wp-json/jwt-auth/v1/",
 
   init: function() {
+
+         // Create h3 user in div
+    // Create H3
+    let titleUser = document.createElement('h3');
+    titleUser.className = 'user_title';
+    // Target the div
+    let newTitleUserContainer = document.querySelector('.field-text');
+    // Create text in H3
+    titleUser.textContent = 'Moi';
+    // Write title in div
+    newTitleUserContainer.prepend(titleUser);    
+    //Create h3 animal in div
+    //Create h3
+    let titleAnimal = document.createElement('h3');
+    titleAnimal.className = 'animal_title';
+    // Target the div
+    let newTitleAnimalContainer = document.querySelector('.user-registration ');
+    // Create text in H3
+    titleAnimal.textContent = 'Mon animal';
+    // Write title in div
+    newTitleAnimalContainer.prepend(titleAnimal);
     console.log('init');
-
-    //verifier si l'utilisateur a bien un token afind'utiliser les authentifications de jwt
-
-    app.initEventListener();
-    app.createH3TitleOnregistrationForm();    
+    app.verifyIfUserIsLoggedIn()
+    app.initEventListener();      
   },
+  verifyIfUserIsLoggedIn: function () {
+
+    const verifyIfUserIsLoggedInPromise = new Promise((resolve, reject) => {
+        const token = app.getToken();
+        if (token) {
+            //console.log('j\'ai trouvé un token !!');
+            axios({
+                method: 'post',
+                url: app.baseUri + app.jwtUrl + 'token/validate',
+                headers: { Authorization: 'Bearer ' + token }
+            })
+                .then(resolve)
+                .catch(reject);
+        }
+        else {
+            reject();
+        }
+    });
+    return verifyIfUserIsLoggedInPromise;
+  },
+
   initEventListener:function() {
     let burgerMenuOpenButton = document.querySelector('.open-menu');
     let burgerMenuCloseButton = document.querySelector('.close-menu');
     burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu);
     burgerMenuOpenButton.addEventListener('click',app.handleOpenFrontPageMenu);
+    let loginForm = document.querySelector('#loginform');
+    loginForm.addEventListener('submit',app.handleSubmitLoginForm);
+
   },
   createH3TitleOnregistrationForm: function() {
      // Create h3 user in div
@@ -51,15 +93,34 @@ var app = {
     document.querySelector('.wrapper').style.filter = "";
     document.querySelector('.header__menu').style.visibility = "hidden";
   },
-  //empecher la soumission du formulaire de login pour recuperer les user name et password de l'api
-  //tout d'abord il faut recuperer ces données dans le js pour pouvoir ensuite les editer a la soumission du formulaire
-
   handleEditUserFormSubmit:function (event) {
-    event.preventDefault();
-    //todo editer les infos de l'utilisateur en js sans recharger la page
-    //axios -> Check :-)
-    
-  }
+    event.preventDefault();    
+  },
+  handleSubmitLoginForm:function(event) {
+    const loginForm = event.currentTarget;
+    const loginFormData = new FormData(loginForm);
+    const loginInfos = {};
+    loginInfos.username = loginFormData.get('log');
+    loginInfos.password = loginFormData.get('pwd');
+    axios.post(
+      app.baseUri+app.jwtUrl+'token',
+      loginInfos
+    )
+    .then(app.getResponseToken)
+    .then(app.storeToken)
+  },
+  getResponseToken: function(response) {
+    return response.data.token;
+  },
+  storeToken: function(token) {
+    localStorage.setItem('token', token);
+  },
+  getToken: function () {
+    return localStorage.getItem('token');
+  },
+
+
+
   //on se basera la dessus pour updater les données de l'utilisateur
   
 //   handleCreateRecipeFormSubmit: function (event) {
