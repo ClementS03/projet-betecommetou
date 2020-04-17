@@ -1,25 +1,8 @@
 var app = {
-
-    baseUri: "http://localhost/projet-betecommetou/Wordpress/",
-    jsonUrl:"wp-json/wp/v2",
-    jwtUrl: "wp-json/jwt-auth/v1/",
-
   init: function() {
-    console.log('init');
-
-    //verifier si l'utilisateur a bien un token afind'utiliser les authentifications de jwt
-
-    app.initEventListener();
-    app.createH3TitleOnregistrationForm();    
-  },
-  initEventListener:function() {
-    let burgerMenuOpenButton = document.querySelector('.open-menu');
-    let burgerMenuCloseButton = document.querySelector('.close-menu');
-    burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu);
-    burgerMenuOpenButton.addEventListener('click',app.handleOpenFrontPageMenu);
-  },
-  createH3TitleOnregistrationForm: function() {
-     // Create h3 user in div
+    console.log('init');z
+    
+    // Create h3 user in div
     // Create H3
     let titleUser = document.createElement('h3');
     titleUser.className = 'user_title';
@@ -40,6 +23,13 @@ var app = {
     titleAnimal.textContent = 'Mon animal';
     // Write title in div
     newTitleAnimalContainer.prepend(titleAnimal);
+
+    // For burger Menu on mobile page 
+    let burgerMenuOpenButton = document.querySelector('.open-menu');
+    let burgerMenuCloseButton = document.querySelector('.close-menu');
+    burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu);
+    burgerMenuOpenButton.addEventListener('click',app.handleOpenFrontPageMenu);
+    
   },
   handleOpenFrontPageMenu: function () {
     document.querySelector('.open-menu').style.visibility = "hidden";
@@ -51,53 +41,8 @@ var app = {
     document.querySelector('.wrapper').style.filter = "";
     document.querySelector('.header__menu').style.visibility = "hidden";
   },
-  //empecher la soumission du formulaire de login pour recuperer les user name et password de l'api
-  //tout d'abord il faut recuperer ces données dans le js pour pouvoir ensuite les editer a la soumission du formulaire
-
-  handleEditUserFormSubmit:function (event) {
-    event.preventDefault();
-    //todo editer les infos de l'utilisateur en js sans recharger la page
-    //axios -> Check :-)
-    
-  }
-  //on se basera la dessus pour updater les données de l'utilisateur
   
-//   handleCreateRecipeFormSubmit: function (event) {
-
-//     // on annule le comportement par défaut (soumission du formulaire)
-//     event.preventDefault();
-
-//     // on cible le formulaire
-//     const createRecipeForm = event.target;
-
-//     // on utilise FormData pour faciliter la manipulation des données du formulaire
-//     const createRecipeFormData = new FormData(createRecipeForm);
-
-//     // on créé un objet qui contient les données du formulaire
-//     const recipe = {};
-
-//     // on le rempli
-//     recipe.title = createRecipeFormData.get('title');
-//     recipe.content = createRecipeFormData.get('content');
-//     recipe.preparation = createRecipeFormData.get('preparation-time');
-//     recipe.temps_de_cuisson = createRecipeFormData.get('cooking-time');
-//     recipe.prix = createRecipeFormData.get('cost-per-person');
-
-//     // recipe.status = 'publish'
-
-//     axios({
-//         method: 'post',
-//         url: app.baseUri + app.jsonUrl + 'recipe',
-//         headers: { Authorization: 'Bearer ' + app.getToken() },
-//         params: recipe
-//     })
-//         // fermer la modal
-//         .then(app.closeCreateRecipeModal)
-//         // vider les champs du formulaire
-//         .then(app.emptyCreateRecipeForm)
-//         // recharger la liste des recettes
-//         .then(app.loadRecipeList);
-// },
+  
 
 
 };
