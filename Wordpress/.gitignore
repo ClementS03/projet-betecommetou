@@ -2,6 +2,7 @@
 /wp
 /wp-config.php
 /content/plugins/*
+!/content/plugins/custom-roles
 /content/themes/*
 /content/languages
 /content/upgrade
@@ -10,3 +11,4 @@
 /content/themes/Betecommetou/public
 /content/themes/Betecommetou/node_modules
 .htaccess
+/content/themes/Betecommetou/page-registration.php

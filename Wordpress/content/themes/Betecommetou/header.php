@@ -9,13 +9,20 @@
 <body>
     <div class="wrapper">    
         <header class="header">
-        <h1 class="header__title">
+        <a href="<?= home_url(); ?>"><h1 class="header__title">
             <i class="fa fa-paw" aria-hidden="true"></i> <?php bloginfo('title'); ?> <i class="fa fa-paw" aria-hidden="true"></i>
-        </h1>     
+        </h1></a> 
         <?php get_template_part('template-parts/nav/nav-header'); ?>
         <span class="ui-button open-menu">
             <i class="fa fa-bars" aria-hidden="true"></i>
         </span>
-        <button class="header__login__button">Mon compte</button>
+        <?php if( !is_user_logged_in()) : ?>
+        <a href="<?= get_page_link(get_page_by_title('formulaire d\'inscription')->ID); ?>" class="header__login__button"> <?=  get_page_by_title( 'formulaire d\'inscription' )->post_title;?></a>
+        <a href="<?=  get_page_link(get_page_by_title('Connexion !')->ID) ; ?>" class="header__login__button"> <?= get_page_by_title( 'Connexion !' )->post_title;?></a>
+        <?php else : ?>
+        <a href="<?= get_page_link(get_page_by_title('votre compte')->ID); ?>" class="header__login__button"> <?=  get_page_by_title( 'votre compte' )->post_title;?></a>
+        <a href="<?= wp_logout_url(home_url()) ;?>" class="header__signout__button"> Bye Bye</a>
+        <?php endif; ?> 
+        
         </header>
         <main class="main">

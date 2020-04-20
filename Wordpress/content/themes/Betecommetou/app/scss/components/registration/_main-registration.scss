@@ -1,61 +1,69 @@
-.header{
-    &__login__button{
-        a{
-    color: black; 
-        }
-    }
-}
-
-.registration{
+.register{
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    justify-content: center;
 
-    &__animal{
-        font-family: $fonts-family-title;
-        font-weight: bold;
-        background-color: $blue-light;
-        padding: 0.7rem;
-        margin: 1rem;
-        border-radius: 30px;
-        border: 1px transparent;
-        box-shadow: 0px 2px 2px black;
-        width: 50%;
-    }
-
-    &__owner{
-        font-family: $fonts-family-title;
-        font-weight: bold;
-        background-color: $blue-light;
-        padding: 0.7rem;
-        margin: 1rem;
-        border-radius: 30px;
-        border: 1px transparent;
-        box-shadow: 0px 2px 2px black;
-        width: 50%;
-    }
-    &__input{
-        margin: 1em;
-        padding: .5em;
-        width: 50vh;
-        background-color: white;
-        border: 2px solid $blue-light;
-        border-radius: 20px;
+    input{
         
+        display: flex;
+        background-color: white;
+        padding: 0.7rem;
+        border: 2px solid $blue-light;
+        border-radius: 30px !important;
+        align-self: center;
     }
-    &__title{
-        font-family: $fonts-family-title;
-    }
-    &__button{
+    /*  Title of input */
+    label{
         font-family: $fonts-family-title;
         font-weight: bold;
+    }
+    /*  Title "Moi"*/
+    .user_title{
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 30px !important;
         background-color: $blue-light;
-        padding: 0.7rem;
-        margin: 1rem;
-        border-radius: 30px;
         border: 1px transparent;
         box-shadow: 0px 2px 2px black;
-        width: 20%;
+        width: 50vw;
+        padding: 0.7em;
+        margin-bottom: 1em;
+        align-self: center;
+        text-align: center;
     }
+    select{
+    display: block;
+    background-color: white !important;
+    padding: 0.7rem;
+    border: 2px solid $blue-light;
+    border-radius: 30px !important;  
+    }
+
 }
+/*  Title "Mon animal"*/
+.user-registration {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .animal_title{
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 30px !important;
+        background-color: $blue-light;
+        border: 1px transparent;
+        box-shadow: 0px 2px 2px black;
+        width: 50vw;
+        padding: 0.7em;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+}
+
