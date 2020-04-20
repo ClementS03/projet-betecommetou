@@ -1,6 +1,7 @@
 var app = {
   init: function() {
     console.log('init');
+
     // For burger Menu on mobile page 
     let burgerMenuOpenButton = document.querySelector('.open-menu');
     let burgerMenuCloseButton = document.querySelector('.close-menu');

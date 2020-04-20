@@ -63,7 +63,9 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
+
 /******/ 	var hotCurrentHash = "617b205f0032d3100075";
+
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -805,6 +807,7 @@
 /* WEBPACK VAR INJECTION */(function($) {var app = {
   init: function() {
     console.log('init');
+
     // For burger Menu on mobile page 
     let burgerMenuOpenButton = document.querySelector('.open-menu');
     let burgerMenuCloseButton = document.querySelector('.close-menu');
