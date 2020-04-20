@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6ecf8a9b99978c319a15";
+/******/ 	var hotCurrentHash = "59614e7808c6b04e0dd3";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -806,27 +806,7 @@
   init: function() {
     console.log('init');
     
-    // Create h3 user in div
-    // Create H3
-    let titleUser = document.createElement('h3');
-    titleUser.className = 'user_title';
-    // Target the div
-    let newTitleUserContainer = document.querySelector('.field-text');
-    // Create text in H3
-    titleUser.textContent = 'Moi';
-    // Write title in div
-    newTitleUserContainer.prepend(titleUser);
-    
-    //Create h3 animal in div
-    //Create h3
-    let titleAnimal = document.createElement('h3');
-    titleAnimal.className = 'animal_title';
-    // Target the div
-    let newTitleAnimalContainer = document.querySelector('.user-registration ');
-    // Create text in H3
-    titleAnimal.textContent = 'Mon animal';
-    // Write title in div
-    newTitleAnimalContainer.prepend(titleAnimal);
+  
 
     // For burger Menu on mobile page 
     let burgerMenuOpenButton = document.querySelector('.open-menu');
