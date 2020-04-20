@@ -3,7 +3,6 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-
     &__title {
         font-family: $fonts-family-title;
         font-weight: bold;
@@ -45,10 +44,8 @@
         border-radius: 30px;
         border: 1px transparent;
         box-shadow: 0px 2px 2px black ;
-
     }
 }
-
 #pet-select {
     margin: 3em;
     padding: .5em;
@@ -56,6 +53,5 @@
     background-color: white;
     font-family: $fonts-family-title;
     border: 2px solid $blue-light;
-    border-radius: 20px;
-    
+    border-radius: 20px;    
 }

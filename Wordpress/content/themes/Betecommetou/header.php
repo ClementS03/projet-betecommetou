@@ -16,12 +16,12 @@
         <span class="ui-button open-menu">
             <i class="fa fa-bars" aria-hidden="true"></i>
         </span>
-        <?php  if( !is_user_logged_in()) : ?>
-        <a href="<?= get_page_link(61); ?>" class="header__login__button"> <?=  get_page_by_title( 'formulaire d\'inscription' )->post_title;?></a>
-        <a href="<?=  get_page_link(60) ; ?>" class="header__login__button"> <?= get_page_by_title( 'Connexion !' )->post_title;?></a>
-        <?php  else : ?>
-        <a href="<?= get_page_link(62); ?>" class="header__login__button"> <?=  get_page_by_title( 'votre compte' )->post_title;?></a>
-        <a href="<?= wp_logout_url(home_url())?>" class="header__signout__button"> Bye Bye</a> 
+        <?php if( !is_user_logged_in()) : ?>
+        <a href="<?= get_page_link(get_page_by_title('formulaire d\'inscription')->ID); ?>" class="header__login__button"> <?=  get_page_by_title( 'formulaire d\'inscription' )->post_title;?></a>
+        <a href="<?=  get_page_link(get_page_by_title('Connexion !')->ID) ; ?>" class="header__login__button"> <?= get_page_by_title( 'Connexion !' )->post_title;?></a>
+        <?php else : ?>
+        <a href="<?= get_page_link(get_page_by_title('votre compte')->ID); ?>" class="header__login__button"> <?=  get_page_by_title( 'votre compte' )->post_title;?></a>
+        <a href="<?= wp_logout_url(home_url()) ;?>" class="header__signout__button"> Bye Bye</a>
         <?php endif; ?> 
         
         </header>

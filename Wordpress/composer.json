@@ -20,6 +20,7 @@
         "wpackagist-plugin/advanced-custom-fields": "^5.8",
         "wpackagist-plugin/what-the-file": "^1.5",
         "wpackagist-plugin/simply-show-hooks": "^1.2",
+        "wpackagist-plugin/user-registration": "1.8.2.1",
         "wpackagist-plugin/jwt-authentication-for-wp-rest-api": "^1.2"
     },
     "extra" : {

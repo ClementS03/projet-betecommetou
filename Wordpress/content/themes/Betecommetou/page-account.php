@@ -10,9 +10,9 @@ Template Name: Account
 ?>
 </pre>
 <?php $user = wp_get_current_user(); ?>
-<pre>
-<?php var_dump ($user); ?>
-</pre>
+<?php //var_dump($user); ?>
+<?php //$meta = get_user_meta($user->ID) ; ?>
+<?php //var_dump($meta); ?>
 <div class="account">
     <h2 class="account__title">
     <?php echo $user->user_login =='Betecommetou' ? 'Bienvenue , roi de ce chateau , seigneur de ce domaine ' : 'Bonjour ' . $user->user_login . '!!'; ?>
