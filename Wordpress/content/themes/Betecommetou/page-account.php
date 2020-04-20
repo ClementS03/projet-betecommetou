@@ -8,12 +8,24 @@ Template Name: Account
 <?php 
 //var_dump (get_user_meta(2));
 ?>
-</pre>
+</pre> 
 <?php $user = wp_get_current_user(); ?>
-
+<?php $post = get_post_meta(70) ;?>
+<?php //var_dump($post); ?>
+<?php $args = array(
+    'post_type' => 'carnetdesante',
+    'author' => $user->ID,
+    
+);
+$query = new WP_Query($args);
+?>
 <pre>
-<?php var_dump ($user); ?>
+    <?php
+//var_dump($query);
+?>
 </pre>
+
+
 
 <div class="account">
     <h2 class="account__title">
@@ -22,14 +34,9 @@ Template Name: Account
     <div class="account__info">
         <h2>Mon carnet de santé</h2>
         <select name="pets" id="pet-select">
-            <option value="">Mes animaux</option>
-            <option value="">Pef</option>
-            <option value="">Clément</option>
-            <option value="">Nico</option>
-            <option value="">Marine</option>
-            <option value=""> Senora Michue</option>
-            <option value="">Fifi</option>
-            <option value="">Kiki</option>
+<?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+            <option value=""><?= get_post_field('nom_de_lanimal'); ?></option>
+<?php endwhile; endif;  ?>
         </select>
     </div>
 
@@ -42,13 +49,13 @@ Template Name: Account
             <label for="file">Sélectionner votre image de profil</label>
             <input type="file" id="image" name="image" class="account_input_avatar" accept="image/*" multiple>
         </div>
-            <input type="text" name="nickname" class="contact-form__input" placeholder="
-            <?= $user->nickname; ?>">
-            <input type="text" name="firstname" class="contact-form__input" placeholder="
-            <?= $user->first_name; ?>">
-            <input type="text" name="lastname" class="contact-form__input" placeholder="
-            <?= $user->last_name; ?>">
-            <input type="text" name="email" class="contact-form__input" placeholder="<?= $user->user_email; ?>">
+            <input type="text" name="nickname" class="contact-form__input" placeholder=
+            <?= $user->nickname; ?>>
+            <input type="text" name="firstname" class="contact-form__input" placeholder=
+            <?= $user->first_name; ?>>
+            <input type="text" name="lastname" class="contact-form__input" placeholder=
+            <?= $user->last_name; ?>>
+            <input type="text" name="email" class="contact-form__input" placeholder=<?= $user->user_email; ?>>
             <input type="text" name="adress" class="contact-form__input" placeholder="Adresse postale">
             <input type="text" name="phone" class="contact-form__input" placeholder="Numéro de téléphone">
         <div>
