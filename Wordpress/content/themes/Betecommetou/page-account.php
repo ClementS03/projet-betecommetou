@@ -10,7 +10,9 @@ Template Name: Account
 ?>
 </pre>
 <?php $user = wp_get_current_user(); ?>
-
+<pre>
+<?php var_dump ($user); ?>
+</pre>
 <div class="account">
     <h2 class="account__title">
     <?php echo $user->user_login =='Betecommetou' ? 'Bienvenue , roi de ce chateau , seigneur de ce domaine ' : 'Bonjour ' . $user->user_login . '!!'; ?>
@@ -24,8 +26,8 @@ Template Name: Account
             <option value="">Nico</option>
             <option value="">Marine</option>
             <option value=""> Senora Michue</option>
-            <option value="">Kim</option>
-            <option value="">Chuck Loris</option>
+            <option value="">Fifi</option>
+            <option value="">Kiki</option>
         </select>
     </div>
 
@@ -38,14 +40,15 @@ Template Name: Account
             <label for="file">Sélectionner votre image de profil</label>
             <input type="file" id="image" name="image" class="account_input_avatar" accept="image/*" multiple>
         </div>
-        <div>
-            <button class="account__form__button">Envoyer</button>
-        </div>
-            <input type="text" class="contact-form__input" placeholder="Prenom">
-            <input type="text" class="contact-form__input" placeholder="Nom">
-            <input type="text" class="contact-form__input" placeholder="Email">
-            <input type="text" class="contact-form__input" placeholder="Adresse postale">
-            <input type="text" class="contact-form__input" placeholder="Numéro de téléphone">
+            <input type="text" name="nickname" class="contact-form__input" placeholder="
+            <?= $user->nickname; ?>">
+            <input type="text" name="firstname" class="contact-form__input" placeholder="
+            <?= $user->first_name; ?>">
+            <input type="text" name="lastname" class="contact-form__input" placeholder="
+            <?= $user->last_name; ?>">
+            <input type="text" name="email" class="contact-form__input" placeholder="<?= $user->user_email; ?>">
+            <input type="text" name="adress" class="contact-form__input" placeholder="Adresse postale">
+            <input type="text" name="phone" class="contact-form__input" placeholder="Numéro de téléphone">
         <div>
             <button class="account__form__button">Modifier</button> 
         </div>
