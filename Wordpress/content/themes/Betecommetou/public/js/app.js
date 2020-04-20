@@ -805,13 +805,11 @@
 /* WEBPACK VAR INJECTION */(function($) {var app = {
   init: function() {
     console.log('init');
-
     // For burger Menu on mobile page 
     let burgerMenuOpenButton = document.querySelector('.open-menu');
     let burgerMenuCloseButton = document.querySelector('.close-menu');
     burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu);
     burgerMenuOpenButton.addEventListener('click',app.handleOpenFrontPageMenu);
-    
   },
   handleOpenFrontPageMenu: function () {
     document.querySelector('.open-menu').style.visibility = "hidden";
@@ -823,10 +821,7 @@
     document.querySelector('.wrapper').style.filter = "";
     document.querySelector('.header__menu').style.visibility = "hidden";
   },
-
-
 };
-
 $(app.init);
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
