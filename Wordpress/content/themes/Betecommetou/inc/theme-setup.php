@@ -11,7 +11,7 @@ if (!function_exists('betecommetou_setup')) {
         ]);
     }
 }
-    add_action('after_setup_theme', 'betecommetou_setup');
+add_action('after_setup_theme', 'betecommetou_setup');
 
 
 // For don't show admin bar
