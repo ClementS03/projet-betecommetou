@@ -44,7 +44,7 @@ function custom_post_type() {
     );
     
     // Registering your Custom Post Type
-    register_post_type( 'Evénements', $args );
+    register_post_type( 'Evenements', $args );
 
 }
 

@@ -8,12 +8,9 @@ Template Name: Account
 <?php 
 //var_dump (get_user_meta(2));
 ?>
-</pre>
+</pre> 
 <?php $user = wp_get_current_user(); ?>
 
-<pre>
-<?php var_dump ($user); ?>
-</pre>
 
 <div class="account">
     <h2 class="account__title">

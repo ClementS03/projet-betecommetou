@@ -44,7 +44,7 @@ function custom_post_type_health_book() {
     );
     
     // Registering your Custom Post Type
-    register_post_type( 'Carnet de santé', $args );
+    register_post_type( 'Carnet de sante', $args );
 
 }
 
