@@ -56,12 +56,20 @@ class BetecommetouAPI {
         add_action('rest_api_init', [$this, 'postAnimalName']);
         add_action('rest_api_init', [$this, 'postAnimalAge']);
         add_action('rest_api_init', [$this, 'postAnimalType']);
+        add_action('rest_api_init', [$this, 'postAnimalSex']);
+        add_action('rest_api_init', [$this, 'postAnimalAssurance']);
+        add_action('rest_api_init', [$this, 'postAnimalRace']);
+        add_action('rest_api_init', [$this, 'postAnimalRobe']);
+        add_action('rest_api_init', [$this, 'postAnimalPedigree']);
+        add_action('rest_api_init', [$this, 'postAnimalTatouage']);
+        add_action('rest_api_init', [$this, 'postAnimalIdentification']);
+
     }
     public function metaFields() {
 
         register_rest_field(
             'healthbook',
-            'animal_caracteristics',
+            'meta',
             [
                 'get_callback' => [$this, 'getMetaFields'],
                 'update_callback' => null,
@@ -142,6 +150,101 @@ class BetecommetouAPI {
                 'get_callback' => null,
                 'update_callback' => function ($value, $object, $field_name) {
                     update_post_meta($object->ID, 'type', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+
+    public function postAnimalSex() {
+        register_rest_field(
+            'healthbook',
+            'sexe',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'sexe', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+    
+    public function postAnimalAssurance() {
+        register_rest_field(
+        'healthbook',
+        'assurance',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'assurance', $value);
+                },
+                'schema' => null
+            ]
+            );
+    }
+    public function postAnimalRace() {
+        register_rest_field(
+            'healthbook',
+            'race',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'race', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+
+    public function postAnimalRobe() {
+        register_rest_field(
+            'healthbook',
+            'robe',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'robe', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+    
+    public function postAnimalPedigree() {
+        register_rest_field(
+            'healthbook',
+            'pedigree',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'pedigree', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+    public function postAnimalTatouage() {
+        register_rest_field(
+            'healthbook',
+            'numero_de_tatouage',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'numero_de_tatouage', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+    public function postAnimalIdentification() {
+        register_rest_field(
+            'healthbook',
+            'numero_didentification_electronique',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'numero_didentification_electronique', $value);
                 },
                 'schema' => null
             ]

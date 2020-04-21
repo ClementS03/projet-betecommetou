@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "4d0a846ce165762254bf";
+/******/ 	var hotCurrentHash = "ee6442207525f2d4fe13";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -821,6 +821,11 @@ initEventListener:function() {
   if (loginForm!=null) {loginForm.addEventListener('submit',app.handleSubmitLoginForm);};
   let userForm = document.querySelector('#userForm')
   if (userForm!=null) { userForm.addEventListener('submit', app.handleSubmitUserForm);}
+  let healthBookSelect = document.querySelector('#pet-select');
+  let healthBookSelectValue = healthBookSelect.options[healthBookSelect.selectedIndex].value;
+  let healthBookSelectOption = healthBookSelect.querySelector('option');
+  healthBookSelect.addEventListener('change', app.handleChangeSelection);
+  console.log(healthBookSelect);
 },
 handleOpenFrontPageMenu: function () {
   document.querySelector('.open-menu').style.visibility = "hidden";
@@ -878,6 +883,15 @@ storeToken: function(token) {
 },
 getToken: function () {
   return localStorage.getItem('token');
+},
+handleChangeSelection: function(event) {
+  const select = event.currentTarget;
+  const selectOptionValue = select.querySelectorAll('option').value;
+  
+  for (let i =0;i < selectOptionValue; i ++) {
+    return selectOptionValue;
+  }
+  console.log(selectOptionValue);
 },
 };
 

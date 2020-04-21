@@ -33,11 +33,21 @@ $query = new WP_Query($args);
         <img class="account_animal_image" src="" alt="">
         <pre>
     </pre>
-        <select name="pets" id="pet-select">
+        <select name="pets" id="pet-select" class="contact-form__input">
 <?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-            <option value="<?=get_the_ID(); ?>" data-animal-image="<?= get_the_post_thumbnail_url(); ?>" data-animal-name="<?= get_post_field('nom_de_lanimal') ;?>"><?= get_post_field('nom_de_lanimal'); ?></option>
+            <option value="<?=get_the_ID(); ?>" ><?= get_post_field('nom_de_lanimal'); ?></option>
 <?php endwhile; endif;?>
         </select>
+            <input type="text" name="animal_name" class="contact-form__input" placeholder="Nom de l'animal">
+            <input type="text" name="DateofBirth" class="contact-form__input" placeholder="Date de naissance">
+            <input type="text" name="Sex" class="contact-form__input" placeholder="Sexe">
+            <input type="text" name="Sterilize" class="contact-form__input" placeholder="Stérilisé">
+            <input type="text" name="Insured" class="contact-form__input" placeholder="Assurance">
+            <input type="text" name="Breed" class="contact-form__input" placeholder="Race">
+            <input type="text" name="Color" class="contact-form__input" placeholder="Robe">
+            <input type="text" name="LOF" class="contact-form__input" placeholder="Pedigree">
+            <input type="text" name="tatoo" class="contact-form__input" placeholder="Numéro de tatouage">
+            <input type="text" name="identification" class="contact-form__input" placeholder="Numéro d'identification électronique">
 
     </div>
 
