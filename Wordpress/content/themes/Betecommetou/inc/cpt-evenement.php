@@ -38,7 +38,7 @@ function custom_post_type() {
         'has_archive'         => true,
         'exclude_from_search' => false,
         'publicly_queryable'  => true,
-        'capability_type'     => 'post',
+        'capability_type'     => 'post',        
         'show_in_rest' => true,
 
     );
