@@ -2,7 +2,7 @@
 /wp
 /wp-config.php
 /content/plugins/*
-!/content/plugins/custom-roles
+!/content/plugins/betecommetou-plugin
 /content/themes/*
 /content/languages
 /content/upgrade
