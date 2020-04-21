@@ -1,12 +1,22 @@
 var app = {
-  init: function() {
-    console.log('init');
 
-    // For burger Menu on mobile page 
+  baseUri: "http://localhost/betecommetou/projet-betecommetou/Wordpress/",
+  jsonUrl:"wp-json/wp/v2/",
+  jwtUrl: "wp-json/jwt-auth/v1/",
+  
+  init: function() {
+    let userForm = document.querySelector('#userForm');
+    userForm.addEventListener('submit', app.handleSubmitUserForm);
+    app.initEventListener();      
+  },
+  
+  initEventListener:function() {
     let burgerMenuOpenButton = document.querySelector('.open-menu');
     let burgerMenuCloseButton = document.querySelector('.close-menu');
     burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu);
     burgerMenuOpenButton.addEventListener('click',app.handleOpenFrontPageMenu);
+    let loginForm = document.querySelector('#loginform');
+    loginForm.addEventListener('submit',app.handleSubmitLoginForm);
   },
   handleOpenFrontPageMenu: function () {
     document.querySelector('.open-menu').style.visibility = "hidden";
@@ -18,5 +28,53 @@ var app = {
     document.querySelector('.wrapper').style.filter = "";
     document.querySelector('.header__menu').style.visibility = "hidden";
   },
-};
-$(app.init);
+  handleEditUserFormSubmit:function (event) {
+    event.preventDefault();    
+  },
+  handleSubmitLoginForm:function(event) {
+    const loginForm = event.currentTarget;
+    const loginFormData = new FormData(loginForm);
+    const loginInfos = {};
+    loginInfos.username = loginFormData.get('log');
+    loginInfos.password = loginFormData.get('pwd');
+    //console.log(loginInfos);
+    axios.post(
+      app.baseUri+app.jwtUrl+'token',
+      loginInfos
+    )
+    .then(app.getResponseToken)
+    .then(app.storeToken)
+  },
+  handleSubmitUserForm:function(event) {  
+    event.preventDefault();
+    const userForm = event.currentTarget;
+    const userFormData = new FormData(userForm);
+    const userID = document.querySelector('#userForm');
+    const userIdDataSet = userID.dataset.userId;
+    console.log(userIdDataSet);
+    userInfos = {};
+    userInfos.nickname = userFormData.get('nickname');
+    userInfos.first_name = userFormData.get('firstname');
+  
+  
+    userInfos.last_name = userFormData.get('lastname');
+    userInfos.email = userFormData.get('email');
+    axios({
+      method: 'post',
+      url: app.baseUri + app.jsonUrl + 'users' + '/' + userIdDataSet,
+      headers: { Authorization: 'Bearer ' + app.getToken() },
+      params: userInfos
+    })
+  },
+  getResponseToken: function(response) {
+    return response.data.token;
+  },
+  storeToken: function(token) {
+    localStorage.setItem('token', token);
+  },
+  getToken: function () {
+    return localStorage.getItem('token');
+  },
+  };
+  
+  document.addEventListener("DOMContentLoaded", app.init);
