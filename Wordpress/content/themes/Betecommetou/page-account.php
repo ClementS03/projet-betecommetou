@@ -45,11 +45,7 @@ $query = new WP_Query($args);
     Mes infos
     </h2>
 
-    <form action="" class="account_contact_utils">
-        <div>
-            <label for="file">Sélectionner votre image de profil</label>
-            <input type="file" id="image" name="image" class="account_input_avatar" accept="image/*" multiple>
-        </div>
+    <form action="" method="post" class="account_contact_utils" id="userForm" data-user-id = <?= $user->ID; ?>>
             <input type="text" name="nickname" class="contact-form__input" placeholder=
             <?= $user->nickname; ?>>
             <input type="text" name="firstname" class="contact-form__input" placeholder=
