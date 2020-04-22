@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "d78808bc7d4c9f9f0baa";
+/******/ 	var hotCurrentHash = "6e5b3ac4d8eb72cd64bf";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -868,7 +868,7 @@
 
 /* WEBPACK VAR INJECTION */(function(axios) {var app = {
 
-  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
+  baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
