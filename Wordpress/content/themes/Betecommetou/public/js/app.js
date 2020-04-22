@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6e5b3ac4d8eb72cd64bf";
+/******/ 	var hotCurrentHash = "62673695c17dcd9f7dd8";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -868,7 +868,7 @@
 
 /* WEBPACK VAR INJECTION */(function(axios) {var app = {
 
-  baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -929,10 +929,10 @@ handleSubmitUserForm:function(event) {
   userInfos = {};
   userInfos.nickname = userFormData.get('nickname');
   userInfos.first_name = userFormData.get('firstname');
-
-
   userInfos.last_name = userFormData.get('lastname');
   userInfos.email = userFormData.get('email');
+  userInfos.adress = userFormData.get('adress');
+  userInfos.phone = userFormData.get('phone');
   axios({
     method: 'post',
     url: app.baseUri + app.jsonUrl + 'users' + '/' + userIdDataSet,
