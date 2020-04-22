@@ -63,9 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-
-/******/ 	var hotCurrentHash = "89a390305ebb79df9c79";
-
+/******/ 	var hotCurrentHash = "b501a0ccad2d28f271d0";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -158,6 +156,7 @@
 /******/ 			_declinedDependencies: {},
 /******/ 			_selfAccepted: false,
 /******/ 			_selfDeclined: false,
+/******/ 			_selfInvalidated: false,
 /******/ 			_disposeHandlers: [],
 /******/ 			_main: hotCurrentChildModule !== moduleId,
 /******/
@@ -187,6 +186,29 @@
 /******/ 			removeDisposeHandler: function(callback) {
 /******/ 				var idx = hot._disposeHandlers.indexOf(callback);
 /******/ 				if (idx >= 0) hot._disposeHandlers.splice(idx, 1);
+/******/ 			},
+/******/ 			invalidate: function() {
+/******/ 				this._selfInvalidated = true;
+/******/ 				switch (hotStatus) {
+/******/ 					case "idle":
+/******/ 						hotUpdate = {};
+/******/ 						hotUpdate[moduleId] = modules[moduleId];
+/******/ 						hotSetStatus("ready");
+/******/ 						break;
+/******/ 					case "ready":
+/******/ 						hotApplyInvalidatedModule(moduleId);
+/******/ 						break;
+/******/ 					case "prepare":
+/******/ 					case "check":
+/******/ 					case "dispose":
+/******/ 					case "apply":
+/******/ 						(hotQueuedInvalidatedModules =
+/******/ 							hotQueuedInvalidatedModules || []).push(moduleId);
+/******/ 						break;
+/******/ 					default:
+/******/ 						// ignore requests in error states
+/******/ 						break;
+/******/ 				}
 /******/ 			},
 /******/
 /******/ 			// Management API
@@ -229,7 +251,7 @@
 /******/ 	var hotDeferred;
 /******/
 /******/ 	// The update info
-/******/ 	var hotUpdate, hotUpdateNewHash;
+/******/ 	var hotUpdate, hotUpdateNewHash, hotQueuedInvalidatedModules;
 /******/
 /******/ 	function toModuleId(id) {
 /******/ 		var isNumber = +id + "" === id;
@@ -244,7 +266,7 @@
 /******/ 		hotSetStatus("check");
 /******/ 		return hotDownloadManifest(hotRequestTimeout).then(function(update) {
 /******/ 			if (!update) {
-/******/ 				hotSetStatus("idle");
+/******/ 				hotSetStatus(hotApplyInvalidatedModules() ? "ready" : "idle");
 /******/ 				return null;
 /******/ 			}
 /******/ 			hotRequestedFilesMap = {};
@@ -337,6 +359,11 @@
 /******/ 		if (hotStatus !== "ready")
 /******/ 			throw new Error("apply() is only allowed in ready status");
 /******/ 		options = options || {};
+/******/ 		return hotApplyInternal(options);
+/******/ 	}
+/******/
+/******/ 	function hotApplyInternal(options) {
+/******/ 		hotApplyInvalidatedModules();
 /******/
 /******/ 		var cb;
 /******/ 		var i;
@@ -359,7 +386,11 @@
 /******/ 				var moduleId = queueItem.id;
 /******/ 				var chain = queueItem.chain;
 /******/ 				module = installedModules[moduleId];
-/******/ 				if (!module || module.hot._selfAccepted) continue;
+/******/ 				if (
+/******/ 					!module ||
+/******/ 					(module.hot._selfAccepted && !module.hot._selfInvalidated)
+/******/ 				)
+/******/ 					continue;
 /******/ 				if (module.hot._selfDeclined) {
 /******/ 					return {
 /******/ 						type: "self-declined",
@@ -527,10 +558,13 @@
 /******/ 				installedModules[moduleId] &&
 /******/ 				installedModules[moduleId].hot._selfAccepted &&
 /******/ 				// removed self-accepted modules should not be required
-/******/ 				appliedUpdate[moduleId] !== warnUnexpectedRequire
+/******/ 				appliedUpdate[moduleId] !== warnUnexpectedRequire &&
+/******/ 				// when called invalidate self-accepting is not possible
+/******/ 				!installedModules[moduleId].hot._selfInvalidated
 /******/ 			) {
 /******/ 				outdatedSelfAcceptedModules.push({
 /******/ 					module: moduleId,
+/******/ 					parents: installedModules[moduleId].parents.slice(),
 /******/ 					errorHandler: installedModules[moduleId].hot._selfAccepted
 /******/ 				});
 /******/ 			}
@@ -603,7 +637,11 @@
 /******/ 		// Now in "apply" phase
 /******/ 		hotSetStatus("apply");
 /******/
-/******/ 		hotCurrentHash = hotUpdateNewHash;
+/******/ 		if (hotUpdateNewHash !== undefined) {
+/******/ 			hotCurrentHash = hotUpdateNewHash;
+/******/ 			hotUpdateNewHash = undefined;
+/******/ 		}
+/******/ 		hotUpdate = undefined;
 /******/
 /******/ 		// insert new code
 /******/ 		for (moduleId in appliedUpdate) {
@@ -656,7 +694,8 @@
 /******/ 		for (i = 0; i < outdatedSelfAcceptedModules.length; i++) {
 /******/ 			var item = outdatedSelfAcceptedModules[i];
 /******/ 			moduleId = item.module;
-/******/ 			hotCurrentParents = [moduleId];
+/******/ 			hotCurrentParents = item.parents;
+/******/ 			hotCurrentChildModule = moduleId;
 /******/ 			try {
 /******/ 				__webpack_require__(moduleId);
 /******/ 			} catch (err) {
@@ -698,10 +737,33 @@
 /******/ 			return Promise.reject(error);
 /******/ 		}
 /******/
+/******/ 		if (hotQueuedInvalidatedModules) {
+/******/ 			return hotApplyInternal(options).then(function(list) {
+/******/ 				outdatedModules.forEach(function(moduleId) {
+/******/ 					if (list.indexOf(moduleId) < 0) list.push(moduleId);
+/******/ 				});
+/******/ 				return list;
+/******/ 			});
+/******/ 		}
+/******/
 /******/ 		hotSetStatus("idle");
 /******/ 		return new Promise(function(resolve) {
 /******/ 			resolve(outdatedModules);
 /******/ 		});
+/******/ 	}
+/******/
+/******/ 	function hotApplyInvalidatedModules() {
+/******/ 		if (hotQueuedInvalidatedModules) {
+/******/ 			if (!hotUpdate) hotUpdate = {};
+/******/ 			hotQueuedInvalidatedModules.forEach(hotApplyInvalidatedModule);
+/******/ 			hotQueuedInvalidatedModules = undefined;
+/******/ 			return true;
+/******/ 		}
+/******/ 	}
+/******/
+/******/ 	function hotApplyInvalidatedModule(moduleId) {
+/******/ 		if (!Object.prototype.hasOwnProperty.call(hotUpdate, moduleId))
+/******/ 			hotUpdate[moduleId] = modules[moduleId];
 /******/ 	}
 /******/
 /******/ 	// The module cache
@@ -819,15 +881,75 @@ init: function() {
     let burgerMenuCloseButton = document.querySelector('.close-menu');
     burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu);
     burgerMenuOpenButton.addEventListener('click',app.handleOpenFrontPageMenu);
-
     let loginForm = document.querySelector('#loginform');
     if (loginForm!=null) {loginForm.addEventListener('submit',app.handleSubmitLoginForm)};
     let userForm = document.querySelector('#userForm');
     if (userForm!=null) { userForm.addEventListener('submit', app.handleSubmitUserForm)};
+    let animalForm = document.querySelector('#animalForm');
+    if (animalForm!=null) { animalForm.addEventListener('submit', app.handleSubmitAnimalForm)};
     let healthBookSelect = document.querySelector('#pet-select');
-    if(healthBookSelect!=null) {healthBookSelect.addEventListener('change', app.handleChangeSelection);
-  }  
+    if(healthBookSelect!=null) {healthBookSelect.addEventListener('change', app.handleChangeSelection)};    
+    let addButton = document.querySelector('#add');
+    if(addButton != null) {addButton.addEventListener('click', app.handleShowModalOnButtonAddClick)};
+    let formToAddanAnimal = document.querySelector('.account_contact_utils');
+    if (formToAddanAnimal != null) {formToAddanAnimal.addEventListener('submit', app.handleModalFormToAdd)};
+    let deleteButton = document.querySelector('#delete');
+    if(deleteButton != null) {deleteButton.addEventListener('click', app.handleShowModalOnButtonDeleteClick)};
+    let formToDeleteanAnimal = document.querySelector('#deleteForm');
+    if (formToDeleteanAnimal != null) {formToDeleteanAnimal.addEventListener('submit', app.handleModalFormToDelete)};
+    let selectInDeleteModal = document.querySelector('#pet-select-deletemodal');
+    if (selectInDeleteModal!=null) {selectInDeleteModal.addEventListener('change', app.handleSelectInDeleteModal)};
+  },
+  handleShowModalOnButtonAddClick:function () {
+    console.log('clicked');
+    let modal = document.querySelector('.modal');
+    modal.style.visibility="visible";
+  
+  },
+  handleModalFormToAdd: function(event) {
+    // let modal = document.querySelector('.modal');
+    // modal.style.display="none";
+    const modalForm = event.currentTarget;
+    const modalFormData = new FormData(modalForm);
+    newAnimalName = {};
+    newAnimalName.title = modalFormData.get('animalName');
+    newAnimalName.nom_de_lanimal = modalFormData.get('animalName');
+    newAnimalName.status = "publish";
+    axios({
+      method: 'post',
+      url: app.baseUri + app.jsonUrl + 'healthbook',
+      headers: { Authorization: 'Bearer ' + app.getToken() },
+      params: newAnimalName
+    })
+    .then(function(){
+      document.querySelector('.account_contact_utils').reset();
+    })
 
+  },
+  handleShowModalOnButtonDeleteClick: function(){
+    let modal = document.querySelector('.modalDelete');
+    modal.style.visibility="visible";
+  },
+  handleSelectInDeleteModal:function(event) {
+    const select = event.currentTarget;
+    const optionID = select.options[select.selectedIndex].value;
+    localStorage.setItem('ID to delete', optionID); 
+  },
+  handleModalFormToDelete: function (event) {
+    let animaltoDelete = event.currentTarget;
+    console.log(localStorage.getItem('ID to delete'))
+      axios({
+        method: 'delete',
+        url: app.baseUri + app.jsonUrl + 'healthbook/' + localStorage.getItem('ID to delete'),
+        headers: { Authorization: 'Bearer ' + app.getToken() },
+        params: {
+            force: true
+        }
+    })
+    .then(function(){
+      document.querySelector('.modalDelete').style.visibility="hidden";
+      localStorage.setItem('ID to delete'," ");
+    })
   },
   handleOpenFrontPageMenu: function () {
     document.querySelector('.open-menu').style.visibility = "hidden";
@@ -874,6 +996,29 @@ init: function() {
       params: userInfos
     })
   },
+  handleSubmitAnimalForm:function(event) {
+    event.preventDefault();
+    const animalForm = event.currentTarget;
+    const animalFormData = new FormData(animalForm);
+    let animalID = localStorage.getItem('ID of animal');
+    animalInfos = {};
+    animalInfos.nom_de_lanimal = animalFormData.get('animal_name');
+    animalInfos.age_de_lanimal = animalFormData.get('DateofBirth');
+    animalInfos.sexe = animalFormData.get('Sex');
+    animalInfos.assurance = animalFormData.get('Insured');
+    animalInfos.race = animalFormData.get('Breed');
+    animalInfos.robe = animalFormData.get('Color');
+    animalInfos.pedigree = animalFormData.get('LOF');
+    animalInfos.numero_de_tatouage = animalFormData.get('tatoo');
+    animalInfos.numero_didentification_electronique = animalFormData.get('identification');
+    axios({
+      method: 'post',
+      url: app.baseUri + app.jsonUrl + 'healthbook' + '/' + animalID,
+      headers: { Authorization: 'Bearer ' + app.getToken() },
+      params: animalInfos
+    })
+    
+  },
   getResponseToken: function(response) {
     return response.data.token;
   },
@@ -886,7 +1031,7 @@ init: function() {
   handleChangeSelection: function(event) {
     const select = event.currentTarget;
     const optionID = select.options[select.selectedIndex].value;
-    console.log(optionID);
+    localStorage.setItem('ID of animal', optionID);
     axios({
       method: 'get',
       url: app.baseUri + app.jsonUrl + 'healthbook' + '/' + optionID,
@@ -896,20 +1041,21 @@ init: function() {
       }
     })
     .then(function(response){
-      console.log(response.data.meta);
-      document.querySelector('input[name=animal_name]').placeholder = response.data.meta.nom_de_lanimal;
-      document.querySelector('input[name=DateofBirth]').placeholder = response.data.meta.age_de_lanimal;
-      document.querySelector('input[name=Sex]').placeholder = response.data.meta.sexe;
-      document.querySelector('input[name=Sterilize').placeholder = "champ non present , a corriger";
-      document.querySelector('input[name=Insured]').placeholder = response.data.meta.assurance;
-      document.querySelector('input[name=Breed]').placeholder = response.data.meta.race;
-      document.querySelector('input[name=Color]').placeholder = response.data.meta.robe;
-      document.querySelector('input[name=LOF]').placeholder = response.data.meta.pedigree;
-      document.querySelector('input[name=tatoo]').placeholder = response.data.meta.numero_de_tatouage;
-      document.querySelector('input[name=identification]').placeholder = response.data.meta.numero_didentification_electronique;
+      if (response.data.meta) {
+        document.querySelector('input[name=animal_name]').value = response.data.meta.nom_de_lanimal;
+        document.querySelector('input[name=DateofBirth]').value = response.data.meta.age_de_lanimal;
+        document.querySelector('input[name=Sex]').value = response.data.meta.sexe;
+        document.querySelector('input[name=Sterilize').value = "champ non present , a corriger";
+        document.querySelector('input[name=Insured]').value = response.data.meta.assurance;
+        document.querySelector('input[name=Breed]').value = response.data.meta.race;
+        document.querySelector('input[name=Color]').value = response.data.meta.robe;
+        document.querySelector('input[name=LOF]').value = response.data.meta.pedigree;
+        document.querySelector('input[name=tatoo]').value = response.data.meta.numero_de_tatouage;
+        document.querySelector('input[name=identification]').value = response.data.meta.numero_didentification_electronique;
+      } else {
+        console.log('il faut selectioner une valeur')
+      }      
     })
-
-
   },
 };
 
