@@ -19,8 +19,6 @@ initEventListener:function() {
   let userForm = document.querySelector('#userForm');
   if (userForm!=null) { userForm.addEventListener('submit', app.handleSubmitUserForm)};
 
-  let healthBookSelect = document.querySelector('#pet-select');
-  healthBookSelect.addEventListener('onchange', app.handleChangeSelection);
 
 },
 handleOpenFrontPageMenu: function () {
