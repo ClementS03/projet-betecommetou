@@ -2655,15 +2655,11 @@ a {
 
 .footer__newsletter {
   width: 50%; }
-  .footer__newsletter .social-nav a {
-    color: #AC4200;
-    font-size: 1.5rem;
-    display: inline-block;
-    padding: 0.3rem; }
-  .footer__newsletter .links li {
-    display: block;
-    font-size: 1.5rem;
-    padding: 1rem; }
+
+.links li {
+  display: block;
+  font-size: 1.5rem;
+  padding: 1rem; }
 
 #loginform {
   display: flex;
@@ -2780,12 +2776,29 @@ a {
     margin-bottom: 1em;
     text-align: center; }
 
+
+.legales__mentions {
+  display: flex; }
+  .legales__mentions__title {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    padding: 0.7rem;
+    margin: 1rem;
+    text-align: center; }
+  .legales__mentions__content {
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 2em; }
+    .legales__mentions__content p {
+      margin-bottom: 2em; }
+
 /*  Title of page registration*/
 .title_registration {
   color: #D57100;
   font-size: 1.5rem;
   text-align: center;
   padding: 1em; }
+
 
 .account {
   display: flex;
