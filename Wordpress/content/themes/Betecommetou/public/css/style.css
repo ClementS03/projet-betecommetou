@@ -2399,7 +2399,7 @@ a {
   background-color: #FFDBAE;
   border-bottom: 5px transparent;
   border-radius: 0 0 35% 35%; }
-  .header__login__button, .contact-form__button {
+  .header__login__button {
     color: black; }
   .header__signout__button {
     color: black; }
@@ -2494,7 +2494,7 @@ a {
   font-size: 3rem;
   color: #AC4200; }
 
-.header__login__button, .contact-form__button {
+.header__login__button {
   font-family: "Comic Neue", cursive;
   font-weight: bold;
   background-color: #CDE9FF;
@@ -2624,10 +2624,23 @@ a {
   width: 50%;
   align-items: center;
   display: none; }
-  .contact-form__title {
+  .contact-form .contact-form__title {
     color: #D57100;
     font-size: 1.5rem; }
-  .contact-form__input {
+  .contact-form label {
+    color: black;
+    font-size: 1.5rem; }
+
+.wpcf7-form-control {
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  padding: 0.7rem;
+  margin: 1rem;
+  border-radius: 30px;
+  border: 1px transparent;
+  box-shadow: 0px 2px 2px black; }
+  .wpcf7-form-control-text {
     text-align: center;
     outline: none; }
 
