@@ -2798,6 +2798,17 @@ a {
     .legales__mentions__content p {
       margin-bottom: 2em; }
 
+.modal {
+  width: auto;
+  position: fixed;
+  top: 10em;
+  left: 10em;
+  z-index: 50;
+  background-color: blue;
+  padding: 2em;
+  margin: 2em;
+  align-self: center; }
+
 .account {
   display: flex;
   flex-direction: column;
@@ -2840,6 +2851,12 @@ a {
     border-radius: 30px;
     border: 1px transparent;
     box-shadow: 0px 2px 2px black; }
+
+#select-buttons {
+  display: flex;
+  justify-content: center; }
+  #select-buttons button {
+    width: 20%; }
 
 
 /*# sourceMappingURL=style.css.map*/
