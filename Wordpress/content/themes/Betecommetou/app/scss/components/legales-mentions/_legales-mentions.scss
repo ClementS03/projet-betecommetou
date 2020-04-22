@@ -1,0 +1,20 @@
+.legales__mentions {
+    display: flex;
+    &__title {
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        padding: 0.7rem;
+        margin: 1rem;    
+        text-align: center;
+    }
+
+    &__content {
+        margin-top: 1em;
+        margin-left: 2em;
+        margin-right: 2em;
+        
+        p{
+            margin-bottom: 2em; 
+        }
+    }
+}

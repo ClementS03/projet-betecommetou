@@ -2,22 +2,16 @@
 <footer class="footer">
     <form class="contact-form">
         <h3 class="contact-form__title">Formulaire de contact</h3>
-        <input type="text" class="contact-form__input" placeholder="Prénom NOM">
-        <input type="text" class="contact-form__input" placeholder="Votre Email">
-        <input type="text" class="contact-form__input" placeholder="Votre message">
-        <button class="contact-form__button"><a href="#">Envoyer</a></button>
+        <?=
+        do_shortcode('[contact-form-7 id="84" title="Formulaire de contact footer"]')
+        ?>
     </form>
     <div class="footer__newsletter">
-        <div class="social-nav">
-        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        </div>
         <div class="links">
         <ul class="links__list">
             <li class="links__contact"><a href="#">Contact</a></li>
             <li class="links__link"><a href="#">Newsletter</a></li>
-            <li class="links__legal_mentions"><a href="#">Mentions légales</a></li>
+            <li class="links__legal_mentions"><a href="mentions-legales">Mentions légales</a></li>
             <li class="links__equipe"><a href="#">L'equipe</a></li>
         </ul>
         </div>
