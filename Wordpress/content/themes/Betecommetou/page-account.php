@@ -31,7 +31,7 @@ $query = new WP_Query($args);
     <div class="account__info">
         <h2>Mon carnet de santé</h2>
         <img class="account_animal_image" src="" alt="">
-        
+
         <select name="pets" id="pet-select" class="contact-form__input">
 <?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
             <option value="<?=get_the_ID(); ?>" ><?= get_post_field('nom_de_lanimal'); ?></option>
@@ -79,10 +79,10 @@ $query = new WP_Query($args);
             <input type="text" name="firstname" class="contact-form__input" placeholder=
             <?= $user->first_name; ?>>
             <input type="text" name="lastname" class="contact-form__input" placeholder=
-            <?= $user->last_name; ?>>
-            <input type="text" name="email" class="contact-form__input" placeholder=<?= $user->user_email; ?>>
-            <input type="text" name="adress" class="contact-form__input" placeholder="Adresse postale">
-            <input type="text" name="phone" class="contact-form__input" placeholder="Numéro de téléphone">
+            "<?= $user->last_name; ?>">
+            <input type="text" name="email" class="contact-form__input" placeholder="<?= $user->user_email; ?>">
+            <input type="text" name="adress" class="contact-form__input" placeholder="<?= $user->adress ;?>">
+            <input type="text" name="phone" class="contact-form__input" placeholder="<?= $user->phone ;?>">
         <div>
             <button class="account__form__button">Modifier</button> 
         </div>
