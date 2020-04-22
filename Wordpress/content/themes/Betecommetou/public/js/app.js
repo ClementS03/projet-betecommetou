@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "3266875944e1f11764bf";
+/******/ 	var hotCurrentHash = "d78808bc7d4c9f9f0baa";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -887,6 +887,9 @@ initEventListener:function() {
   let userForm = document.querySelector('#userForm');
   if (userForm!=null) { userForm.addEventListener('submit', app.handleSubmitUserForm)};
 
+  let healthBookSelect = document.querySelector('#pet-select');
+  if(healthBookSelect!=null) {healthBookSelect.addEventListener('onchange', app.handleChangeSelection);}
+  
 
 },
 handleOpenFrontPageMenu: function () {
