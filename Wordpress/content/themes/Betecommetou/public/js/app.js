@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "d9f2b91c77d3c5d4b25c";
+/******/ 	var hotCurrentHash = "e093bc7980b436fcc766";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -951,12 +951,8 @@ getToken: function () {
 handleChangeSelection: function(event) {
   const select = event.currentTarget;
   console.log(select);
-  const selectOptionValue = select.querySelectorAll('option').value;
+  const selectOptionValue = select.querySelector('option').value;
   
-  for (let i =0;i < selectOptionValue; i ++) {
-    return selectOptionValue;
-  }
-  console.log(selectOptionValue);
 },
 };
 
