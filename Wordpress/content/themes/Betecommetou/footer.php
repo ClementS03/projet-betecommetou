@@ -2,9 +2,7 @@
 <footer class="footer">
     <form class="contact-form">
         <h3 class="contact-form__title">Formulaire de contact</h3>
-        <?=
-        do_shortcode('[contact-form-7 id="84" title="Formulaire de contact footer"]')
-        ?>
+       <?php echo do_shortcode('[contact-form-7 id="89" title="Formulaire contact footer"]') ?>
     </form>
     <div class="footer__newsletter">
         <div class="links">
