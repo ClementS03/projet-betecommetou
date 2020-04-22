@@ -91,16 +91,16 @@ init: function() {
     })
     .then(function(response){
       console.log(response.data.meta);
-      document.querySelector('input[name=animal_name]').placeholder = response.data.meta.nom_de_lanimal;
-      document.querySelector('input[name=DateofBirth]').placeholder = response.data.meta.age_de_lanimal;
-      document.querySelector('input[name=Sex]').placeholder = response.data.meta.sexe;
-      document.querySelector('input[name=Sterilize').placeholder = "champ non present , a corriger";
-      document.querySelector('input[name=Insured]').placeholder = response.data.meta.assurance;
-      document.querySelector('input[name=Breed]').placeholder = response.data.meta.race;
-      document.querySelector('input[name=Color]').placeholder = response.data.meta.robe;
-      document.querySelector('input[name=LOF]').placeholder = response.data.meta.pedigree;
-      document.querySelector('input[name=tatoo]').placeholder = response.data.meta.numero_de_tatouage;
-      document.querySelector('input[name=identification]').placeholder = response.data.meta.numero_didentification_electronique;
+      document.querySelector('input[name=animal_name]').value = response.data.meta.nom_de_lanimal;
+      document.querySelector('input[name=DateofBirth]').value = response.data.meta.age_de_lanimal;
+      document.querySelector('input[name=Sex]').value = response.data.meta.sexe;
+      document.querySelector('input[name=Sterilize').value = "champ non present , a corriger";
+      document.querySelector('input[name=Insured]').value = response.data.meta.assurance;
+      document.querySelector('input[name=Breed]').value = response.data.meta.race;
+      document.querySelector('input[name=Color]').value = response.data.meta.robe;
+      document.querySelector('input[name=LOF]').value = response.data.meta.pedigree;
+      document.querySelector('input[name=tatoo]').value = response.data.meta.numero_de_tatouage;
+      document.querySelector('input[name=identification]').value = response.data.meta.numero_didentification_electronique;
     })
 
 
