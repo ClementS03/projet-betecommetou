@@ -41,6 +41,7 @@
     border: 2px solid $blue-light;
     border-radius: 30px !important;  
     }
+    
 
 }
 /*  Title "Mon animal"*/
@@ -66,4 +67,10 @@
     }
 
 }
-
+/*  Title of page registration*/
+.title_registration {
+    color: $orange-darken; 
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1em;
+}
