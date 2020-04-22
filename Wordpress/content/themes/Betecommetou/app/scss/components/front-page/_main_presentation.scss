@@ -6,11 +6,26 @@
         font-weight: bold;
     }
     .content {
+
+    
         .main__presentation__content {
-            padding: 0 1.5rem;
-        }
-        img {
-            width: 100%;
+            padding: 1 1.5rem;
+            @media(min-width: $breakpoint-large) {
+            height: 60%;
+            width: 60%;
         }
     }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            @media(min-width: $breakpoint-large) {
+                height: 40%;
+                width: 40%;
+                padding-right: 100px;
+            }
+        }
+    
+}
+
 }
