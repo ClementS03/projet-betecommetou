@@ -12,6 +12,7 @@
 label{
         color: black; 
         font-size: 1.5rem;
+        
     }
 
 }
@@ -24,11 +25,21 @@ label{
         margin: 1rem;
         border-radius: 30px;
         border: 1px transparent;
-        box-shadow: 0px 2px 2px black ;  
+        box-shadow: 0px 2px 2px black ; 
+        text-align: center;
+        outline: none;
 
-    &-text {
-       text-align: center;
-       outline: none;
-    }    
+    
+
+    
 }
-     
+.wpcf7-submit  {
+    font-family: $fonts-family-title;
+    font-weight: bold;
+    background-color: $blue-light;
+    padding: 0.7rem;
+    margin: 1rem;
+    border-radius: 30px;
+    border: 1px transparent;
+    box-shadow: 0px 2px 2px black;
+} 
