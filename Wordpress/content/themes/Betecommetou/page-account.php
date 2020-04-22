@@ -40,10 +40,10 @@ $query = new WP_Query($args);
 
         <!-- Modal -->
         <div class="modal">
-            <form class="modal-form" action="">
+            <form class="account_contact_utils" action="">
                 <h2 class="modal-title">Veuillez entrer le nom de votre Animal</h2>
-                <input class="modal-input" type="text">
-                <button class="modal-button">Valider</button>
+                <input class="contact-form__input" type="text">
+                <button class="account__form__button">Valider</button>
             </form>
         </div>
 
