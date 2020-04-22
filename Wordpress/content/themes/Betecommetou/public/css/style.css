@@ -2776,6 +2776,12 @@ a {
     margin-bottom: 1em;
     text-align: center; }
 
+/*  Title of page registration*/
+.title_registration {
+  color: #D57100;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1em; }
 
 .legales__mentions {
   display: flex; }
@@ -2791,14 +2797,6 @@ a {
     margin-right: 2em; }
     .legales__mentions__content p {
       margin-bottom: 2em; }
-
-/*  Title of page registration*/
-.title_registration {
-  color: #D57100;
-  font-size: 1.5rem;
-  text-align: center;
-  padding: 1em; }
-
 
 .account {
   display: flex;

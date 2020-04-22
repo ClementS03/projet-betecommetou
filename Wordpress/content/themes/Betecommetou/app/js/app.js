@@ -13,15 +13,15 @@ initEventListener:function() {
   let burgerMenuCloseButton = document.querySelector('.close-menu');
   burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu);
   burgerMenuOpenButton.addEventListener('click',app.handleOpenFrontPageMenu);
+
   let loginForm = document.querySelector('#loginform');
-  if (loginForm!=null) {loginForm.addEventListener('submit',app.handleSubmitLoginForm);};
-  let userForm = document.querySelector('#userForm')
-  if (userForm!=null) { userForm.addEventListener('submit', app.handleSubmitUserForm);}
+  if (loginForm!=null) {loginForm.addEventListener('submit',app.handleSubmitLoginForm)};
+  let userForm = document.querySelector('#userForm');
+  if (userForm!=null) { userForm.addEventListener('submit', app.handleSubmitUserForm)};
+
   let healthBookSelect = document.querySelector('#pet-select');
-  let healthBookSelectValue = healthBookSelect.options[healthBookSelect.selectedIndex].value;
-  let healthBookSelectOption = healthBookSelect.querySelector('option');
-  healthBookSelect.addEventListener('change', app.handleChangeSelection);
-  console.log(healthBookSelect);
+  healthBookSelect.addEventListener('onchange', app.handleChangeSelection);
+
 },
 handleOpenFrontPageMenu: function () {
   document.querySelector('.open-menu').style.visibility = "hidden";
@@ -82,12 +82,9 @@ getToken: function () {
 },
 handleChangeSelection: function(event) {
   const select = event.currentTarget;
-  const selectOptionValue = select.querySelectorAll('option').value;
+  console.log(select);
+  const selectOptionValue = select.querySelector('option').value;
   
-  for (let i =0;i < selectOptionValue; i ++) {
-    return selectOptionValue;
-  }
-  console.log(selectOptionValue);
 },
 };
 
