@@ -31,22 +31,42 @@ $query = new WP_Query($args);
     <div class="account__info">
         <h2>Mon carnet de santé</h2>
         <img class="account_animal_image" src="" alt="">
+
         <select name="pets" id="pet-select" class="contact-form__input">
 <?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
             <option value="<?=get_the_ID(); ?>" ><?= get_post_field('nom_de_lanimal'); ?></option>
 <?php endwhile; endif;?>
         </select>
-            <input type="text" name="animal_name" class="contact-form__input" placeholder="Nom de l'animal">
-            <input type="text" name="DateofBirth" class="contact-form__input" placeholder="Date de naissance">
-            <input type="text" name="Sex" class="contact-form__input" placeholder="Sexe">
-            <input type="text" name="Sterilize" class="contact-form__input" placeholder="Stérilisé">
-            <input type="text" name="Insured" class="contact-form__input" placeholder="Assurance">
-            <input type="text" name="Breed" class="contact-form__input" placeholder="Race">
-            <input type="text" name="Color" class="contact-form__input" placeholder="Robe">
-            <input type="text" name="LOF" class="contact-form__input" placeholder="Pedigree">
-            <input type="text" name="tatoo" class="contact-form__input" placeholder="Numéro de tatouage">
-            <input type="text" name="identification" class="contact-form__input" placeholder="Numéro d'identification électronique">
 
+        <!-- Modal -->
+        <div class="modal">
+            <form class="account_contact_utils" action="">
+                <h2 class="modal-title">Veuillez entrer le nom de votre Animal</h2>
+                <input class="contact-form__input" type="text">
+                <button class="account__form__button">Valider</button>
+            </form>
+        </div>
+
+            <div id="select-buttons">
+                <button id="add" class="account__form__button">Ajouter</button>
+                <button id="delete" class="account__form__button">Supprimer</button>
+            </div>
+
+            <form action="" method="post" class="account_contact_utils" id="userForm">
+                <input type="text" name="animal_name" class="contact-form__input" placeholder="Nom de l'animal">
+                <input type="text" name="DateofBirth" class="contact-form__input" placeholder="Date de naissance">
+                <input type="text" name="Sex" class="contact-form__input" placeholder="Sexe">
+                <input type="text" name="Sterilize" class="contact-form__input" placeholder="Stérilisé">
+                <input type="text" name="Insured" class="contact-form__input" placeholder="Assurance">
+                <input type="text" name="Breed" class="contact-form__input" placeholder="Race">
+                <input type="text" name="Color" class="contact-form__input" placeholder="Robe">
+                <input type="text" name="LOF" class="contact-form__input" placeholder="Pedigree">
+                <input type="text" name="tatoo" class="contact-form__input" placeholder="Numéro de tatouage">
+                <input type="text" name="identification" class="contact-form__input" placeholder="Numéro d'identification électronique">
+            <div>
+                <button class="account__form__button">Modifier</button> 
+            </div>
+            </form>
     </div>
 
     <h2 class="account__info__title">
