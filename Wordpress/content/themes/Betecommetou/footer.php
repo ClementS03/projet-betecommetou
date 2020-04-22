@@ -2,10 +2,7 @@
 <footer class="footer">
     <form class="contact-form">
         <h3 class="contact-form__title">Formulaire de contact</h3>
-        <input type="text" class="contact-form__input" placeholder="Prénom NOM">
-        <input type="text" class="contact-form__input" placeholder="Votre Email">
-        <input type="text" class="contact-form__input" placeholder="Votre message">
-        <button class="contact-form__button"><a href="#">Envoyer</a></button>
+       <?php echo do_shortcode('[contact-form-7 id="89" title="Formulaire contact footer"]') ?>
     </form>
     <div class="footer__newsletter">
         <div class="social-nav">
