@@ -23,26 +23,30 @@ function change_role_name() {
 
 add_action('init', 'change_role_name');
 
+
 function addCap()
+    
     {
-        $array_roles = [
-            'administrator',
-            'subscriber'
-        ];
+        global $wp_roles;
+            $wp_roles->add_cap('administrator','read_healthbooks');
+            $wp_roles->add_cap('administrator','delete_healthbooks');
+            $wp_roles->add_cap('administrator','delete_private_healthbooks');
+            $wp_roles->add_cap('administrator','delete_published_healthbooks');
+            $wp_roles->add_cap('administrator','delete_others_healthbooks');
+            $wp_roles->add_cap('administrator','edit_private_healthbooks');
+            $wp_roles->add_cap('administrator','edit_published_healthbooks');
+            $wp_roles->add_cap('administrator','edit_others_healthbooks');
+            $wp_roles->add_cap('administrator','edit_healthbooks');
+            $wp_roles->add_cap('administrator','publish_healthbooks');
 
-        foreach ($array_roles as $role_name) {
-
-            $role = get_role($role_name);
-            $role->add_cap('delete_healthbook');
-            $role->add_cap('delete_private_healthbook');
-            $role->add_cap('delete_published_healthbook');
-            $role->add_cap('delete_others_healthbook');
-            $role->add_cap('edit_private_healthbook');
-            $role->add_cap('edit_published_healthbook');
-            $role->add_cap('edit_others_healthbook');
-            $role->add_cap('edit_healthbook');
-            $role->add_cap('publish_healthbook');
-        }
+            $wp_roles->add_cap('subscriber','read_healthbooks');
+            $wp_roles->add_cap('subscriber','delete_healthbooks');
+            $wp_roles->add_cap('subscriber','delete_private_healthbooks');
+            $wp_roles->add_cap('subscriber','delete_published_healthbooks');
+            $wp_roles->add_cap('subscriber','edit_private_healthbooks');
+            $wp_roles->add_cap('subscriber','edit_published_healthbooks');
+            $wp_roles->add_cap('subscriber','edit_healthbooks');
+            $wp_roles->add_cap('subscriber','publish_healthbooks');
     }
 
 add_action('init', 'addCap');
@@ -51,6 +55,9 @@ class BetecommetouAPI {
 
     public function __construct() {
 
+        add_action('rest_api_init', [$this, 'userMetaField']);
+        add_action('rest_api_init', [$this, 'userAdressField']);
+        add_action('rest_api_init', [$this, 'userPhoneField']);
         add_action('rest_api_init', [$this, 'metaFields']);
         add_action('rest_api_init', [$this, 'thumbnailField']);
         add_action('rest_api_init', [$this, 'postAnimalName']);
@@ -65,6 +72,59 @@ class BetecommetouAPI {
         add_action('rest_api_init', [$this, 'postAnimalIdentification']);
 
     }
+    public function userMetaField() {
+        register_rest_field(
+            "user",
+            'meta',
+            [
+                'get_callback' => [$this, 'getUserMetaFields'],
+                'update_callback' => null,
+                'schema' => null
+            ]
+        );
+    }
+
+    public function getUserMetaFields ($object) {
+        $array_return = [];
+        $object_id = $object['id'];
+        $all_meta = get_user_meta($object_id);
+        foreach($all_meta as $meta_name => $meta_value) {
+            if(substr($meta_name,0,1) != '_') {
+                $array_return[$meta_name] = $meta_value[0];
+            }
+        }
+        return $array_return;
+    }
+
+    public function userAdressField() {
+        register_rest_field(
+            'user',
+            'adress',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_user_meta($object->ID, 'adress', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+    public function userPhoneField() {
+        register_rest_field(
+            'user',
+            'phone',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_user_meta($object->ID, 'phone', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+
+
+
     public function metaFields() {
 
         register_rest_field(
