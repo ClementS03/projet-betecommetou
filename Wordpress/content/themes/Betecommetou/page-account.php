@@ -36,8 +36,6 @@ $query = new WP_Query($args);
             <option value="<?=get_the_ID(); ?>" ><?= get_post_field('nom_de_lanimal'); ?></option>
 <?php endwhile; endif;?>
         </select>
-            <button id="add" class="account__form__button">Ajouter</button>
-            <button id="delete" class="account__form__button">Supprimer</button>
             <input type="text" name="animal_name" class="contact-form__input" placeholder="Nom de l'animal">
             <input type="text" name="DateofBirth" class="contact-form__input" placeholder="Date de naissance">
             <input type="text" name="Sex" class="contact-form__input" placeholder="Sexe">
