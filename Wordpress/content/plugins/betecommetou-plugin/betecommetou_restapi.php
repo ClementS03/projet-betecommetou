@@ -47,6 +47,14 @@ function addCap()
             $wp_roles->add_cap('subscriber','edit_published_healthbooks');
             $wp_roles->add_cap('subscriber','edit_healthbooks');
             $wp_roles->add_cap('subscriber','publish_healthbooks');
+            $wp_roles->add_cap('subscriber','read_healthbook');
+            $wp_roles->add_cap('subscriber','delete_healthbook');
+            $wp_roles->add_cap('subscriber','delete_private_healthbook');
+            $wp_roles->add_cap('subscriber','delete_published_healthbook');
+            $wp_roles->add_cap('subscriber','edit_private_healthbook');
+            $wp_roles->add_cap('subscriber','edit_published_healthbook');
+            $wp_roles->add_cap('subscriber','edit_healthbook');
+            $wp_roles->add_cap('subscriber','publish_healthbook');
     }
 
 add_action('init', 'addCap');
