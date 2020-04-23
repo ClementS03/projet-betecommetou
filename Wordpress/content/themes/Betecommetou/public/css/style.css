@@ -2458,7 +2458,9 @@ a {
     .footer__newsletter {
       align-self: flex-start; }
     .footer ::placeholder {
-      text-align: center; } }
+      text-align: center; }
+  .contact__title {
+    max-width: 50%; } }
 
 .header__title {
   font-family: "Comic Neue", cursive;
@@ -2812,7 +2814,7 @@ a {
     border-radius: 30px;
     border: 1px  transparent;
     box-shadow: 0px 2px 2px black;
-    width: 50%; }
+    width: 100%; }
 
 .modal, .modalDelete {
   display: flex;
