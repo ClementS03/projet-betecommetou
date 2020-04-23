@@ -2880,37 +2880,51 @@ a {
 
 .presentation {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1em; }
-
-.title_team {
-  color: #D57100;
-  font-size: 3rem;
-  text-align: center;
-  padding: 1em; }
-
-.main-title-team {
-  justify-content: center;
-  align-items: center;
-  font-family: "Comic Neue", cursive;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 30px !important;
-  background-color: #CDE9FF;
-  border: 1px transparent;
-  box-shadow: 0px 2px 2px black;
-  width: 70vw;
-  padding: 0.7em;
-  margin-bottom: 1em;
-  text-align: center; }
-
-img {
-  justify-content: center;
-  width: 200px;
-  align-items: center;
-  padding: 0.7em; }
+  flex-direction: column; }
+  .presentation__title {
+    color: #D57100;
+    font-size: 3rem;
+    text-align: center;
+    padding: 1em; }
+  .presentation__person__title {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 30px;
+    background-color: #CDE9FF;
+    box-shadow: 0px 2px 2px black;
+    padding: 0.7em;
+    text-align: center;
+    margin: auto;
+    width: 180px; }
+    @media (min-width: 768px) {
+      .presentation__person__title {
+        font-size: 24px;
+        width: 400px; } }
+  .presentation__person__picture {
+    width: 200px;
+    display: block;
+    margin: auto;
+    padding: 30px; }
+    @media (min-width: 768px) {
+      .presentation__person__picture {
+        width: 300px; } }
+  .presentation__person__picturepef {
+    width: 170px;
+    display: block;
+    margin: auto;
+    padding: 30px; }
+    @media (min-width: 768px) {
+      .presentation__person__picturepef {
+        width: 250px; } }
+  .presentation__person__text {
+    margin-bottom: 2em;
+    text-align: center;
+    font-family: "arial", "helvetica", sans-serif; }
+    @media (min-width: 768px) {
+      .presentation__person__text {
+        padding-right: 40px;
+        padding-left: 40px; } }
 
 
 /*# sourceMappingURL=style.css.map*/

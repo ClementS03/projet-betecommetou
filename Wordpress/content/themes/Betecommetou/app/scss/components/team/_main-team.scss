@@ -1,48 +1,64 @@
 .presentation {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1em;
-}
-
-.title_team {
-    color: $orange-darken; 
-    font-size: 3rem;
-    text-align: center;
-    padding: 1em;
-}
-
-// .presentation {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     justify-content: center;
-//     padding: 1em;
-// }
-
-
-
     
-.main-title-team {
-    justify-content: center;
-    align-items: center;
-    font-family: $fonts-family-title;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 30px !important;
-    background-color: $blue-light;
-    border: 1px transparent;
-    box-shadow: 0px 2px 2px black;
-    width: 70vw;
-    padding: 0.7em;
-    margin-bottom: 1em;
-    text-align: center;
-}
-
- img {
-    justify-content: center;
-    width: 200px;
-    align-items: center;
-    padding: 0.7em;
- }
+    
+        &__title{
+        color: $orange-darken;
+        font-size: 3rem;
+        text-align: center;
+        padding: 1em;
+        }
+    
+            &__person{
+            
+                &__title{
+                    font-family: $fonts-family-title;
+                    font-weight: bold;
+                    font-size: 20px;
+                    border-radius: 30px;
+                    background-color: $blue-light;
+                    box-shadow: 0px 2px 2px black;
+                    padding: 0.7em;
+                    text-align: center; 
+                    margin: auto;
+                    width: 180px;   
+                    @media(min-width: $breakpoint-large) {
+                    font-size: 24px;
+                    width: 400px;
+                }
+                }
+    
+                &__picture{
+                width: 200px;
+                display: block;  
+                margin: auto; 
+                padding: 30px;
+                @media(min-width: $breakpoint-large) {
+                    width: 300px;
+                    
+                }
+                }
+    
+                &__picturepef{
+                width: 170px;
+                display: block;  
+                margin: auto; 
+                padding: 30px;
+                @media(min-width: $breakpoint-large) {
+                    width: 250px;
+                    
+                }
+                }
+    
+                &__text{
+                    margin-bottom: 2em;
+                    text-align: center;
+                    font-family: $normal-font-family;
+                    @media(min-width: $breakpoint-large) {
+                    padding-right: 40px;
+                    padding-left: 40px;}
+                    
+                }
+            }
+    }
