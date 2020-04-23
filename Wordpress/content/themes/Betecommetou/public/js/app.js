@@ -64,6 +64,7 @@
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
 
+
 /******/ 	var hotCurrentHash = "265467d7fc65fe214579";
 
 /******/ 	var hotRequestTimeout = 10000;
@@ -869,7 +870,9 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(axios) {var app = {
+
   //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
+
   baseUri: "http://localhost/projet-betecommetou/Wordpress/",
 
   jsonUrl:"wp-json/wp/v2/",
@@ -902,6 +905,10 @@ init: function() {
     if (formToDeleteanAnimal != null) {formToDeleteanAnimal.addEventListener('submit', app.handleModalFormToDelete)};
     let selectInDeleteModal = document.querySelector('#pet-select-deletemodal');
     if (selectInDeleteModal!=null) {selectInDeleteModal.addEventListener('change', app.handleSelectInDeleteModal)};
+    let closeAddModal = document.querySelector('.modal');
+    closeAddModal.addEventListener('focusout', app.handleCloseAddModal);  
+    let closeDeleteModal = document.querySelector('.modalDelete');
+    closeDeleteModal.addEventListener('focusout', app.handleCloseDeleteModal); 
   },
   handleShowModalOnButtonAddClick:function () {
     console.log('clicked');
@@ -909,7 +916,14 @@ init: function() {
     modal.style.visibility="visible";
   
   },
+
+  handleCloseAddModal: function() {
+   let modal = document.querySelector('.modal');;
   
+    modal.style.visibility = "hidden";
+  
+  },
+
   handleModalFormToAdd: function(event) {
     // let modal = document.querySelector('.modal');
     // modal.style.display="none";
@@ -933,6 +947,11 @@ init: function() {
   handleShowModalOnButtonDeleteClick: function(){
     let modal = document.querySelector('.modalDelete');
     modal.style.visibility="visible";
+  },
+  handleCloseDeleteModal: function() {
+    let modal = document.querySelector('.modalDelete');
+  
+    modal.style.visibility = "hidden";
   },
   handleSelectInDeleteModal:function(event) {
     const select = event.currentTarget;
