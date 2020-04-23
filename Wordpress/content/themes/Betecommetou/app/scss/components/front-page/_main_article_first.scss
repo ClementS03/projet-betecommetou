@@ -4,14 +4,34 @@
     background-position: center center;
     background-size: cover;
     &__title {
-        padding-top: 1rem;
-        padding-bottom: 1rem; 
-        color: black;
+        font-size: 1.2rem;
         font-weight: bold;
-        font-size: 2rem;       
+        margin-bottom: 1em;
+        margin-top: 1em;
+        padding: 1rem;
+        color: white;
+        border: 2px solid white; 
+        background-color: transparentize($blue-light, 0.2);
+        border-radius: 30px;
+        font-family: $normal-font-family;   
     }
     &__content {
         height: 30vh;
         padding: 0 1rem;
+    }
+    a{
+        display: inline-block;
+                color: white;
+                font-weight: bold;
+                margin-top:  150px;
+                padding: 0.5rem;
+                border: 2px solid white; 
+                background-color: transparentize($blue-light, 0.2);
+                border-radius: 30px;
+                &:hover{
+                    background-color: $orange-light;}
+                @media(min-width: $breakpoint-large) {
+                margin-top: 250px;
+                }
     }
 }
