@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "bfd3903bf93c34dbd251";
+/******/ 	var hotCurrentHash = "2e70074c6c7bf1a4bbbb";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -953,6 +953,12 @@ init: function() {
       headers: { Authorization: 'Bearer ' + app.getToken() },
       params: animalInfos
     })
+    .then(function() {
+
+      localStorage.setItem('ID of animal', " ");
+
+    })
+    
     
   },
   getResponseToken: function(response) {
