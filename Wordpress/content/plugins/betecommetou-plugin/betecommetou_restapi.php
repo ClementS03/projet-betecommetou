@@ -122,9 +122,6 @@ class BetecommetouAPI {
             ]
         );
     }
-
-
-
     public function metaFields() {
 
         register_rest_field(
