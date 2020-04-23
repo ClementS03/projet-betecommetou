@@ -1,11 +1,16 @@
-<section class="main__presentation">    
-    <h2 class="main__presentation__title">
-    <?php the_title(); ?>
-    </h2>
-    <div class="content">
-    <img src="<?php bloginfo('template_url'); ?>/public/images/corgi.png" alt="corgi">
-        <div class="main__presentation__content"> 
-            <?php the_content(); ?>
+<section class="main__presentation" >
+
+    <div class="main__presentation__picture">
+    <img src="<?php the_post_thumbnail_url(); ?>" alt="corgi">
+    </div>
+
+    <div class="main__presentation__content">
+        <h2 class="main__presentation__title">
+        <?php the_title(); ?>
+        </h2>
+        <div class="main__presentation__text">
+        <?php the_content(); ?>
         </div>
-    </div> 
+    </div>
+
 </section>

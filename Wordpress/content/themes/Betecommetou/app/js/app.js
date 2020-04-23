@@ -1,6 +1,6 @@
 var app = {
 
-  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/APOTHEOSE/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
