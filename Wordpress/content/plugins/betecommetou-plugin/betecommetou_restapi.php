@@ -38,6 +38,16 @@ function addCap()
             $wp_roles->add_cap('administrator','edit_others_healthbooks');
             $wp_roles->add_cap('administrator','edit_healthbooks');
             $wp_roles->add_cap('administrator','publish_healthbooks');
+            $wp_roles->add_cap('administrator','read_healthbook');
+            $wp_roles->add_cap('administrator','delete_healthbook');
+            $wp_roles->add_cap('administrator','delete_private_healthbook');
+            $wp_roles->add_cap('administrator','delete_published_healthbook');
+            $wp_roles->add_cap('administrator','delete_others_healthbook');
+            $wp_roles->add_cap('administrator','edit_private_healthbook');
+            $wp_roles->add_cap('administrator','edit_published_healthbook');
+            $wp_roles->add_cap('administrator','edit_others_healthbook');
+            $wp_roles->add_cap('administrator','edit_healthbook');
+            $wp_roles->add_cap('administrator','publish_healthbook');
 
             $wp_roles->add_cap('subscriber','read_healthbooks');
             $wp_roles->add_cap('subscriber','delete_healthbooks');
