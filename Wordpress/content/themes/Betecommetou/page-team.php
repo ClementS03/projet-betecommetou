@@ -1,60 +1,49 @@
 <?php 
 /*
 Template Name: L'équipe
-Template Post TYpe: page
+Template Post Type: page
 */
 ?>
 <?php get_header(); ?>
 
-<h2 class="title_team"><?php the_title() ?></h2>
+
+
 <section class="presentation">
-    <div class="flo">
-    <img src="<?php bloginfo('template_url'); ?>/public/images/flo.png" alt="flo">
-        <h3 class="main-title-team">Floriane</h3>
-        <p> Product owner
-            représente les intérêts du client, des utilisateurs finaux,
-            tranche en cas de conflits fonctionnels de points de vue sur le projet 
-            C'est le porteur du projet. 
-            Création du product backlog, défini les priorités et la validation des users stories.
-        </p>
+<h2 class="presentation__title"><?php the_title() ?></h2>
+
+    <div class="presentation__person">
+    <h3 class="presentation__person__title">Floriane</h3>    
+    <img class="presentation__person__picture"src="<?php bloginfo('template_url'); ?>/public/images/flo.png" alt="flo">
+    <p class="presentation__person__text"> Floriane est la Product Owner du projet. Toujours prête à ronronner des paroles rassurantes pour remonter le moral des troupes, son implication et sa sensibilité à la thématique du projet ont été un véritable atout dans l'esthétique et les fonctionnalités du site. 
+    </p>
     </div>
-    <div class="marine">
-    <img src="<?php bloginfo('template_url'); ?>/public/images/marine.png" alt="flo">
-        <h3 class="main-title-team">Marine</h3>
-        <p>Scrum Master
-            elle s'assure que toutes les tâches sont bien attribuées, suivies et faites, 
-            garant de l'avancement du projet, 
-            facilite la communication à l'intérieur de l’équipe, 
-            fait réaliser les estimations des users stories, 
-        </p>
+
+    <div class="presentation__person">
+    <h3 class="presentation__person__title">Marine</h3>   
+    <img class="presentation__person__picture" src="<?php bloginfo('template_url'); ?>/public/images/marine.png" alt="flo">   
+    <p class="presentation__person__text"> Marine est la Scrum Master. Pétillante et enthousiaste jusqu'au bout des moustaches, ses qualités d'organisation et de créativité ont apporté un bel élan d'inspiration et de cohésion au sein de l'équipe. 
+    </p>
     </div>
-    <div class="pef">
-    <img src="<?php bloginfo('template_url'); ?>/public/images/pef.png" alt="flo">
-        <h3 class="main-title-team">Pierre François</h3>
-        <p>
-            Référent technique Wordpress
-            Git master (gère le versionning du projet, merge les PR...)
-            Un référent par techno/lib/bundle particulière du projet
-            Le référent technique s’occupe de se documenter sur son domaine et d’en informer les autres
-        </p>
+
+    <div class="presentation__person">
+    <h3 class="presentation__person__title">Pierre François</h3>    
+    <img class="presentation__person__picturepef" src="<?php bloginfo('template_url'); ?>/public/images/pef.png" alt="flo">    
+    <p class="presentation__person__text"> Pef, notre fidèle référent technique est un fin limier, qui a traqué avec bravoure les nombreuses embuches qui ont parsemé notre projet. Chasseur hors pair, les bugs tremblent désormais devant lui. Ses imposantes compétences techniques, sa patience et sa pédagogie ont permis à toute l'équipe de progresser dans une ambiance bienveillante.
+    </p>
     </div>
-    <div class="nico">
-    <img src="<?php bloginfo('template_url'); ?>/public/images/nico.png" alt="flo">
-        <h3 class="main-title-team">Nicolas</h3>
-        <p>
-            Lead dev front
-            Effectue les choix techniques côté back
-            S'assure du bon fonctionnement de la facette du projet
-        </p>
+
+    <div class="presentation__person">
+    <h3 class="presentation__person__title">Nicolas</h3>    
+    <img class="presentation__person__picture" src="<?php bloginfo('template_url'); ?>/public/images/nico.png" alt="flo">   
+    <p class="presentation__person__text"> Nicolas est le Lead Dev Front du projet. D'apparence discrète, il a su devenir très vite irremplaçable en nous apportant chaque jour un rayon de soleil de joie, de bonne humeur et d'humour désopilant. Très impliqué dans le projet et force de proposition, c'est un compagnon extrêmement attachant !  
+    </p>
     </div>
-    <div class="clem">
-    <img src="<?php bloginfo('template_url'); ?>/public/images/clem.png" alt="flo">
-        <h3 class="main-title-team">Clément</h3>
-        <p>
-            Lead dev front
-            Effectue les choix techniques côté front
-            S'assure du bon fonctionnement de la facette du projet
-        </p>
+
+    <div class="presentation__person">
+    <h3 class="presentation__person__title">Clément</h3>    
+    <img class="presentation__person__picture" src="<?php bloginfo('template_url'); ?>/public/images/clem.png" alt="flo">   
+    <p class="presentation__person__text"> Clem, notre Lead Dev Back, a révélé au fil du projet ses plus grandes qualités. Avec beaucoup de patience et de détermination, notre Clément s'est révelé devenir un véritable leader, tirant vaillament le traineau du projet avec une volonté indestructible ! 
+    </p>
     </div>
 </section>
 
