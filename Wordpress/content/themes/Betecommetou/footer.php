@@ -1,16 +1,12 @@
 </main>
 <footer class="footer">
-    <form class="contact-form">
-        <h3 class="contact-form__title">Formulaire de contact</h3>
-       <?php echo do_shortcode('[contact-form-7 id="84" title="Formulaire contact footer"]') ?>
-    </form>
     <div class="footer__newsletter">
         <div class="links">
         <ul class="links__list">
             <li class="links__contact"><a href="#">Contact</a></li>
             <li class="links__link"><a href="#">Newsletter</a></li>
-            <li class="links__legal_mentions"><a href="mentions-legales">Mentions légales</a></li>
-            <li class="links__equipe"><a href="#">L'equipe</a></li>
+            <li class="links__legal_mentions"><a href="<?= get_permalink(get_page_by_path('mentions-legales')); ?>">Mentions légales</a></li>
+            <li class="links__equipe"><a href="<?= get_permalink(get_page_by_path('lequipe')); ?>">L'equipe</a></li>
         </ul>
         </div>
     </div>

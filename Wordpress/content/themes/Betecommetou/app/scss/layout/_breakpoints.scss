@@ -50,10 +50,7 @@
     .footer {
         display: flex;
         flex-flow: row;
-        justify-content: space-between;
-        .contact-form {
-            display: flex;
-        }
+        justify-content: center;
         &__newsletter {
             align-self: flex-start;
         }

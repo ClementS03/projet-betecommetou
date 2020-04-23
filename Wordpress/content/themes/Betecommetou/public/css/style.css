@@ -2416,7 +2416,7 @@ a {
   text-align: center;
   background-color: #FFDBAE; }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .wrapper {
     font-size: 22px; }
   .header {
@@ -2454,9 +2454,7 @@ a {
   .footer {
     display: flex;
     flex-flow: row;
-    justify-content: space-between; }
-    .footer .contact-form {
-      display: flex; }
+    justify-content: center; }
     .footer__newsletter {
       align-self: flex-start; }
     .footer ::placeholder {
@@ -2523,7 +2521,7 @@ a {
 .main__presentation {
   display: flex;
   flex-direction: column; }
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     .main__presentation {
       display: flex;
       flex-direction: row; } }
@@ -2532,13 +2530,13 @@ a {
     margin-left: auto;
     margin-right: auto;
     padding-top: 30px; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       .main__presentation__picture img {
         height: 500px;
         width: 500px; } }
   .main__presentation__content {
     padding: 1 1.5rem; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       .main__presentation__content {
         height: 50%;
         width: 50%; } }
@@ -2798,6 +2796,23 @@ a {
     margin-right: 2em; }
     .legales__mentions__content p {
       margin-bottom: 2em; }
+
+.contact {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center; }
+  .contact__title {
+    text-align: center;
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    background-color: #CDE9FF;
+    padding: 0.7rem;
+    margin: 1rem;
+    border-radius: 30px;
+    border: 1px  transparent;
+    box-shadow: 0px 2px 2px black;
+    width: 50%; }
 
 .modal, .modalDelete {
   display: flex;
