@@ -49,7 +49,7 @@ $query = new WP_Query($args);
                         <option value="<?=get_the_ID(); ?>" ><?= get_post_field('nom_de_lanimal'); ?></option>
                     <?php endwhile; endif;?>
                 </select>
-                <button class="account__form__button deleteButton">Supprimmer</button>
+                <button class="account__form__button deleteButton">Supprimer</button>
             </form>
         </div>
 
@@ -59,16 +59,36 @@ $query = new WP_Query($args);
             </div>
 
             <form action="" method="post" class="account_contact_utils" id="animalForm">
+                <label for="nom de l'animal"> Nom de l'animal
                 <input type="text" name="animal_name" class="contact-form__input" placeholder="Nom de l'animal">
+                </label>
+                <label for="date de naissance"> Date de naissance
                 <input type="text" name="DateofBirth" class="contact-form__input" placeholder="Date de naissance">
+                </label>
+                <label for="sexe"> Sexe
                 <input type="text" name="Sex" class="contact-form__input" placeholder="Sexe">
+                </label>
+                <label for="stérilisé"> Stérilisé ?
                 <input type="text" name="Sterilize" class="contact-form__input" placeholder="Stérilisé">
+                </label>
+                <label for="assurance"> Assuré ?
                 <input type="text" name="Insured" class="contact-form__input" placeholder="Assurance">
+                </label>
+                <label for="race"> Race
                 <input type="text" name="Breed" class="contact-form__input" placeholder="Race">
+                </label>
+                <label for="robe"> Robe
                 <input type="text" name="Color" class="contact-form__input" placeholder="Robe">
+                </label>
+                <label for="pedigree"> Pedigree ?
                 <input type="text" name="LOF" class="contact-form__input" placeholder="Pedigree">
+                </label>
+                <label for="tatoo"> Numéro de tatouage
                 <input type="text" name="tatoo" class="contact-form__input" placeholder="Numéro de tatouage">
+                </label>
+                <label for="id number"> Numéro d'identification électronique
                 <input type="text" name="identification" class="contact-form__input" placeholder="Numéro d'identification électronique">
+                </label>
             <div>
                 <button class="account__form__button">Modifier</button> 
             </div>
@@ -80,15 +100,27 @@ $query = new WP_Query($args);
     </h2>
 
     <form action="" method="post" class="account_contact_utils" id="userForm" data-user-id = <?= $user->ID; ?>>
+            <label for="Surnom">Surnom
             <input type="text" name="nickname" class="contact-form__input" placeholder="Surnom" value=
             <?= $user->nickname; ?>>
+            </label>
+            <label for="Prénom">Prénom
             <input type="text" placeholder="Prénom" name="firstname" class="contact-form__input" value=
             <?= $user->first_name; ?>>
+            </label>
+            <label for="Nom">Nom
             <input type="text" placeholder="Nom" name="lastname" class="contact-form__input" value=
             "<?= $user->last_name; ?>">
+            </label>
+            <label for="Email">Email
             <input type="text" placeholder="Email" name="email" class="contact-form__input" value="<?= $user->user_email; ?>">
+            </label>
+            <label for="Adresse">Adresse
             <input type="text" placeholder="adresse" name="adress" class="contact-form__input" value="<?= $user->adress ;?>">
+            </label>
+            <label for="Numéro de téléphone">Numéro de téléphone
             <input type="text" placeholder="numéro de téléphone" name="phone" class="contact-form__input" value="<?= $user->phone ;?>">
+            </label>
         <div>
             <button class="account__form__button">Modifier</button> 
         </div>

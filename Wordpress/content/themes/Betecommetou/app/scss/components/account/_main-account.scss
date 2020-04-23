@@ -45,11 +45,34 @@
         border: 1px transparent;
         box-shadow: 0px 2px 2px black ;
     }
-
-    
-
 }
-
+.contact-form{
+    &__input{
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        background-color: white;
+        padding: 0.7rem;
+        margin: 1rem;
+        border-radius: 30px;
+        border: 2px solid $blue-light;
+        width: 100%;
+    }
+    &__button{
+    a{
+    color: black; 
+    }
+}
+}
+.account_contact_utils {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    label {
+        width: 100%;
+        align-self: center;
+        display: block;
+    }
+}
 #select-buttons{
     display: flex;
     justify-content: center;

@@ -2416,7 +2416,7 @@ a {
   text-align: center;
   background-color: #FFDBAE; }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .wrapper {
     font-size: 22px; }
   .header {
@@ -2454,13 +2454,13 @@ a {
   .footer {
     display: flex;
     flex-flow: row;
-    justify-content: space-between; }
-    .footer .contact-form {
-      display: flex; }
+    justify-content: center; }
     .footer__newsletter {
       align-self: flex-start; }
     .footer ::placeholder {
-      text-align: center; } }
+      text-align: center; }
+  .contact__title {
+    max-width: 50%; } }
 
 .header__title {
   font-family: "Comic Neue", cursive;
@@ -2523,7 +2523,7 @@ a {
 .main__presentation {
   display: flex;
   flex-direction: column; }
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     .main__presentation {
       display: flex;
       flex-direction: row; } }
@@ -2532,13 +2532,13 @@ a {
     margin-left: auto;
     margin-right: auto;
     padding-top: 30px; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       .main__presentation__picture img {
         height: 500px;
         width: 500px; } }
   .main__presentation__content {
     padding: 1 1.5rem; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       .main__presentation__content {
         height: 50%;
         width: 50%; } }
@@ -2559,65 +2559,74 @@ a {
   background-position: center center;
   background-size: cover; }
   .main__articles__first__title {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    color: black;
+    font-size: 1.2rem;
     font-weight: bold;
-    font-size: 2rem; }
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding: 1rem;
+    color: white;
+    border: 2px solid white;
+    background-color: rgba(205, 233, 255, 0.8);
+    border-radius: 30px;
+    font-family: "arial", "helvetica", sans-serif; }
   .main__articles__first__content {
     height: 30vh;
     padding: 0 1rem; }
+  .main__articles__first a {
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    margin-top: 150px;
+    padding: 0.5rem;
+    border: 2px solid white;
+    background-color: rgba(205, 233, 255, 0.8);
+    border-radius: 30px; }
+    .main__articles__first a:hover {
+      background-color: #FFDBAE; }
+    @media (min-width: 768px) {
+      .main__articles__first a {
+        margin-top: 250px; } }
 
 .main__articles {
   text-align: center; }
-  .main__articles__content__archive {
-    height: 100vh;
-    position: relative;
-    padding: 3em;
-    background-position: center;
-    background-size: cover;
-    z-index: 10;
-    background-repeat: no-repeat;
-    width: 100%; }
   .main__articles__content {
     height: 50vh;
     position: relative;
     padding: 3em;
     background-position: center;
     background-size: cover;
-    z-index: 10; }
+    z-index: 10;
+    border-spacing: 50px; }
     .main__articles__content__title {
       font-size: 1.2rem;
       font-weight: bold;
-      text-transform: uppercase;
       margin-bottom: 1em;
-      padding-bottom: 0.3em; }
-    .main__articles__content::after {
-      content: '';
-      opacity: 0.8;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      transition: opacity 0.5s; }
-    .main__articles__content:hover::after {
-      background-color: black;
-      opacity: 0.3; }
-  .main__articles__content__title {
-    padding: 1rem;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    font-family: "arial", "helvetica", sans-serif;
-    border: 2px solid white;
-    background-color: rgba(205, 233, 255, 0.8);
-    border-radius: 30px; }
-    .main__articles__content__title:hover {
-      background-color: #FFDBAE;
-      width: 100%;
-      height: 100%; }
+      padding: 1rem;
+      color: white;
+      border: 2px solid white;
+      background-color: rgba(205, 233, 255, 0.8);
+      border-radius: 30px;
+      font-family: "arial", "helvetica", sans-serif; }
+    .main__articles__content a {
+      display: inline-block;
+      color: white;
+      font-weight: bold;
+      margin-top: 150px;
+      padding: 0.5rem;
+      border: 2px solid white;
+      background-color: rgba(205, 233, 255, 0.8);
+      border-radius: 30px; }
+      .main__articles__content a:hover {
+        background-color: #FFDBAE; }
+    .main__articles__content__archive {
+      height: 100vh;
+      position: relative;
+      padding: 3em;
+      background-position: center;
+      background-size: cover;
+      z-index: 10;
+      background-repeat: no-repeat;
+      width: 100%; }
 
 .contact-form {
   display: flex;
@@ -2707,19 +2716,6 @@ a {
     #loginform label a {
       color: black; }
 
-.contact-form__input {
-  font-family: "Comic Neue", cursive;
-  font-weight: bold;
-  background-color: white;
-  padding: 0.7rem;
-  margin: 1rem;
-  border-radius: 30px;
-  border: 2px solid #CDE9FF;
-  width: 50%; }
-
-.contact-form__button a {
-  color: black; }
-
 .register {
   display: flex;
   flex-direction: column;
@@ -2799,20 +2795,35 @@ a {
     .legales__mentions__content p {
       margin-bottom: 2em; }
 
-.modal, .modalDelete {
+.contact {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   align-items: center;
+  text-align: center; }
+  .contact__title {
+    text-align: center;
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    background-color: #CDE9FF;
+    padding: 0.7rem;
+    margin: 1rem;
+    border-radius: 30px;
+    border: 1px  transparent;
+    box-shadow: 0px 2px 2px black;
+    width: 100%; }
+
+.modal, .modalDelete {
   visibility: hidden;
   position: fixed;
-  top: 0;
+  top: 25%;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 20%;
   z-index: 50;
   background-color: #FFF7DF;
-  padding: 5em;
-  margin: 15em;
+  width: 60vw;
+  height: 30vh;
+  padding: 0.8em;
   justify-content: center;
   border: 3px solid #FFDBAE;
   border-radius: 30px; }
@@ -2862,6 +2873,28 @@ a {
     border-radius: 30px;
     border: 1px transparent;
     box-shadow: 0px 2px 2px black; }
+
+.contact-form__input {
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+  background-color: white;
+  padding: 0.7rem;
+  margin: 1rem;
+  border-radius: 30px;
+  border: 2px solid #CDE9FF;
+  width: 100%; }
+
+.contact-form__button a {
+  color: black; }
+
+.account_contact_utils {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center; }
+  .account_contact_utils label {
+    width: 100%;
+    align-self: center;
+    display: block; }
 
 #select-buttons {
   display: flex;
