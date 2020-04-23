@@ -149,6 +149,12 @@ init: function() {
       headers: { Authorization: 'Bearer ' + app.getToken() },
       params: animalInfos
     })
+    .then(function() {
+
+      localStorage.setItem('ID of animal', " ");
+
+    })
+    
     
   },
   getResponseToken: function(response) {

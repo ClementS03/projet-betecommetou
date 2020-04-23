@@ -4,14 +4,7 @@ Template Name: Account
 */
 ?>
 <?php get_header(); ?>
-<pre>
-<?php 
-//var_dump (get_user_meta(2));
-?>
-</pre> 
 <?php $user = wp_get_current_user(); ?>
-<?php //var_dump(get_role( 'subscriber' )); ?>
-
 <?php $args = array(
     'post_type' => 'healthbook',
     'author' => $user->ID,
@@ -26,7 +19,7 @@ $query = new WP_Query($args);
 </pre>
 <div class="account">
     <h2 class="account__title">
-    <?php echo $user->user_login =='Betecommetou' ? 'Bienvenue , roi de ce chateau , seigneur de ce domaine ' : 'Bonjour ' . $user->user_login . '!!'; ?>
+    <?php echo $user->user_login =='Betecommetou' ? 'Bienvenue , roi de ce chateau , seigneur de ce domaine ' : 'Bonjour ' . $user->user_login . ' !!'; ?>
     </h2>
     <div class="account__info">
         <h2>Mon carnet de santé</h2>
