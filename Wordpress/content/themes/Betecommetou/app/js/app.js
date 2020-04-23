@@ -39,6 +39,7 @@ init: function() {
     modal.style.visibility="visible";
   
   },
+  
   handleModalFormToAdd: function(event) {
     // let modal = document.querySelector('.modal');
     // modal.style.display="none";
