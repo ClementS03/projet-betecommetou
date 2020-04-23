@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "bfcc022c5bb6f5700965";
+/******/ 	var hotCurrentHash = "3b62ca2c13a022137aef";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -867,8 +867,9 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(axios) {var app = {
+
   
-  baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -1019,7 +1020,7 @@ init: function() {
     })
     .then(function() {
 
-      localStorage.setItem('ID of animal', " ");
+      localStorage.clear;
 
     })
     
@@ -1047,17 +1048,27 @@ init: function() {
       }
     })
     .then(function(response){
-      if (response.data.meta) {
-        document.querySelector('input[name=animal_name]').value = response.data.meta.nom_de_lanimal;
-        document.querySelector('input[name=DateofBirth]').value = response.data.meta.age_de_lanimal;
-        document.querySelector('input[name=Sex]').value = response.data.meta.sexe;
+      let metas = response.data.meta;
+      if (metas) {       
+        document.querySelector('input[name=animal_name]').value = metas.nom_de_lanimal;
+        if(metas.age_de_lanimal)
+        {document.querySelector('input[name=DateofBirth]').value = metas.age_de_lanimal;}
+        else {metas.age_de_lanimal = ""};
+        if(metas.sexe){document.querySelector('input[name=Sex]').value = metas.sexe;}
+        else {metas.sexe = ""};
         document.querySelector('input[name=Sterilize').value = "champ non present , a corriger";
-        document.querySelector('input[name=Insured]').value = response.data.meta.assurance;
-        document.querySelector('input[name=Breed]').value = response.data.meta.race;
-        document.querySelector('input[name=Color]').value = response.data.meta.robe;
-        document.querySelector('input[name=LOF]').value = response.data.meta.pedigree;
-        document.querySelector('input[name=tatoo]').value = response.data.meta.numero_de_tatouage;
-        document.querySelector('input[name=identification]').value = response.data.meta.numero_didentification_electronique;
+        if(metas.assurance){document.querySelector('input[name=Insured]').value = metas.assurance;}
+        else {metas.sexe = ""};
+        if (metas.race) {document.querySelector('input[name=Breed]').value = metas.race;}
+        else {metas.race = ""};
+        if (metas.robe) {document.querySelector('input[name=Color]').value = metas.robe;}
+        else{metas.robe = ""};
+        if (metas.pedigree) {document.querySelector('input[name=LOF]').value = metas.pedigree;}
+        else{metas.pedigree = ""};
+        if (metas.numero_de_tatouage) {document.querySelector('input[name=tatoo]').value = metas.numero_de_tatouage;}
+        else {metas.numero_de_tatouage = ""};
+        if (metas.numero_didentification_electronique) {document.querySelector('input[name=identification]').value = metas.numero_didentification_electronique;}
+        else{metas.numero_didentification_electronique = ""};
       } else {
         console.log('il faut selectioner une valeur')
       }      
@@ -1067,6 +1078,27 @@ init: function() {
 
 document.addEventListener("DOMContentLoaded", app.init);
 
+// document.querySelector('input[name=animal_name]').value = metas.nom_de_lanimal;
+// if(metas.age_de_lanimal)
+// {document.querySelector('input[name=DateofBirth]').value = metas.age_de_lanimal;}
+// else {metas.age_de_lanimal = ""};
+// if(metas.sexe){document.querySelector('input[name=Sex]').value = metas.sexe;}
+// else {metas.sexe = ""};
+// document.querySelector('input[name=Sterilize').value = "champ non present , a corriger";
+// if(metas.assurance){document.querySelector('input[name=Insured]').value = metas.assurance;}
+// else {metas.sexe = ""};
+// if (metas.race) {
+  
+// }
+
+// document.querySelector('input[name=Breed]').value = metas.race;
+// document.querySelector('input[name=Color]').value = metas.robe;
+// document.querySelector('input[name=LOF]').value = metas.pedigree;
+// document.querySelector('input[name=tatoo]').value = metas.numero_de_tatouage;
+// document.querySelector('input[name=identification]').value = metas.numero_didentification_electronique;
+// } else {
+// console.log('il faut selectioner une valeur')
+// }  
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! axios */ "./node_modules/axios/index.js")))
 
 /***/ }),
