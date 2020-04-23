@@ -1,6 +1,6 @@
 var app = {
 
-  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/Apotheose/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -31,11 +31,21 @@ init: function() {
     if (formToDeleteanAnimal != null) {formToDeleteanAnimal.addEventListener('submit', app.handleModalFormToDelete)};
     let selectInDeleteModal = document.querySelector('#pet-select-deletemodal');
     if (selectInDeleteModal!=null) {selectInDeleteModal.addEventListener('change', app.handleSelectInDeleteModal)};
+    let closeAddModal = document.querySelector('.modal');
+    closeAddModal.addEventListener('focusout', app.handleCloseAddModal);  
+    let closeDeleteModal = document.querySelector('.modalDelete');
+    closeDeleteModal.addEventListener('focusout', app.handleCloseDeleteModal); 
   },
   handleShowModalOnButtonAddClick:function () {
     console.log('clicked');
     let modal = document.querySelector('.modal');
     modal.style.visibility="visible";
+  
+  },
+  handleCloseAddModal: function() {
+   let modal = document.querySelector('.modal');;
+  
+    modal.style.visibility = "hidden";
   
   },
   handleModalFormToAdd: function(event) {
@@ -61,6 +71,11 @@ init: function() {
   handleShowModalOnButtonDeleteClick: function(){
     let modal = document.querySelector('.modalDelete');
     modal.style.visibility="visible";
+  },
+  handleCloseDeleteModal: function() {
+    let modal = document.querySelector('.modalDelete');
+  
+    modal.style.visibility = "hidden";
   },
   handleSelectInDeleteModal:function(event) {
     const select = event.currentTarget;

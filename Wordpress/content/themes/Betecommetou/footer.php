@@ -9,7 +9,7 @@
         <ul class="links__list">
             <li class="links__contact"><a href="#">Contact</a></li>
             <li class="links__link"><a href="#">Newsletter</a></li>
-            <li class="links__legal_mentions"><a href="mentions-legales">Mentions légales</a></li>
+            <li class="links__legal_mentions"><a href="<?= get_permalink( get_page_by_path( 'mentions-legales' ) ) ?>">Mentions légales</a></li>
             <li class="links__equipe"><a href="#">L'equipe</a></li>
         </ul>
         </div>
