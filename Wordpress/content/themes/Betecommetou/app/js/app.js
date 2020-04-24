@@ -2,7 +2,7 @@ var app = {
 
 
   //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
-  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/betecommetou/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -33,10 +33,11 @@ init: function() {
     if (formToDeleteanAnimal != null) {formToDeleteanAnimal.addEventListener('submit', app.handleModalFormToDelete)};
     let selectInDeleteModal = document.querySelector('#pet-select-deletemodal');
     if (selectInDeleteModal!=null) {selectInDeleteModal.addEventListener('change', app.handleSelectInDeleteModal)};
-    //let closeAddModal = document.querySelector('.modal');
-    //closeAddModal.addEventListener('focusout', app.handleCloseAddModal);  
-    //let closeDeleteModal = document.querySelector('.modalDelete');
-    //closeDeleteModal.addEventListener('focusout', app.handleCloseDeleteModal); 
+    let closeAddModal = document.querySelector('.addSpan');
+    closeAddModal.addEventListener('click', app.handleCloseAddModal);  
+    let closeDeleteModal = document.querySelector('.deleteSpan');
+    closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal);
+    
   },
   handleShowModalOnButtonAddClick:function () {
     console.log('clicked');
@@ -46,10 +47,17 @@ init: function() {
   },
 
   handleCloseAddModal: function() {
-   let modal = document.querySelector('.modal');;
+  console.log('span add');
+  let modal = document.querySelector('.modal');
   
-    modal.style.visibility = "hidden";
+  modal.style.visibility = "hidden";
   
+  },
+  handleCloseDeleteModal: function() {
+    console.log('deleteSpan');
+    let modalDelete = document.querySelector('.modalDelete');
+  
+    modalDelete.style.visibility = "hidden";
   },
 
   handleModalFormToAdd: function(event) {
@@ -75,11 +83,6 @@ init: function() {
   handleShowModalOnButtonDeleteClick: function(){
     let modal = document.querySelector('.modalDelete');
     modal.style.visibility="visible";
-  },
-  handleCloseDeleteModal: function() {
-    let modal = document.querySelector('.modalDelete');
-  
-    modal.style.visibility = "hidden";
   },
   handleSelectInDeleteModal:function(event) {
     const select = event.currentTarget;
