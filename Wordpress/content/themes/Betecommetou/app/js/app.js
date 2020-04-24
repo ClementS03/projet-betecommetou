@@ -1,8 +1,8 @@
 var app = {
 
 
-  baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
-  //baseUri: "http://localhost/projet-betecommetou/Wordpress/",
+  //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -33,10 +33,10 @@ init: function() {
     if (formToDeleteanAnimal != null) {formToDeleteanAnimal.addEventListener('submit', app.handleModalFormToDelete)};
     let selectInDeleteModal = document.querySelector('#pet-select-deletemodal');
     if (selectInDeleteModal!=null) {selectInDeleteModal.addEventListener('change', app.handleSelectInDeleteModal)};
-    let closeAddModal = document.querySelector('.modal');
-    closeAddModal.addEventListener('focusout', app.handleCloseAddModal);  
-    let closeDeleteModal = document.querySelector('.modalDelete');
-    closeDeleteModal.addEventListener('focusout', app.handleCloseDeleteModal); 
+    //let closeAddModal = document.querySelector('.modal');
+    //closeAddModal.addEventListener('focusout', app.handleCloseAddModal);  
+    //let closeDeleteModal = document.querySelector('.modalDelete');
+    //closeDeleteModal.addEventListener('focusout', app.handleCloseDeleteModal); 
   },
   handleShowModalOnButtonAddClick:function () {
     console.log('clicked');

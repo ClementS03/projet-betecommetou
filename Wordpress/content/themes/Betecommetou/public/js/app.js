@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8da426744fc9c3122c0d";
+/******/ 	var hotCurrentHash = "55de4cb909f84316878f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -869,8 +869,8 @@
 /* WEBPACK VAR INJECTION */(function(axios) {var app = {
 
 
-  baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
-  //baseUri: "http://localhost/projet-betecommetou/Wordpress/",
+  //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -901,10 +901,10 @@ init: function() {
     if (formToDeleteanAnimal != null) {formToDeleteanAnimal.addEventListener('submit', app.handleModalFormToDelete)};
     let selectInDeleteModal = document.querySelector('#pet-select-deletemodal');
     if (selectInDeleteModal!=null) {selectInDeleteModal.addEventListener('change', app.handleSelectInDeleteModal)};
-    let closeAddModal = document.querySelector('.modal');
-    closeAddModal.addEventListener('focusout', app.handleCloseAddModal);  
-    let closeDeleteModal = document.querySelector('.modalDelete');
-    closeDeleteModal.addEventListener('focusout', app.handleCloseDeleteModal); 
+    //let closeAddModal = document.querySelector('.modal');
+    //closeAddModal.addEventListener('focusout', app.handleCloseAddModal);  
+    //let closeDeleteModal = document.querySelector('.modalDelete');
+    //closeDeleteModal.addEventListener('focusout', app.handleCloseDeleteModal); 
   },
   handleShowModalOnButtonAddClick:function () {
     console.log('clicked');
