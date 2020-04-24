@@ -66,13 +66,25 @@ $query = new WP_Query($args);
                 <input type="text" name="DateofBirth" class="contact-form__input" placeholder="Date de naissance">
                 </label>
                 <label for="sexe"> Sexe
-                <input type="text" name="Sex" class="contact-form__input" placeholder="Sexe">
+                <select name="Sex" class="contact-form__input" >
+                    <option value="">Que suis je ?</option>
+                    <option value="Male">Male</option>
+                    <option value="Femelle">Femelle</option>
+                </select>
                 </label>
                 <label for="stérilisé"> Stérilisé ?
-                <input type="text" name="Sterilize" class="contact-form__input" placeholder="Stérilisé">
+                <select name="sterilized" class="contact-form__input" >
+                    <option value="">Suis je Stérilisé ?</option>
+                    <option value="Oui">Oui</option>
+                    <option value="Non">Non</option>
+                </select>
                 </label>
                 <label for="assurance"> Assuré ?
-                <input type="text" name="Insured" class="contact-form__input" placeholder="Assurance">
+                <select name="Insured" class="contact-form__input" >
+                    <option value="">Suis je assuré ?</option>
+                    <option value="Oui">Oui</option>
+                    <option value="Non">Non</option>
+                </select>
                 </label>
                 <label for="race"> Race
                 <input type="text" name="Breed" class="contact-form__input" placeholder="Race">
@@ -81,7 +93,11 @@ $query = new WP_Query($args);
                 <input type="text" name="Color" class="contact-form__input" placeholder="Robe">
                 </label>
                 <label for="pedigree"> Pedigree ?
-                <input type="text" name="LOF" class="contact-form__input" placeholder="Pedigree">
+                <select name="LOF" class="contact-form__input" >
+                    <option value="">Mon pedigree ?</option>
+                    <option value="Oui">Oui</option>
+                    <option value="Non">Non</option>
+                </select>
                 </label>
                 <label for="tatoo"> Numéro de tatouage
                 <input type="text" name="tatoo" class="contact-form__input" placeholder="Numéro de tatouage">

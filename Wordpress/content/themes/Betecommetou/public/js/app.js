@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "55de4cb909f84316878f";
+/******/ 	var hotCurrentHash = "f58b1d4af9223d7de010";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -901,10 +901,6 @@ init: function() {
     if (formToDeleteanAnimal != null) {formToDeleteanAnimal.addEventListener('submit', app.handleModalFormToDelete)};
     let selectInDeleteModal = document.querySelector('#pet-select-deletemodal');
     if (selectInDeleteModal!=null) {selectInDeleteModal.addEventListener('change', app.handleSelectInDeleteModal)};
-    //let closeAddModal = document.querySelector('.modal');
-    //closeAddModal.addEventListener('focusout', app.handleCloseAddModal);  
-    //let closeDeleteModal = document.querySelector('.modalDelete');
-    //closeDeleteModal.addEventListener('focusout', app.handleCloseDeleteModal); 
   },
   handleShowModalOnButtonAddClick:function () {
     console.log('clicked');
@@ -912,14 +908,12 @@ init: function() {
     modal.style.visibility="visible";
   
   },
-
   handleCloseAddModal: function() {
    let modal = document.querySelector('.modal');;
   
     modal.style.visibility = "hidden";
   
   },
-
   handleModalFormToAdd: function(event) {
     // let modal = document.querySelector('.modal');
     // modal.style.display="none";
@@ -1024,6 +1018,7 @@ init: function() {
     animalInfos.nom_de_lanimal = animalFormData.get('animal_name');
     animalInfos.age_de_lanimal = animalFormData.get('DateofBirth');
     animalInfos.sexe = animalFormData.get('Sex');
+    animalInfos.sterilise = animalFormData.get('sterilized');
     animalInfos.assurance = animalFormData.get('Insured');
     animalInfos.race = animalFormData.get('Breed');
     animalInfos.robe = animalFormData.get('Color');
@@ -1072,16 +1067,17 @@ init: function() {
         if(metas.age_de_lanimal)
         {document.querySelector('input[name=DateofBirth]').value = metas.age_de_lanimal;}
         else {metas.age_de_lanimal = ""};
-        if(metas.sexe){document.querySelector('input[name=Sex]').value = metas.sexe;}
+        if(metas.sexe){document.querySelector('select[name=Sex]').value = metas.sexe;}
         else {metas.sexe = ""};
-        document.querySelector('input[name=Sterilize').value = "champ non present , a corriger";
-        if(metas.assurance){document.querySelector('input[name=Insured]').value = metas.assurance;}
+        if (metas.sterilise) {document.querySelector('select[name=sterilized').value = metas.sterilise;}
+        else {metas.sterilise = " "};
+        if(metas.assurance){document.querySelector('select[name=Insured]').value = metas.assurance;}
         else {metas.sexe = ""};
         if (metas.race) {document.querySelector('input[name=Breed]').value = metas.race;}
         else {metas.race = ""};
         if (metas.robe) {document.querySelector('input[name=Color]').value = metas.robe;}
         else{metas.robe = ""};
-        if (metas.pedigree) {document.querySelector('input[name=LOF]').value = metas.pedigree;}
+        if (metas.pedigree) {document.querySelector('select[name=LOF]').value = metas.pedigree;}
         else{metas.pedigree = ""};
         if (metas.numero_de_tatouage) {document.querySelector('input[name=tatoo]').value = metas.numero_de_tatouage;}
         else {metas.numero_de_tatouage = ""};
