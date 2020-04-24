@@ -808,7 +808,9 @@
 
 
   //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
+
   baseUri: "http://localhost/betecommetou/projet-betecommetou/Wordpress/",
+
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
