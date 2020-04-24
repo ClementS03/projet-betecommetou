@@ -83,11 +83,16 @@ class BetecommetouAPI {
         add_action('rest_api_init', [$this, 'postAnimalType']);
         add_action('rest_api_init', [$this, 'postAnimalSex']);
         add_action('rest_api_init', [$this, 'postAnimalAssurance']);
+        add_action('rest_api_init', [$this, 'postSterilized']);
         add_action('rest_api_init', [$this, 'postAnimalRace']);
         add_action('rest_api_init', [$this, 'postAnimalRobe']);
         add_action('rest_api_init', [$this, 'postAnimalPedigree']);
         add_action('rest_api_init', [$this, 'postAnimalTatouage']);
         add_action('rest_api_init', [$this, 'postAnimalIdentification']);
+        add_action('rest_api_init', [$this, 'postAnimalVeterinary']);
+        add_action('rest_api_init', [$this, 'postAnimalVaccins']);
+        add_action('rest_api_init', [$this, 'postAnimalObservations']);
+        add_action('rest_api_init', [$this, 'postAnimalDiseases']);
 
     }
     public function userMetaField() {
@@ -197,6 +202,72 @@ class BetecommetouAPI {
                 'get_callback' => null,
                 'update_callback' => function ($value, $object, $field_name) {
                     update_post_meta($object->ID, 'nom_de_lanimal', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+
+    public function postAnimalSterilized() {
+        register_rest_field(
+            'healthbook',
+            'sterilise',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'sterilise', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+    public function postAnimalDiseases() {
+        register_rest_field(
+            'healthbook',
+            'maladies_allergies',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'maladies_allergies', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+    public function postAnimalVaccins() {
+        register_rest_field(
+            'healthbook',
+            'vaccins',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'vaccins', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+    public function postAnimalObservations() {
+        register_rest_field(
+            'healthbook',
+            'observations',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'observations', $value);
+                },
+                'schema' => null
+            ]
+        );
+    }
+    public function postAnimalVeterinary() {
+        register_rest_field(
+            'healthbook',
+            'veterinaire',
+            [
+                'get_callback' => null,
+                'update_callback' => function ($value, $object, $field_name) {
+                    update_post_meta($object->ID, 'veterinaire', $value);
                 },
                 'schema' => null
             ]
