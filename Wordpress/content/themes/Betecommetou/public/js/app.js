@@ -63,10 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-
-/******/ 	var hotCurrentHash = "265467d7fc65fe214579";
-
-
+/******/ 	var hotCurrentHash = "8da426744fc9c3122c0d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -872,11 +869,8 @@
 /* WEBPACK VAR INJECTION */(function(axios) {var app = {
 
 
-  //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
-
-
-  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
-
+  baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
+  //baseUri: "http://localhost/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -919,14 +913,12 @@ init: function() {
   
   },
 
-
   handleCloseAddModal: function() {
    let modal = document.querySelector('.modal');;
   
     modal.style.visibility = "hidden";
   
   },
-
 
   handleModalFormToAdd: function(event) {
     // let modal = document.querySelector('.modal');

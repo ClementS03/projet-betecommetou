@@ -2583,7 +2583,7 @@ a {
     border-radius: 30px; }
     .main__articles__first a:hover {
       background-color: #FFDBAE; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       .main__articles__first a {
         margin-top: 250px; } }
 
@@ -2921,7 +2921,7 @@ a {
     text-align: center;
     margin: auto;
     width: 180px; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       .presentation__person__title {
         font-size: 24px;
         width: 400px; } }
@@ -2930,7 +2930,7 @@ a {
     display: block;
     margin: auto;
     padding: 30px; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       .presentation__person__picture {
         width: 300px; } }
   .presentation__person__picturepef {
@@ -2938,14 +2938,14 @@ a {
     display: block;
     margin: auto;
     padding: 30px; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       .presentation__person__picturepef {
         width: 250px; } }
   .presentation__person__text {
     margin-bottom: 2em;
     text-align: center;
     font-family: "arial", "helvetica", sans-serif; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       .presentation__person__text {
         padding-right: 40px;
         padding-left: 40px; } }
