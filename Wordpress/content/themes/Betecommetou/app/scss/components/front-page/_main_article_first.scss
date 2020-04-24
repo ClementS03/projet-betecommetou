@@ -3,35 +3,49 @@
     padding-bottom:1.5rem ;
     background-position: center center;
     background-size: cover;
-    &__title {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 1em;
-        margin-top: 1em;
-        padding: 1rem;
-        color: white;
-        border: 2px solid white; 
-        background-color: transparentize($blue-light, 0.2);
-        border-radius: 30px;
-        font-family: $normal-font-family;   
-    }
+    @media(min-width: $breakpoint-large) {
+        height: 70vh;
+        padding: 3em;    
+        }
+    
     &__content {
         height: 30vh;
         padding: 0 1rem;
+        margin: 3em;
+        // @media(min-width: $breakpoint-large) {
+        //     padding: 3em; 
+        //     }
+        
+        &__title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            padding: 1rem;
+            color: $orange-brown;
+            border: 2px solid $orange-brown; 
+            background-color: transparentize($orange-light, 0.2);
+            border-radius: 30px;
+            font-family: $normal-font-family;
+            
+        }
+       
     }
     a{
         display: inline-block;
-                color: white;
+                color: $orange-brown;
                 font-weight: bold;
-                margin-top:  150px;
+                margin-top:  6em;
                 padding: 0.5rem;
-                border: 2px solid white; 
-                background-color: transparentize($blue-light, 0.2);
+                border: 2px solid $orange-brown; 
+                background-color: transparentize($orange-light, 0.2);
                 border-radius: 30px;
                 &:hover{
-                    background-color: $orange-light;}
-                @media(min-width: $breakpoint-large) {
-                margin-top: 250px;
-                }
+                    background-color: $blue-light;}
+                
+                    @media(min-width: $breakpoint-large) {
+                        margin-top:  15em;    
+                                }
+                
     }
 }

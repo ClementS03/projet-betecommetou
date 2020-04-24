@@ -9,30 +9,36 @@
         background-size: cover;
         z-index:10;
         border-spacing: 50px;
+        @media(min-width: $breakpoint-large) {
+        height: 80vh;    
+        }
 
             &__title{
                 font-size: 1.2rem;
                 font-weight: bold;
                 margin-bottom: 1em;
                 padding: 1rem;
-                color: white;
-                border: 2px solid white; 
-                background-color: transparentize($blue-light, 0.2);
+                color: $orange-brown;
+                border: 2px solid $orange-brown; 
+                background-color: transparentize($orange-light, 0.2);
                 border-radius: 30px;
                 font-family: $normal-font-family;
             }
              
                  a{
                 display: inline-block;
-                color: white;
+                color:$orange-brown;
                 font-weight: bold;
-                margin-top:  150px;
+                margin-top:  4em;
                 padding: 0.5rem;
-                border: 2px solid white; 
-                background-color: transparentize($blue-light, 0.2);
+                border: 2px solid $orange-brown; 
+                background-color: transparentize($orange-light, 0.2);
                 border-radius: 30px;
                 &:hover{
-                    background-color: $orange-light;}
+                    background-color: $blue-light;}
+                @media(min-width: $breakpoint-large) {
+                margin-top:  15em;    
+                        }
                  
                  }
                  &__archive{
