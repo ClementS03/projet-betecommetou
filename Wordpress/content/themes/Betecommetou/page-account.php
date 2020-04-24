@@ -33,15 +33,21 @@ $query = new WP_Query($args);
         </select>
 
         <!-- Modal -->
-        <div class="modal">
+        <div class="modal close">
             <form class="account_contact_utils" action="" data-user-id-modal="<?= $user->ID; ?>">
+                <span class="addSpan">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </span>
                 <h2 class="modal-title">Veuillez entrer le nom de votre Animal</h2>
                 <input class="contact-form__input" name="animalName" type="text">
                 <button class="account__form__button">Valider</button>
             </form>
         </div>
-        <div class="modalDelete">
+        <div class="modalDelete close">
             <form class="account_contact_utils" id="deleteForm" action="" >
+                <span class="deleteSpan">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </span>
                 <h2 class="modal-title">Choisissez un animal a supprimer</h2>
                 <select name="petsdeletemodal" id="pet-select-deletemodal" class="contact-form__input">
                 <option value="" >Choisissez votre animal à supprimer</option>
