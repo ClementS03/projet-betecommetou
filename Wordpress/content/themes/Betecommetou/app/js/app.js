@@ -1,8 +1,10 @@
 var app = {
 
-
+  // URL and endpoints for request to API
   //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
-  baseUri: "http://localhost/APOTHEOSE/projet-betecommetou/Wordpress/",
+
+  baseUri: "http://localhost/betecommetou/projet-betecommetou/Wordpress/",
+
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -10,6 +12,7 @@ init: function() {
   app.initEventListener();      
 },
 
+// All selct and Events Listener
   initEventListener:function() {
     let burgerMenuOpenButton = document.querySelector('.open-menu');
     let burgerMenuCloseButton = document.querySelector('.close-menu');
@@ -33,19 +36,42 @@ init: function() {
     if (formToDeleteanAnimal != null) {formToDeleteanAnimal.addEventListener('submit', app.handleModalFormToDelete)};
     let selectInDeleteModal = document.querySelector('#pet-select-deletemodal');
     if (selectInDeleteModal!=null) {selectInDeleteModal.addEventListener('change', app.handleSelectInDeleteModal)};
+
+    let closeAddModal = document.querySelector('.addSpan');
+    closeAddModal.addEventListener('click', app.handleCloseAddModal);  
+    let closeDeleteModal = document.querySelector('.deleteSpan');
+    closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal);
+    
+
   },
+  // Display modal with click on Add button 
   handleShowModalOnButtonAddClick:function () {
     console.log('clicked');
     let modal = document.querySelector('.modal');
     modal.style.visibility="visible";
   
   },
+
+//function to close add modal
+
   handleCloseAddModal: function() {
-   let modal = document.querySelector('.modal');;
+  console.log('span add');
+  let modal = document.querySelector('.modal');
   
-    modal.style.visibility = "hidden";
+  modal.style.visibility = "hidden";
   
   },
+  //function to close delete modal
+  handleCloseDeleteModal: function() {
+    console.log('deleteSpan');
+    let modalDelete = document.querySelector('.modalDelete');
+  
+    modalDelete.style.visibility = "hidden";
+  },
+
+
+  // Axios request for add an animal
+
   handleModalFormToAdd: function(event) {
     // let modal = document.querySelector('.modal');
     // modal.style.display="none";
@@ -66,20 +92,18 @@ init: function() {
     })
 
   },
+  // Display Modal when click on Delete button
   handleShowModalOnButtonDeleteClick: function(){
     let modal = document.querySelector('.modalDelete');
     modal.style.visibility="visible";
   },
-  handleCloseDeleteModal: function() {
-    let modal = document.querySelector('.modalDelete');
-  
-    modal.style.visibility = "hidden";
-  },
+  // Request for delete an animal (get an ID to delete)
   handleSelectInDeleteModal:function(event) {
     const select = event.currentTarget;
     const optionID = select.options[select.selectedIndex].value;
     localStorage.setItem('ID to delete', optionID); 
   },
+  //axios request for remove an animal
   handleModalFormToDelete: function (event) {
     let animaltoDelete = event.currentTarget;
     console.log(localStorage.getItem('ID to delete'))
@@ -96,16 +120,19 @@ init: function() {
       localStorage.setItem('ID to delete'," ");
     })
   },
+  // Open burger menu in header in mobile 
   handleOpenFrontPageMenu: function () {
     document.querySelector('.open-menu').style.visibility = "hidden";
     document.querySelector('.wrapper').style.filter = "blur(1.5rem)";
     document.querySelector('.header__menu').style.visibility = "visible";
   },
+  //Close burger menu in header in mobile
   handleCloseFrontPageMenu: function () {
     document.querySelector('.open-menu').style.visibility = "visible";
     document.querySelector('.wrapper').style.filter = "";
     document.querySelector('.header__menu').style.visibility = "hidden";
   },
+  // Axios request for submit login form
   handleSubmitLoginForm:function(event) {
     const loginForm = event.currentTarget;
     const loginFormData = new FormData(loginForm);
@@ -120,6 +147,7 @@ init: function() {
     .then(app.getResponseToken)
     .then(app.storeToken)
   },
+  // Request for modifying user infos
   handleSubmitUserForm:function(event) {  
     event.preventDefault();
     const userForm = event.currentTarget;
@@ -141,6 +169,7 @@ init: function() {
       params: userInfos
     })
   },
+  // Request for submit and modifying animals info 
   handleSubmitAnimalForm:function(event) {
     event.preventDefault();
     const animalForm = event.currentTarget;
@@ -175,15 +204,19 @@ init: function() {
     
     
   },
+  // Return token response 
   getResponseToken: function(response) {
     return response.data.token;
   },
+  // Stock the token in local storage
   storeToken: function(token) {
     localStorage.setItem('token', token);
   },
+  // return the token we get
   getToken: function () {
     return localStorage.getItem('token');
   },
+  // Change animal information when selected
   handleChangeSelection: function(event) {
     const select = event.currentTarget;
     const optionID = select.options[select.selectedIndex].value;

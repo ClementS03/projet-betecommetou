@@ -1,5 +1,7 @@
+
 <?php get_header(); ?>
 
-<img src="<?php bloginfo('template_url'); ?>/public/images/image1.jpeg" alt="">
+<h1 id="page__404__text" style="color: #D57100; font-weight:bold; font-size: 25px; margin:8em; ">Oups ! Bobby à encore manger toutes mes pages ...</h1>
+
 
 <?php get_footer(); ?>
