@@ -105,6 +105,19 @@ $query = new WP_Query($args);
                 <label for="id number"> Numéro d'identification électronique
                 <input type="text" name="identification" class="contact-form__input" placeholder="Numéro d'identification électronique">
                 </label>
+                <label for="diseases"> Maladies / Alergies
+                <textarea type="text" name="diseases" class="contact-form__input" placeholder="Maladies / Allergies"></textarea>
+                </label>
+                <label for="vaccins"> Vaccins
+                <textarea type="text" name="vaccins" class="contact-form__input" placeholder="Vaccins"></textarea>
+                </label>
+                <label for="observations"> Observations
+                <textarea type="text" name="observations" class="contact-form__input" placeholder="Observations"></textarea>
+                </label>
+                <label for="veterinary"> Email Veterinaire
+                <input type="text" name="veterinary" class="contact-form__input" placeholder="Email Veterinaire">
+                </label>
+
             <div>
                 <button class="account__form__button">Modifier</button> 
             </div>

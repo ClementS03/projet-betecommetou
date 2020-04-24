@@ -157,6 +157,10 @@ init: function() {
     animalInfos.pedigree = animalFormData.get('LOF');
     animalInfos.numero_de_tatouage = animalFormData.get('tatoo');
     animalInfos.numero_didentification_electronique = animalFormData.get('identification');
+    animalInfos.maladies_allergies = animalFormData.get('diseases');
+    animalInfos.vaccins = animalFormData.get('vaccins');
+    animalInfos.observations = animalFormData.get('observations');
+    animalInfos.veterinaire = animalFormData.get('veterinary');
     axios({
       method: 'post',
       url: app.baseUri + app.jsonUrl + 'healthbook' + '/' + animalID,
@@ -215,6 +219,16 @@ init: function() {
         else {metas.numero_de_tatouage = ""};
         if (metas.numero_didentification_electronique) {document.querySelector('input[name=identification]').value = metas.numero_didentification_electronique;}
         else{metas.numero_didentification_electronique = ""};
+        if (metas.maladies_allergies) {document.querySelector('textarea[name=diseases]').value = metas.maladies_allergies;}
+        else{metas.maladies_allergies = ""};
+        if (metas.vaccins) {document.querySelector('textarea[name=vaccins]').value = metas.vaccins;}
+        else{metas.vaccins = ""};
+        if (metas.observations) {document.querySelector('textarea[name=observations]').value = metas.observations;}
+        else{metas.observations = ""};
+        if (metas.veterinaire) {document.querySelector('input[name=veterinary]').value = metas.veterinaire;}
+        else{metas.veterinaire = ""};
+
+
       } else {
         console.log('il faut selectioner une valeur')
       }      
