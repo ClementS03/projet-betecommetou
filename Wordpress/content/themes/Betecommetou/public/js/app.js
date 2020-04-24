@@ -64,8 +64,8 @@
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
 
-
 /******/ 	var hotCurrentHash = "265467d7fc65fe214579";
+
 
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
@@ -871,7 +871,9 @@
 
 /* WEBPACK VAR INJECTION */(function(axios) {var app = {
 
+
   //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
+
 
   baseUri: "http://localhost/projet-betecommetou/Wordpress/",
 
@@ -917,12 +919,14 @@ init: function() {
   
   },
 
+
   handleCloseAddModal: function() {
    let modal = document.querySelector('.modal');;
   
     modal.style.visibility = "hidden";
   
   },
+
 
   handleModalFormToAdd: function(event) {
     // let modal = document.querySelector('.modal');
