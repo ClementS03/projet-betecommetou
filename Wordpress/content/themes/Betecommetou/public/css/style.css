@@ -2526,16 +2526,24 @@ a {
   @media (min-width: 900px) {
     .main__presentation {
       display: flex;
-      flex-direction: row; } }
+      flex-direction: row;
+      margin-top: 0.5em;
+      margin-bottom: 3em; } }
   .main__presentation__picture {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 30px; }
+    margin-left: 40%;
+    margin-top: 5%; }
+    .main__presentation__picture img {
+      width: 35%; }
     @media (min-width: 900px) {
-      .main__presentation__picture img {
-        height: 500px;
-        width: 500px; } }
+      .main__presentation__picture {
+        width: 50%;
+        margin-left: 0%; }
+        .main__presentation__picture img {
+          height: 100%;
+          width: 50%;
+          margin-left: 12em;
+          margin-right: 3em; } }
   .main__presentation__content {
     padding: 1 1.5rem; }
     @media (min-width: 900px) {
@@ -2547,10 +2555,12 @@ a {
       text-align: center;
       color: #D57100;
       font-weight: bold;
-      font-size: 28px; }
+      font-size: 32px; }
     .main__presentation__content .main__presentation__text {
       font-family: "arial", "helvetica", sans-serif;
-      text-align: justify;
+      color: #AC4200;
+      font-weight: bold;
+      text-align: center;
       padding: 30px; }
 
 .main__articles__first {
@@ -2772,6 +2782,16 @@ a {
     padding: 0.7em;
     margin-bottom: 1em;
     text-align: center; }
+  .user-registration button {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    background-color: #CDE9FF;
+    padding: 0.7rem;
+    margin: 1rem;
+    border-radius: 30px;
+    border: 1px transparent;
+    box-shadow: 0px 2px 2px black;
+    width: 100%; }
 
 /*  Title of page registration*/
 .title_registration {
@@ -2812,7 +2832,7 @@ a {
     box-shadow: 0px 2px 2px black;
     width: 100%; }
 
-.modal, .modalDelete {
+.modal, .modalDelete, .close {
   visibility: hidden;
   position: fixed;
   top: 25%;
@@ -2823,13 +2843,22 @@ a {
   background-color: #FFF7DF;
   width: 60vw;
   height: 30vh;
-  padding: 0.8em;
+  padding: 2em;
   justify-content: center;
   border: 3px solid #FFDBAE;
   border-radius: 30px; }
-  .modal input, .modalDelete input {
+  .modal h2, .modalDelete h2, .close h2 {
+    margin-bottom: 1em; }
+  .modal input, .modalDelete input, .close input {
     display: block;
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 1em; }
+  .modal i, .modalDelete i, .close i {
+    color: #AC4200;
+    position: absolute;
+    font-size: 1.5em;
+    top: .5em;
+    right: .5em; }
 
 .account {
   display: flex;

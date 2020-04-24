@@ -5,23 +5,30 @@ flex-direction: column;
 @media(min-width: $breakpoint-large) {
 display: flex;
 flex-direction: row;
+margin-top: 0.5em;
+margin-bottom: 3em;
 }
 
     &__picture{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 30px;
+    margin-left: 40%;
+    margin-top: 5%;
+    img {
+    width: 35%;
+    
+    }
     @media(min-width: $breakpoint-large) {
-     img{
-        height: 500px;
-        width: 500px; 
-     }   
-    
+    width: 50%;
+    margin-left: 0%;
+      img {
+        height: 100%;
+        width: 50%; 
+        margin-left: 12em;
+        margin-right: 3em;
+      }
     
     }
     }
-
     &__content{
     padding: 1 1.5rem;
     @media(min-width: $breakpoint-large) {
@@ -39,7 +46,9 @@ flex-direction: row;
 
         .main__presentation__text {
         font-family: $normal-font-family;
-        text-align: justify;
+        color: $orange-brown;
+        font-weight: bold;
+        text-align: center;
         padding: 30px;
             }
 
