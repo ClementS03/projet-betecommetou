@@ -2772,6 +2772,16 @@ a {
     padding: 0.7em;
     margin-bottom: 1em;
     text-align: center; }
+  .user-registration button {
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    background-color: #CDE9FF;
+    padding: 0.7rem;
+    margin: 1rem;
+    border-radius: 30px;
+    border: 1px transparent;
+    box-shadow: 0px 2px 2px black;
+    width: 100%; }
 
 /*  Title of page registration*/
 .title_registration {
