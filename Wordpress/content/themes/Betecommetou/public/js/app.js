@@ -63,9 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-
-/******/ 	var hotCurrentHash = "6046862b7a87374b475b";
-
+/******/ 	var hotCurrentHash = "4a0f015f5f2354eb78a3";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -158,6 +156,7 @@
 /******/ 			_declinedDependencies: {},
 /******/ 			_selfAccepted: false,
 /******/ 			_selfDeclined: false,
+/******/ 			_selfInvalidated: false,
 /******/ 			_disposeHandlers: [],
 /******/ 			_main: hotCurrentChildModule !== moduleId,
 /******/
@@ -187,6 +186,29 @@
 /******/ 			removeDisposeHandler: function(callback) {
 /******/ 				var idx = hot._disposeHandlers.indexOf(callback);
 /******/ 				if (idx >= 0) hot._disposeHandlers.splice(idx, 1);
+/******/ 			},
+/******/ 			invalidate: function() {
+/******/ 				this._selfInvalidated = true;
+/******/ 				switch (hotStatus) {
+/******/ 					case "idle":
+/******/ 						hotUpdate = {};
+/******/ 						hotUpdate[moduleId] = modules[moduleId];
+/******/ 						hotSetStatus("ready");
+/******/ 						break;
+/******/ 					case "ready":
+/******/ 						hotApplyInvalidatedModule(moduleId);
+/******/ 						break;
+/******/ 					case "prepare":
+/******/ 					case "check":
+/******/ 					case "dispose":
+/******/ 					case "apply":
+/******/ 						(hotQueuedInvalidatedModules =
+/******/ 							hotQueuedInvalidatedModules || []).push(moduleId);
+/******/ 						break;
+/******/ 					default:
+/******/ 						// ignore requests in error states
+/******/ 						break;
+/******/ 				}
 /******/ 			},
 /******/
 /******/ 			// Management API
@@ -229,7 +251,7 @@
 /******/ 	var hotDeferred;
 /******/
 /******/ 	// The update info
-/******/ 	var hotUpdate, hotUpdateNewHash;
+/******/ 	var hotUpdate, hotUpdateNewHash, hotQueuedInvalidatedModules;
 /******/
 /******/ 	function toModuleId(id) {
 /******/ 		var isNumber = +id + "" === id;
@@ -244,7 +266,7 @@
 /******/ 		hotSetStatus("check");
 /******/ 		return hotDownloadManifest(hotRequestTimeout).then(function(update) {
 /******/ 			if (!update) {
-/******/ 				hotSetStatus("idle");
+/******/ 				hotSetStatus(hotApplyInvalidatedModules() ? "ready" : "idle");
 /******/ 				return null;
 /******/ 			}
 /******/ 			hotRequestedFilesMap = {};
@@ -337,6 +359,11 @@
 /******/ 		if (hotStatus !== "ready")
 /******/ 			throw new Error("apply() is only allowed in ready status");
 /******/ 		options = options || {};
+/******/ 		return hotApplyInternal(options);
+/******/ 	}
+/******/
+/******/ 	function hotApplyInternal(options) {
+/******/ 		hotApplyInvalidatedModules();
 /******/
 /******/ 		var cb;
 /******/ 		var i;
@@ -359,7 +386,11 @@
 /******/ 				var moduleId = queueItem.id;
 /******/ 				var chain = queueItem.chain;
 /******/ 				module = installedModules[moduleId];
-/******/ 				if (!module || module.hot._selfAccepted) continue;
+/******/ 				if (
+/******/ 					!module ||
+/******/ 					(module.hot._selfAccepted && !module.hot._selfInvalidated)
+/******/ 				)
+/******/ 					continue;
 /******/ 				if (module.hot._selfDeclined) {
 /******/ 					return {
 /******/ 						type: "self-declined",
@@ -527,10 +558,13 @@
 /******/ 				installedModules[moduleId] &&
 /******/ 				installedModules[moduleId].hot._selfAccepted &&
 /******/ 				// removed self-accepted modules should not be required
-/******/ 				appliedUpdate[moduleId] !== warnUnexpectedRequire
+/******/ 				appliedUpdate[moduleId] !== warnUnexpectedRequire &&
+/******/ 				// when called invalidate self-accepting is not possible
+/******/ 				!installedModules[moduleId].hot._selfInvalidated
 /******/ 			) {
 /******/ 				outdatedSelfAcceptedModules.push({
 /******/ 					module: moduleId,
+/******/ 					parents: installedModules[moduleId].parents.slice(),
 /******/ 					errorHandler: installedModules[moduleId].hot._selfAccepted
 /******/ 				});
 /******/ 			}
@@ -603,7 +637,11 @@
 /******/ 		// Now in "apply" phase
 /******/ 		hotSetStatus("apply");
 /******/
-/******/ 		hotCurrentHash = hotUpdateNewHash;
+/******/ 		if (hotUpdateNewHash !== undefined) {
+/******/ 			hotCurrentHash = hotUpdateNewHash;
+/******/ 			hotUpdateNewHash = undefined;
+/******/ 		}
+/******/ 		hotUpdate = undefined;
 /******/
 /******/ 		// insert new code
 /******/ 		for (moduleId in appliedUpdate) {
@@ -656,7 +694,8 @@
 /******/ 		for (i = 0; i < outdatedSelfAcceptedModules.length; i++) {
 /******/ 			var item = outdatedSelfAcceptedModules[i];
 /******/ 			moduleId = item.module;
-/******/ 			hotCurrentParents = [moduleId];
+/******/ 			hotCurrentParents = item.parents;
+/******/ 			hotCurrentChildModule = moduleId;
 /******/ 			try {
 /******/ 				__webpack_require__(moduleId);
 /******/ 			} catch (err) {
@@ -698,10 +737,33 @@
 /******/ 			return Promise.reject(error);
 /******/ 		}
 /******/
+/******/ 		if (hotQueuedInvalidatedModules) {
+/******/ 			return hotApplyInternal(options).then(function(list) {
+/******/ 				outdatedModules.forEach(function(moduleId) {
+/******/ 					if (list.indexOf(moduleId) < 0) list.push(moduleId);
+/******/ 				});
+/******/ 				return list;
+/******/ 			});
+/******/ 		}
+/******/
 /******/ 		hotSetStatus("idle");
 /******/ 		return new Promise(function(resolve) {
 /******/ 			resolve(outdatedModules);
 /******/ 		});
+/******/ 	}
+/******/
+/******/ 	function hotApplyInvalidatedModules() {
+/******/ 		if (hotQueuedInvalidatedModules) {
+/******/ 			if (!hotUpdate) hotUpdate = {};
+/******/ 			hotQueuedInvalidatedModules.forEach(hotApplyInvalidatedModule);
+/******/ 			hotQueuedInvalidatedModules = undefined;
+/******/ 			return true;
+/******/ 		}
+/******/ 	}
+/******/
+/******/ 	function hotApplyInvalidatedModule(moduleId) {
+/******/ 		if (!Object.prototype.hasOwnProperty.call(hotUpdate, moduleId))
+/******/ 			hotUpdate[moduleId] = modules[moduleId];
 /******/ 	}
 /******/
 /******/ 	// The module cache
@@ -806,9 +868,9 @@
 
 /* WEBPACK VAR INJECTION */(function(axios) {var app = {
 
-
+  // URL and endpoints for request to API
   //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
-  baseUri: "http://localhost/betecommetou/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -816,6 +878,7 @@ init: function() {
   app.initEventListener();      
 },
 
+// All selct and Events Listener
   initEventListener:function() {
     let burgerMenuOpenButton = document.querySelector('.open-menu');
     let burgerMenuCloseButton = document.querySelector('.close-menu');
@@ -844,14 +907,19 @@ init: function() {
     closeAddModal.addEventListener('click', app.handleCloseAddModal);  
     let closeDeleteModal = document.querySelector('.deleteSpan');
     closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal);
+    
 
   },
+  // Display modal with click on Add button 
   handleShowModalOnButtonAddClick:function () {
     console.log('clicked');
     let modal = document.querySelector('.modal');
     modal.style.visibility="visible";
   
   },
+
+//function to close add modal
+
   handleCloseAddModal: function() {
   console.log('span add');
   let modal = document.querySelector('.modal');
@@ -859,7 +927,7 @@ init: function() {
   modal.style.visibility = "hidden";
   
   },
-
+  //function to close delete modal
   handleCloseDeleteModal: function() {
     console.log('deleteSpan');
     let modalDelete = document.querySelector('.modalDelete');
@@ -867,6 +935,8 @@ init: function() {
     modalDelete.style.visibility = "hidden";
   },
 
+
+  // Axios request for add an animal
 
   handleModalFormToAdd: function(event) {
     // let modal = document.querySelector('.modal');
@@ -888,15 +958,18 @@ init: function() {
     })
 
   },
+  // Display Modal when click on Delete button
   handleShowModalOnButtonDeleteClick: function(){
     let modal = document.querySelector('.modalDelete');
     modal.style.visibility="visible";
   },
+  // Request for delete an animal (get an ID to delete)
   handleSelectInDeleteModal:function(event) {
     const select = event.currentTarget;
     const optionID = select.options[select.selectedIndex].value;
     localStorage.setItem('ID to delete', optionID); 
   },
+  //axios request for remove an animal
   handleModalFormToDelete: function (event) {
     let animaltoDelete = event.currentTarget;
     console.log(localStorage.getItem('ID to delete'))
@@ -913,16 +986,19 @@ init: function() {
       localStorage.setItem('ID to delete'," ");
     })
   },
+  // Open burger menu in header in mobile 
   handleOpenFrontPageMenu: function () {
     document.querySelector('.open-menu').style.visibility = "hidden";
     document.querySelector('.wrapper').style.filter = "blur(1.5rem)";
     document.querySelector('.header__menu').style.visibility = "visible";
   },
+  //Close burger menu in header in mobile
   handleCloseFrontPageMenu: function () {
     document.querySelector('.open-menu').style.visibility = "visible";
     document.querySelector('.wrapper').style.filter = "";
     document.querySelector('.header__menu').style.visibility = "hidden";
   },
+  // Axios request for submit login form
   handleSubmitLoginForm:function(event) {
     const loginForm = event.currentTarget;
     const loginFormData = new FormData(loginForm);
@@ -937,6 +1013,7 @@ init: function() {
     .then(app.getResponseToken)
     .then(app.storeToken)
   },
+  // Request for modifying user infos
   handleSubmitUserForm:function(event) {  
     event.preventDefault();
     const userForm = event.currentTarget;
@@ -958,6 +1035,7 @@ init: function() {
       params: userInfos
     })
   },
+  // Request for submit and modifying animals info 
   handleSubmitAnimalForm:function(event) {
     event.preventDefault();
     const animalForm = event.currentTarget;
@@ -992,15 +1070,19 @@ init: function() {
     
     
   },
+  // Return token response 
   getResponseToken: function(response) {
     return response.data.token;
   },
+  // Stock the token in local storage
   storeToken: function(token) {
     localStorage.setItem('token', token);
   },
+  // return the token we get
   getToken: function () {
     return localStorage.getItem('token');
   },
+  // Change animal information when selected
   handleChangeSelection: function(event) {
     const select = event.currentTarget;
     const optionID = select.options[select.selectedIndex].value;

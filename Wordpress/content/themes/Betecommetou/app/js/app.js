@@ -2,7 +2,7 @@ var app = {
 
   // URL and endpoints for request to API
   //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
-  baseUri: "http://localhost/betecommetou/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -36,9 +36,9 @@ init: function() {
     if (selectInDeleteModal!=null) {selectInDeleteModal.addEventListener('change', app.handleSelectInDeleteModal)};
 
     let closeAddModal = document.querySelector('.addSpan');
-    closeAddModal.addEventListener('click', app.handleCloseAddModal);  
+    if (closeAddModal !=null){closeAddModal.addEventListener('click', app.handleCloseAddModal)};  
     let closeDeleteModal = document.querySelector('.deleteSpan');
-    closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal);
+    if (closeDeleteModal != null){closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal)};
     
 
   },

@@ -83,7 +83,7 @@ class BetecommetouAPI {
         add_action('rest_api_init', [$this, 'postAnimalType']);
         add_action('rest_api_init', [$this, 'postAnimalSex']);
         add_action('rest_api_init', [$this, 'postAnimalAssurance']);
-        add_action('rest_api_init', [$this, 'postSterilized']);
+        add_action('rest_api_init', [$this, 'postAnimalSterilized']);
         add_action('rest_api_init', [$this, 'postAnimalRace']);
         add_action('rest_api_init', [$this, 'postAnimalRobe']);
         add_action('rest_api_init', [$this, 'postAnimalPedigree']);
