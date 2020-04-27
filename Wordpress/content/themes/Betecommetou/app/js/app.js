@@ -244,8 +244,6 @@ init: function() {
         else{metas.observations = ""};
         if (metas.veterinaire) {document.querySelector('input[name=veterinary]').value = metas.veterinaire;}
         else{metas.veterinaire = ""};
-
-
       } else {
         console.log('il faut selectioner une valeur')
       }      

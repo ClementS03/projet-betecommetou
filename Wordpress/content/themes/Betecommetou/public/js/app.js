@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "574d3bb3eeec11172f47";
+/******/ 	var hotCurrentHash = "bdf48034a89510993383";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1112,8 +1112,6 @@ init: function() {
         else{metas.observations = ""};
         if (metas.veterinaire) {document.querySelector('input[name=veterinary]').value = metas.veterinaire;}
         else{metas.veterinaire = ""};
-
-
       } else {
         console.log('il faut selectioner une valeur')
       }      
