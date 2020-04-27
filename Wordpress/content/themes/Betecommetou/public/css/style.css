@@ -2428,18 +2428,6 @@ a {
       text-align: center; }
   .open-menu {
     display: none; }
-  .main__presentation {
-    display: flex;
-    flex-flow: column;
-    width: 100%; }
-    .main__presentation .content {
-      display: flex;
-      flex-flow: row; }
-      .main__presentation .content .main__presentation__image {
-        width: 50%;
-        height: 100%; }
-      .main__presentation .content .main__presentation__content {
-        width: 50%; }
   .main__articles__first {
     background-position: center center;
     background-size: cover;
@@ -2522,28 +2510,25 @@ a {
 
 .main__presentation {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  text-align: center;
+  margin-top: 3em; }
   @media (min-width: 900px) {
     .main__presentation {
       display: flex;
       flex-direction: row;
-      margin-top: 0.5em;
+      justify-content: space-around;
       margin-bottom: 3em; } }
   .main__presentation__picture {
-    display: block;
-    margin-left: 40%;
-    margin-top: 5%; }
+    display: block; }
     .main__presentation__picture img {
       width: 35%; }
     @media (min-width: 900px) {
       .main__presentation__picture {
-        width: 50%;
-        margin-left: 0%; }
+        width: 50%; }
         .main__presentation__picture img {
           height: 100%;
-          width: 50%;
-          margin-left: 12em;
-          margin-right: 3em; } }
+          width: 70%; } }
   .main__presentation__content {
     padding: 1 1.5rem; }
     @media (min-width: 900px) {
