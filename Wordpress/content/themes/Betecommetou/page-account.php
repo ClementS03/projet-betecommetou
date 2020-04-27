@@ -123,6 +123,7 @@ $query = new WP_Query($args);
                 <label for="veterinary"> Email Veterinaire
                 <input type="text" name="veterinary" class="contact-form__input" placeholder="Email Veterinaire">
                 </label>
+                
 
             <div>
                 <button class="account__form__button">Modifier</button> 
