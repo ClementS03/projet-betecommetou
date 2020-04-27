@@ -218,50 +218,42 @@ init: function() {
     })
     .then(function(response){
       let metas = response.data.meta;
-      console.log(metas)
-;      if (metas) {       
+      if (metas) {   
+        let fields = document.querySelectorAll('.contact-form__input');
+        fields.forEach(element => {
+          element.value = "";
+        });
         document.querySelector('input[name=animal_name]').value = metas.nom_de_lanimal;
-        if(metas.age_de_lanimal!=undefined)
+        if(metas.age_de_lanimal)
         {document.querySelector('input[name=DateofBirth]').value = metas.age_de_lanimal;}
         else {metas.age_de_lanimal = " "};
-        if(metas.sexe!=undefined){console.log(metas.sexe) ; document.querySelector('select[name=Sex]').value = metas.sexe;}
+        if(metas.sexe){document.querySelector('select[name=Sex]').value = metas.sexe;}
         else {metas.sexe = " "};
-        if (metas.sterilise!=undefined) {document.querySelector('select[name=sterilized').value = metas.sterilise;}
+        if (metas.sterilise) {document.querySelector('select[name=sterilized').value = metas.sterilise;}
         else {metas.sterilise = " "};
-        if(metas.assurance!=undefined){document.querySelector('select[name=Insured]').value = metas.assurance;}
+        if(metas.assurance){document.querySelector('select[name=Insured]').value = metas.assurance;}
         else {metas.sexe = " "};
-        if (metas.race!=undefined) {document.querySelector('input[name=Breed]').value = metas.race;}
+        if (metas.race) {document.querySelector('input[name=Breed]').value = metas.race;}
         else {metas.race = " "};
-        if (metas.robe!=undefined) {document.querySelector('input[name=Color]').value = metas.robe;}
+        if (metas.robe) {document.querySelector('input[name=Color]').value = metas.robe;}
         else{metas.robe = ""};
-        if (metas.pedigree!=undefined) {document.querySelector('select[name=LOF]').value = metas.pedigree;}
+        if (metas.pedigree) {document.querySelector('select[name=LOF]').value = metas.pedigree;}
         else{metas.pedigree = " "};
-        if (metas.numero_de_tatouage!=undefined) {document.querySelector('input[name=tatoo]').value = metas.numero_de_tatouage;}
+        if (metas.numero_de_tatouage) {document.querySelector('input[name=tatoo]').value = metas.numero_de_tatouage;}
         else {metas.numero_de_tatouage = " "};
-        if (metas.numero_didentification_electronique!=undefined) {document.querySelector('input[name=identification]').value = metas.numero_didentification_electronique;}
+        if (metas.numero_didentification_electronique) {document.querySelector('input[name=identification]').value = metas.numero_didentification_electronique;}
         else{metas.numero_didentification_electronique = " "};
-        if (metas.maladies_allergies!=undefined) {document.querySelector('textarea[name=diseases]').value = metas.maladies_allergies;}
+        if (metas.maladies_allergies) {document.querySelector('textarea[name=diseases]').value = metas.maladies_allergies;}
         else{metas.maladies_allergies = " "};
-        if (metas.vaccins!=undefined) {document.querySelector('textarea[name=vaccins]').value = metas.vaccins;}
+        if (metas.vaccins) {document.querySelector('textarea[name=vaccins]').value = metas.vaccins;}
         else{metas.vaccins = " "};
-        if (metas.observations!=undefined) {document.querySelector('textarea[name=observations]').value = metas.observations;}
+        if (metas.observations) {document.querySelector('textarea[name=observations]').value = metas.observations;}
         else{metas.observations = " "};
-        if (metas.veterinaire!=undefined) {document.querySelector('input[name=veterinary]').value = metas.veterinaire;}
+        if (metas.veterinaire) {document.querySelector('input[name=veterinary]').value = metas.veterinaire;}
         else{metas.veterinaire = " "};
       } else {
         console.log('il faut selectioner une valeur')
       }      
-    })
-    .then(function() {
-      document.querySelector('.contact-form__input').value = "";
-    //  console.log(fields);
-    //   fields.forEach(element => {
-    //     if (element.value == undefined) {
-    //       element.value= " ";
-    //     }
-        
-    //   });
-      
     })
     
     
