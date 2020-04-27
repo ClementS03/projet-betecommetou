@@ -4,6 +4,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    padding: 7em 0;
     p { 
         display: flex;
         flex-direction: column;
@@ -18,7 +19,8 @@
         padding: 0.7rem;
         margin: 1rem;
         border-radius: 30px;
-        border: 2px solid $blue-light;        
+        border: 2px solid $blue-light;  
+        outline: none;
     }    
     .button-primary{
         font-family: $fonts-family-title;
@@ -48,6 +50,13 @@
             color: black; 
         }      
     }
+}
+.login_failed {
+    
+    font-size: 2.5rem;
+    width: 100%;
+    background-color: red;
+    text-align: center;
 }
 
 

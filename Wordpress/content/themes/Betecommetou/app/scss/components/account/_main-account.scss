@@ -44,6 +44,7 @@
         border-radius: 30px;
         border: 1px transparent;
         box-shadow: 0px 2px 2px black ;
+        outline: none;
     }
 }
 .contact-form{
@@ -55,13 +56,10 @@
         margin: 1rem;
         border-radius: 30px;
         border: 2px solid $blue-light;
-        width: 100%;
+        width: 90%;
+        outline: none;
     }
-    &__button{
-    a{
-    color: black; 
-    }
-}
+
 }
 .account_contact_utils {
     display: flex;

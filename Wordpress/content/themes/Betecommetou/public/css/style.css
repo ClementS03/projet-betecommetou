@@ -2649,41 +2649,6 @@ a {
       background-repeat: no-repeat;
       width: 100%; }
 
-.contact-form {
-  display: flex;
-  flex-flow: column wrap;
-  width: 50%;
-  align-items: center;
-  display: none; }
-  .contact-form .contact-form__title {
-    color: #D57100;
-    font-size: 1.5rem; }
-  .contact-form label {
-    color: black;
-    font-size: 1.5rem; }
-
-.wpcf7-form-control {
-  font-family: "Comic Neue", cursive;
-  font-weight: bold;
-  background-color: #FFFFFF;
-  padding: 0.7rem;
-  margin: 1rem;
-  border-radius: 30px;
-  border: 1px transparent;
-  box-shadow: 0px 2px 2px black;
-  text-align: center;
-  outline: none; }
-
-.wpcf7-submit {
-  font-family: "Comic Neue", cursive;
-  font-weight: bold;
-  background-color: #CDE9FF;
-  padding: 0.7rem;
-  margin: 1rem;
-  border-radius: 30px;
-  border: 1px transparent;
-  box-shadow: 0px 2px 2px black; }
-
 .footer__newsletter {
   width: 50%; }
 
@@ -2697,7 +2662,8 @@ a {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  padding: 7em 0; }
   #loginform p {
     display: flex;
     flex-direction: column;
@@ -2711,7 +2677,8 @@ a {
     padding: 0.7rem;
     margin: 1rem;
     border-radius: 30px;
-    border: 2px solid #CDE9FF; }
+    border: 2px solid #CDE9FF;
+    outline: none; }
   #loginform .button-primary {
     font-family: "Comic Neue", cursive;
     font-weight: bold;
@@ -2736,6 +2703,12 @@ a {
     width: 100%; }
     #loginform label a {
       color: black; }
+
+.login_failed {
+  font-size: 2.5rem;
+  width: 100%;
+  background-color: red;
+  text-align: center; }
 
 .register {
   display: flex;
@@ -2843,6 +2816,31 @@ a {
     box-shadow: 0px 2px 2px black;
     width: 100%; }
 
+.ur-frontend-form {
+  border: none; }
+
+.wpcf7-form-control {
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  padding: 0.7rem;
+  margin: 1rem;
+  border-radius: 30px;
+  border: 1px transparent;
+  box-shadow: 0px 2px 2px black;
+  text-align: center;
+  outline: none; }
+
+.wpcf7-submit {
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+  background-color: #CDE9FF;
+  padding: 0.7rem;
+  margin: 1rem;
+  border-radius: 30px;
+  border: 1px transparent;
+  box-shadow: 0px 2px 2px black; }
+
 .modal, .modalDelete, .close {
   visibility: hidden;
   position: fixed;
@@ -2912,7 +2910,8 @@ a {
     margin: 1rem;
     border-radius: 30px;
     border: 1px transparent;
-    box-shadow: 0px 2px 2px black; }
+    box-shadow: 0px 2px 2px black;
+    outline: none; }
 
 .contact-form__input {
   font-family: "Comic Neue", cursive;
@@ -2922,10 +2921,8 @@ a {
   margin: 1rem;
   border-radius: 30px;
   border: 2px solid #CDE9FF;
-  width: 100%; }
-
-.contact-form__button a {
-  color: black; }
+  width: 90%;
+  outline: none; }
 
 .account_contact_utils {
   display: flex;

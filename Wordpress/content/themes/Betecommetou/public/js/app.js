@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "4a0f015f5f2354eb78a3";
+/******/ 	var hotCurrentHash = "574d3bb3eeec11172f47";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -877,7 +877,6 @@
 init: function() {
   app.initEventListener();      
 },
-
 // All selct and Events Listener
   initEventListener:function() {
     let burgerMenuOpenButton = document.querySelector('.open-menu');
@@ -902,13 +901,10 @@ init: function() {
     if (formToDeleteanAnimal != null) {formToDeleteanAnimal.addEventListener('submit', app.handleModalFormToDelete)};
     let selectInDeleteModal = document.querySelector('#pet-select-deletemodal');
     if (selectInDeleteModal!=null) {selectInDeleteModal.addEventListener('change', app.handleSelectInDeleteModal)};
-
     let closeAddModal = document.querySelector('.addSpan');
-    closeAddModal.addEventListener('click', app.handleCloseAddModal);  
+    if (closeAddModal !=null){closeAddModal.addEventListener('click', app.handleCloseAddModal)};  
     let closeDeleteModal = document.querySelector('.deleteSpan');
-    closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal);
-    
-
+    if (closeDeleteModal != null){closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal)};
   },
   // Display modal with click on Add button 
   handleShowModalOnButtonAddClick:function () {
@@ -917,9 +913,7 @@ init: function() {
     modal.style.visibility="visible";
   
   },
-
 //function to close add modal
-
   handleCloseAddModal: function() {
   console.log('span add');
   let modal = document.querySelector('.modal');
@@ -934,10 +928,7 @@ init: function() {
   
     modalDelete.style.visibility = "hidden";
   },
-
-
   // Axios request for add an animal
-
   handleModalFormToAdd: function(event) {
     // let modal = document.querySelector('.modal');
     // modal.style.display="none";
@@ -1064,11 +1055,9 @@ init: function() {
     })
     .then(function() {
 
-      localStorage.clear;
+      localStorage.setItem('ID of animal' , " ");
 
-    })
-    
-    
+    })   
   },
   // Return token response 
   getResponseToken: function(response) {
@@ -1091,9 +1080,6 @@ init: function() {
       method: 'get',
       url: app.baseUri + app.jsonUrl + 'healthbook' + '/' + optionID,
       headers: { Authorization: 'Bearer ' + app.getToken() },
-      params: {
-        status: 'any'
-      }
     })
     .then(function(response){
       let metas = response.data.meta;
@@ -1132,32 +1118,12 @@ init: function() {
         console.log('il faut selectioner une valeur')
       }      
     })
+    
+    
   },
 };
 
 document.addEventListener("DOMContentLoaded", app.init);
-
-// document.querySelector('input[name=animal_name]').value = metas.nom_de_lanimal;
-// if(metas.age_de_lanimal)
-// {document.querySelector('input[name=DateofBirth]').value = metas.age_de_lanimal;}
-// else {metas.age_de_lanimal = ""};
-// if(metas.sexe){document.querySelector('input[name=Sex]').value = metas.sexe;}
-// else {metas.sexe = ""};
-// document.querySelector('input[name=Sterilize').value = "champ non present , a corriger";
-// if(metas.assurance){document.querySelector('input[name=Insured]').value = metas.assurance;}
-// else {metas.sexe = ""};
-// if (metas.race) {
-  
-// }
-
-// document.querySelector('input[name=Breed]').value = metas.race;
-// document.querySelector('input[name=Color]').value = metas.robe;
-// document.querySelector('input[name=LOF]').value = metas.pedigree;
-// document.querySelector('input[name=tatoo]').value = metas.numero_de_tatouage;
-// document.querySelector('input[name=identification]').value = metas.numero_didentification_electronique;
-// } else {
-// console.log('il faut selectioner une valeur')
-// }  
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! axios */ "./node_modules/axios/index.js")))
 
 /***/ }),
