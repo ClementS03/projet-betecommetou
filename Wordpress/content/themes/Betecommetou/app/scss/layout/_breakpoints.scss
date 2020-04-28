@@ -2,11 +2,9 @@
     .wrapper {
         font-size: $large-font-size;
     }
-    
     .header {    
         flex-flow: row;
         justify-content: space-evenly;
-
         .header__navbar {
             visibility: visible;
             display: block;
@@ -16,22 +14,22 @@
     .open-menu {
         display: none;
     }    
-    .main__presentation {
-        display: flex;
-        flex-flow: column;
-        width: 100%;
-        .content {
-            display: flex;
-            flex-flow: row;
-            .main__presentation__image {
-                width: 50%;
-                height: 100%;
-            }
-            .main__presentation__content {
-                width: 50%;
-            }  
-        } 
-    }
+    // .main__presentation {
+    //     // display: flex;
+    //     // flex-flow: column;
+    //     // width: 100%;
+    //     .content {
+    //         display: flex;
+    //         flex-flow: row;
+    //         .main__presentation__image {
+    //             width: 50%;
+    //             height: 100%;
+    //         }
+    //         .main__presentation__content {
+    //             width: 50%;
+    //         }  
+    //     } 
+    // }
     .main__articles__first {
         background-position: center center;
         background-size: cover;
@@ -58,12 +56,9 @@
             text-align: center;
         }
     }
-
     .contact {
         &__title {
             max-width: 50%;
         }
     }
-
-    
 }

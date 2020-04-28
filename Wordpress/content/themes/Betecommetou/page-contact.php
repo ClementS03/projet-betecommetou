@@ -9,7 +9,9 @@ get_header(); ?>
 
 <h2 class="contact__title"><?= the_title(); ?></h2>
 
-<?= do_shortcode('[contact-form-7 id="6" title="Formulaire contact footer"]'); ?>
+
+<?= do_shortcode('[contact-form-7 id="84" title="Formulaire contact footer"]'); ?>
+
 
 </div>
 
