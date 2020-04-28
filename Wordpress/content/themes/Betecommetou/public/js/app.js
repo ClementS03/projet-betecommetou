@@ -63,9 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-
-/******/ 	var hotCurrentHash = "167bf61f48769445b74e";
-
+/******/ 	var hotCurrentHash = "6c7c04dfb72ab50985db";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -843,7 +841,6 @@ init: function() {
     if (closeAddModal !=null){closeAddModal.addEventListener('click', app.handleCloseAddModal)};  
     let closeDeleteModal = document.querySelector('.deleteSpan');
     if (closeDeleteModal != null){closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal)};
-
   },
   // Display modal with click on Add button 
   handleShowModalOnButtonAddClick:function () {
