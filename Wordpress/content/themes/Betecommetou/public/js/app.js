@@ -63,7 +63,9 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
+
 /******/ 	var hotCurrentHash = "3ed15dba2976644a8a3e";
+
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -806,7 +808,7 @@
 
   // URL and endpoints for request to API
   //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
-  baseUri: "http://localhost/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/APOTHEOSE/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 

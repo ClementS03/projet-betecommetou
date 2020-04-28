@@ -7,5 +7,7 @@ Template Name: registration
 
 <h2 class="title_registration"><?php the_title() ?></h2>
 
-<?= do_shortcode( '[user_registration_form id="65"]' ); ?>
+
+<?= do_shortcode( '[user_registration_form id="76"]' ); ?>
+
 <?php get_footer(); ?>
