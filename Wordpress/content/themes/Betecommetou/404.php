@@ -1,7 +1,13 @@
 
 <?php get_header(); ?>
 
-<h1 id="page__404__text" style="color: #D57100; font-weight:bold; font-size: 25px; margin:8em; ">Oups ! Bobby à encore manger toutes mes pages ...</h1>
+<div class="container-404">
+    
+    <h2 id="title-404">Oups ! Page non trouvée, Bobby les a mangés !!</h2>
+
+    <img id="image-404" src="<?php bloginfo('template_url'); ?>/public/images/chien-404.jpg" alt="Chien-404">
+
+</div>
 
 
 <?php get_footer(); ?>
