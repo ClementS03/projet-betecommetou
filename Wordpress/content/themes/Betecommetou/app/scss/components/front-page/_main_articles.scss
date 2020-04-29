@@ -3,6 +3,7 @@
     text-align: center;
         &__content{
         height: 50vh; 
+        line-height: 1.2em;
         position: relative;
         padding: 3em;
         background-position: center;
@@ -16,6 +17,8 @@
             &__title{
                 font-size: 1.2rem;
                 font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: .8em;
                 margin-bottom: 1em;
                 padding: 1rem;
                 color: $orange-brown;
@@ -50,6 +53,26 @@
                     z-index:10;
                     background-repeat: no-repeat;
                     width: 100%;
+
+                    a{
+                        display: inline-block;
+                                color: $orange-brown;
+                                font-weight: bold;
+                                margin-top:  8em;
+                                padding: 0.5rem;
+                                border: 2px solid $orange-brown; 
+                                background-color: transparentize($orange-light, 0.2);
+                                
+                                border-radius: 30px;
+                                &:hover{
+                                    background-color: $blue-light;}
+                                
+                                    @media(min-width: $breakpoint-large) {
+                                        margin-top:  20em; 
+                                        width: 30%;   
+                                                }
+                                
+                    }
                 }
 
     }
