@@ -2934,8 +2934,24 @@ a {
   margin: 1rem;
   border-radius: 30px;
   border: 2px solid #CDE9FF;
-  width: 90%;
+  width: 100%;
+  height: 3em; }
+
+.contact-form__select {
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+  background-color: white;
+  padding: 0.7rem;
+  margin: 1rem;
+  border-radius: 30px;
+  border: 2px solid #CDE9FF;
+  width: 98%;
+  height: 3em; }
+
+.contact-form__button a {
+  color: black; }
   outline: none; }
+
 
 .account_contact_utils {
   display: flex;

@@ -26,7 +26,9 @@ $query = new WP_Query($args);
         <img class="account_animal_image" src="" alt="">
 
         <select name="pets" id="pet-select" class="contact-form__select">
+
         <option value="">Choisissez le carnet de santé</option>
+
 <?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
             <option value="<?=get_the_ID();?>" ><?=get_post_field('nom_de_lanimal');?></option>
 <?php endwhile; endif;?>
