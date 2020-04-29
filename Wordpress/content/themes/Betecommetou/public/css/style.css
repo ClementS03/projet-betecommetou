@@ -2734,8 +2734,9 @@ a {
     border-radius: 30px !important;
     align-self: center; }
   .register label {
-    font-family: "Comic Neue", cursive;
-    font-weight: bold; }
+    font-family: "arial", "helvetica", sans-serif;
+    font-weight: bold;
+    color: #AC4200; }
   .register .user_title {
     font-family: "Comic Neue", cursive;
     font-weight: bold;
@@ -2788,6 +2789,8 @@ a {
 /*  Title of page registration*/
 .title_registration {
   color: #D57100;
+  font-family: "arial", "helvetica", sans-serif;
+  font-weight: bold;
   font-size: 1.5rem;
   text-align: center;
   padding: 1em; }
@@ -2795,17 +2798,19 @@ a {
 .legales__mentions {
   display: flex; }
   .legales__mentions__title {
-    font-family: "Comic Neue", cursive;
+    font-family: "arial", "helvetica", sans-serif;
     font-weight: bold;
     padding: 0.7rem;
     margin: 1rem;
-    text-align: center; }
+    text-align: center;
+    color: #D57100; }
   .legales__mentions__content {
     margin-top: 1em;
     margin-left: 2em;
     margin-right: 2em; }
     .legales__mentions__content p {
-      margin-bottom: 2em; }
+      margin-bottom: 2em;
+      color: #AC4200; }
 
 .contact {
   display: flex;
