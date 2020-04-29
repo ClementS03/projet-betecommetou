@@ -1,4 +1,4 @@
-<?php 
+ <!-- <?php 
 
 /*
 Template Name: login
@@ -32,4 +32,4 @@ Template Name: login
 
 <?php
 // get_footer();
-?>//
+?> -->
