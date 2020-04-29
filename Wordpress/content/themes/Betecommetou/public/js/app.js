@@ -63,7 +63,9 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "c3c5fc5eca45723cad1c";
+
+/******/ 	var hotCurrentHash = "323d6a87ae713ae0108e";
+
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -869,8 +871,8 @@
 /* WEBPACK VAR INJECTION */(function(axios) {var app = {
 
   // URL and endpoints for request to API
-  baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
-  //baseUri: "http://localhost/APOTHEOSE/projet-betecommetou/Wordpress/",
+  //baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/Projet/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
