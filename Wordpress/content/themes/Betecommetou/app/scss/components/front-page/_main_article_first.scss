@@ -1,33 +1,33 @@
 .main__articles__first {    
     text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
     padding-bottom:1.5rem ;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     @media(min-width: $breakpoint-large) {
         height: 70vh;
         padding: 3em;    
         }
-    
     &__content {
         height: 30vh;
         padding: 0 1rem;
         margin: 3em;
-        
-        
         &__title {
+            text-transform: uppercase;
             font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 1em;
             margin-top: 1em;
             padding: 1rem;
+            width: 85%;
             color: $orange-brown;
             border: 2px solid $orange-brown; 
             background-color: transparentize($orange-light, 0.2);
             border-radius: 30px;
             font-family: $normal-font-family;
-            
         }
-       
     }
     a{
         display: inline-block;
@@ -40,10 +40,13 @@
                 border-radius: 30px;
                 &:hover{
                     background-color: $blue-light;}
-                
                     @media(min-width: $breakpoint-large) {
-                        margin-top:  15em;    
+                        margin-top:  15em; 
+                        width: 30%;   
                                 }
-                
+                                @media(min-width: $breakpoint-xlarge) {
+                                    margin-top:  15em; 
+                                    width: 20%;   
+                                            }
     }
 }

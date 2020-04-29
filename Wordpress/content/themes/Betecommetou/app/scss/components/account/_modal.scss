@@ -1,44 +1,44 @@
-.modal {
+   .modal {
 
-    visibility: hidden;
-     position: fixed;
-     top: 25%;
-     right: 0;
-     bottom: 0;
-     left: 20%;
-     z-index: 50;
-     background-color: $orange-clean;
-     width: 60vw;
-     height: 30vh;
-     padding: 2em;
-     justify-content: center;
-     border: 3px solid $orange-light;
-     border-radius: 30px;
+      visibility: hidden;
+      position: fixed;
+      top: 25%;
+      right: 0;
+      bottom: 0;
+      left: 20%;
+      z-index: 50;
+      background-color: $orange-clean;
+      width: 60vw;
+      height: 30vh;
+      padding: 2em;
+      justify-content: center;
+      border: 3px solid $orange-light;
+      border-radius: 30px;
 
-     h2{
-        margin-bottom: 1em;
-     }
+      h2{
+         margin-bottom: 1em;
+      }
 
-     input{
+      input{
          display: block;
          width: 100%;
          margin-bottom: 1em;
-     }
+      }
 
-     i{
-        color: $orange-brown;
-        position: absolute;
-        font-size: 1.5em;
-        top: .5em;
-        right: .5em;
+      i{
+         color: $orange-brown;
+         position: absolute;
+         font-size: 1.5em;
+         top: .5em;
+         right: .5em;
 
-     }
+      }
 
-}
-.modalDelete {
- @extend .modal;
-}
-
-.close{
+   }
+   .modalDelete {
    @extend .modal;
-}
+   }
+
+   .close{
+   @extend .modal;
+   }

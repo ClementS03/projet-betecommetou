@@ -54,12 +54,24 @@ flex-direction: column;
             &__text{
                 margin-bottom: 2em;
                 text-align: center;
+                color: $orange-darken;
+                font-weight: bold;
                 font-family: $normal-font-family;
+                line-height: 1.2em;
                 @media(min-width: $breakpoint-large) {
                 padding-right: 40px;
                 padding-left: 40px;}
                 
             }
+            
+            .fa {
+                font-size: 2em;
+                color: $orange-brown;
+                margin-bottom: 1em;
+                margin-left: 49%;
+            }
         }
+
+        
 }
 
