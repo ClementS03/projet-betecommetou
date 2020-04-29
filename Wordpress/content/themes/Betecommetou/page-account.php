@@ -128,7 +128,7 @@ $query = new WP_Query($args);
                 
 
             <div>
-                <button class="account__form__button">Modifier</button> 
+                <a class="account__form__button">Modifier</a> 
             </div>
             </form>
     </div>
