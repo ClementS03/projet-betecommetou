@@ -1,13 +1,13 @@
-<?php 
+ <?php 
+
 /*
 Template Name: login
 */
 get_header();
 wp_login_form([
-    'redirect' => home_url(),
+    'redirect' => get_page_link(get_page_by_title('votre compte')->ID),
     'remember' => false,
 ]);
-get_footer();
 ?>
     
     <?php
@@ -24,7 +24,7 @@ get_footer();
 	?>
     <?php
 		if (strpos($url,'login/?login=echec') !== false) {
-		    echo "<div class='login_failed'>Mot de passe ou nom d'utilisateur incorrect</div>";
+			echo "<div class='login_failed'>Mot de passe ou nom d'utilisateur incorrect</div>";
 		}
 	?>
 	
@@ -32,4 +32,4 @@ get_footer();
 
 <?php
 get_footer();
-?>
+?> 

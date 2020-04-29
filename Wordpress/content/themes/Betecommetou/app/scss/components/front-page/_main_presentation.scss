@@ -1,58 +1,51 @@
 .main__presentation {
-    
-display: flex;
-flex-direction: column;
-@media(min-width: $breakpoint-large) {
-display: flex;
-flex-direction: row;
-margin-top: 0.5em;
-margin-bottom: 3em;
-}
-
-    &__picture{
-    display: block;
-    margin-left: 40%;
-    margin-top: 5%;
-    img {
-    width: 35%;
-    
-    }
-    @media(min-width: $breakpoint-large) {
-    width: 50%;
-    margin-left: 0%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 3em;
+  @media(min-width: $breakpoint-large) {
+    display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   margin-bottom: 3em;
+   //margin: 5em;
+  
+  
+  }
+      &__picture{
+      display: block;
       img {
-        height: 100%;
-        width: 50%; 
-        margin-left: 12em;
-        margin-right: 3em;
+      width: 35%;
       }
-    
-    }
-    }
-    &__content{
-    padding: 1 1.5rem;
-    @media(min-width: $breakpoint-large) {
-    height: 50%;
-    width: 50%;
-    
-    }    
-        .main__presentation__title {
-        padding: 2rem;
-        text-align: center;
-        color: $orange-darken;
-        font-weight: bold;
-        font-size: $extra-large-font-size;
+      @media(min-width: $breakpoint-large) {
+      width: 50%;
+        img {
+          height: 100%;
+          width: 70%; 
+           
         }
-
-        .main__presentation__text {
-        font-family: $normal-font-family;
-        color: $orange-brown;
-        font-weight: bold;
-        text-align: center;
-        padding: 30px;
-            }
-
-    }
-
-}
-
+      }
+      }
+      &__content{
+      padding: 1 1.5rem;
+      @media(min-width: $breakpoint-large) {
+      height: 50%;
+      width: 50%;
+      }    
+          .main__presentation__title {
+          padding: 2rem;
+          text-align: center;
+          color: $orange-darken;
+          font-weight: bold;
+          font-size: $extra-large-font-size;
+          }
+          .main__presentation__text {
+          font-family: $normal-font-family;
+          color: $orange-brown;
+          font-weight: bold;
+          text-align: center;
+          padding: 30px;
+          line-height: 1.2em
+              }
+      }
+  }

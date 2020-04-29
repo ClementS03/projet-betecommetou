@@ -26,9 +26,11 @@ $query = new WP_Query($args);
         <img class="account_animal_image" src="" alt="">
 
         <select name="pets" id="pet-select" class="contact-form__select">
-        <option value="" >Choisissez le carnet de santé </option>
+
+        <option value="">Choisissez le carnet de santé</option>
+
 <?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-            <option value="<?=get_the_ID(); ?>" ><?= get_post_field('nom_de_lanimal'); ?></option>
+            <option value="<?=get_the_ID();?>" ><?=get_post_field('nom_de_lanimal');?></option>
 <?php endwhile; endif;?>
         </select>
 
@@ -49,8 +51,8 @@ $query = new WP_Query($args);
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </span>
                 <h2 class="modal-title">Choisissez un animal a supprimer</h2>
-                <select name="petsdeletemodal" id="pet-select-deletemodal" class="contact-form__input">
-                <option value="" >Choisissez votre animal à supprimer</option>
+                <select name="petsdeletemodal" id="pet-select-deletemodal" class="contact-form__select">
+                <option value="">Choisissez votre animal à supprimer</option>
                     <?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                         <option value="<?=get_the_ID(); ?>" ><?= get_post_field('nom_de_lanimal'); ?></option>
                     <?php endwhile; endif;?>
@@ -123,6 +125,7 @@ $query = new WP_Query($args);
                 <label for="veterinary"> Email Veterinaire
                 <input type="text" name="veterinary" class="contact-form__input" placeholder="Email Veterinaire">
                 </label>
+                
 
             <div>
                 <button class="account__form__button">Modifier</button> 
@@ -161,7 +164,11 @@ $query = new WP_Query($args);
         </div>
     </form>
 </div>
-
-
+    <script>
+    let token = localStorage.getItem('token');
+    if (token === null) {
+        location.href = "<?= wp_logout_url(); ?>";
+    }
+    </script>
 
 <?php get_footer(); ?>
