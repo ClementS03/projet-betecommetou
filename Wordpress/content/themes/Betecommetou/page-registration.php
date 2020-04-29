@@ -9,7 +9,7 @@ Template Name: registration
 
 
 
-<?= do_shortcode( '[user_registration_form id="63"]' ); ?>
+<?= do_shortcode( '[user_registration_form id="82"]' ); ?>
 
 
 <?php get_footer(); ?>

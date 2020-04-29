@@ -1,11 +1,12 @@
 .legales__mentions {
     display: flex;
     &__title {
-        font-family: $fonts-family-title;
+        font-family: $normal-font-family;
         font-weight: bold;
         padding: 0.7rem;
         margin: 1rem;    
         text-align: center;
+        color: $orange-darken;
     }
 
     &__content {
@@ -15,6 +16,7 @@
         
         p{
             margin-bottom: 2em; 
+            color: $orange-brown;
         }
     }
 }

@@ -16,8 +16,9 @@
     }
     /*  Title of input */
     label{
-        font-family: $fonts-family-title;
+        font-family: $normal-font-family;
         font-weight: bold;
+        color: $orange-brown;
     }
     /*  Title "Moi"*/
     .user_title{
@@ -81,7 +82,9 @@
 }
 /*  Title of page registration*/
 .title_registration {
-    color: $orange-darken; 
+    color: $orange-darken;
+    font-family: $normal-font-family;
+    font-weight: bold; 
     font-size: 1.5rem;
     text-align: center;
     padding: 1em;
