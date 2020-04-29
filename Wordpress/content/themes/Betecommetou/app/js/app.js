@@ -1,7 +1,11 @@
 var app = {
 
   // URL and endpoints for request to API
+<<<<<<< HEAD
   baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
+=======
+  baseUri: "http://ec2-34-205-32-161.compute-1.amazonaws.com/APOTHEOSE/projet-betecommetou/Wordpress/",
+>>>>>>> 5ea998622063a0febcbe20288958bdfacc259261
   //baseUri: "http://localhost/APOTHEOSE/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",

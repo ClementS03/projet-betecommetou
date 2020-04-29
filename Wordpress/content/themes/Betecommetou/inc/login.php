@@ -1,4 +1,4 @@
-<?php
+ <?php
 function _catch_empty_user( $username, $pwd ) {
     if (empty($pwd)&&empty($username)) {
         wp_safe_redirect(home_url().'/login/?champs=vides');
@@ -25,4 +25,4 @@ function pippin_login_fail( $username ) {
     }
 }
 add_action( 'wp_login_failed', 'pippin_login_fail' );
-?>
+?> 

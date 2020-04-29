@@ -1,4 +1,5 @@
-<?php 
+ <?php 
+
 /*
 Template Name: login
 */
@@ -31,4 +32,4 @@ wp_login_form([
 
 <?php
 get_footer();
-?>
+?> 
