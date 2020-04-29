@@ -8,6 +8,7 @@ if (!function_exists('betecommetou_setup')) {
         register_nav_menus ([
             'menu_burger_header' => ('menu de navigation de la version mobile , betecommetou'),
             'menu_header' => ('menu de navigation de la version desktop, betecommetou'),
+            'menu_footer' => ('menu de navigation du footer, betecommetou'),
         ]);
     }
 }
