@@ -16,8 +16,9 @@
     }
     /*  Title of input */
     label{
-        font-family: $fonts-family-title;
+        font-family: $normal-font-family;
         font-weight: bold;
+        color: $orange-brown;
     }
     /*  Title "Moi"*/
     .user_title{

@@ -2734,8 +2734,9 @@ a {
     border-radius: 30px !important;
     align-self: center; }
   .register label {
-    font-family: "Comic Neue", cursive;
-    font-weight: bold; }
+    font-family: "arial", "helvetica", sans-serif;
+    font-weight: bold;
+    color: #AC4200; }
   .register .user_title {
     font-family: "Comic Neue", cursive;
     font-weight: bold;
