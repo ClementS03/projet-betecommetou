@@ -1,6 +1,6 @@
 <?php
 // Redirection if not logged    
-if (!function_exists('redirect_if_not_logged')) {
+/*if (!function_exists('redirect_if_not_logged')) {
 
     function redirect_if_not_logged () {
 
@@ -28,4 +28,4 @@ function redirect_from_login_if_user_is_logged() {
 }
 add_action('template_redirect', 'redirect_from_login_if_user_is_logged');
 
-?>
+*/?>

@@ -1,8 +1,9 @@
 <?php 
+
 /*
 Template Name: login
 */
-get_header();
+/*get_header();
 wp_login_form([
     'redirect' => get_page_link(get_page_by_title('votre compte')->ID),
     'remember' => false,
@@ -31,4 +32,4 @@ wp_login_form([
 
 <?php
 get_footer();
-?>
+?>//
