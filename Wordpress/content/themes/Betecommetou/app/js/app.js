@@ -107,6 +107,7 @@ init: function() {
     .then(function(){
       document.querySelector('.modalDelete').style.visibility="hidden";
       localStorage.setItem('ID to delete'," ");
+      window.location.reload();
     })
   },
   // Open burger menu in header in mobile 
