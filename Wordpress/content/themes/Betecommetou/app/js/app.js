@@ -77,7 +77,7 @@ init: function() {
       params: newAnimalName
     })
     .then(function(){
-      document.location.reload();
+      document.location.reload(true);
       document.querySelector('.account_contact_utils').reset();
     })
 
@@ -108,7 +108,7 @@ init: function() {
     })
     .then(function(){
       document.querySelector('.modalDelete').style.visibility="hidden";
-      document.location.reload();
+      document.location.reload(true);
       localStorage.setItem('ID to delete'," ");
     })
   },
