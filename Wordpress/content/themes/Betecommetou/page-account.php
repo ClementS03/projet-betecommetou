@@ -55,7 +55,7 @@ $query = new WP_Query($args);
                 <select name="petsdeletemodal" id="pet-select-deletemodal" class="contact-form__select">
                 <option value="">Choisissez votre animal à supprimer</option>
                     <?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-                        <option value="<?=get_the_ID(); ?>" ><?= get_post_field('nom_de_lanimal'); ?></option>
+                        <option value="<?=get_the_ID(); ?>" ><?= the_title(); ?></option>
                     <?php endwhile; endif;?>
                 </select>
                 <button class="account__form__button deleteButton">Supprimer</button>
