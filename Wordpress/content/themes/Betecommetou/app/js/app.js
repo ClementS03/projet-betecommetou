@@ -107,7 +107,7 @@ init: function() {
     .then(function(){
       document.querySelector('.modalDelete').style.visibility="hidden";
       localStorage.setItem('ID to delete'," ");
-      window.location.reload();
+      document.location.reload(true);
     })
   },
   // Open burger menu in header in mobile 
@@ -189,7 +189,7 @@ init: function() {
     .then(function() {
 
       localStorage.setItem('ID of animal' , " ");
-      window.location.reload();
+      document.location.reload(true);
 
     })   
   },
