@@ -23,7 +23,7 @@
             
         }
             &__title{
-                font-size: 1.2rem;
+                font-size: 1.5rem;
                 text-transform: uppercase;
                 font-weight: bold;
                 padding: 1rem;
@@ -34,6 +34,9 @@
                 font-family: $normal-font-family;
                 width: 99%;
             }
+
+           
+
                  a{
                 display: inline-block;
                 color:$orange-brown;
@@ -63,6 +66,8 @@
                     background-repeat: no-repeat;
                     width: 100%;
 
+                    
+
                     a{
                         display: inline-block;
                                 color: $orange-brown;
@@ -84,7 +89,18 @@
                     }
                 }
     }
-    }
+    p {
+        border-radius: 30px;
+        color: darken($orange-brown , 10%) ;
+        font-weight: bold;
+        line-height: 1.2em;
+        margin: 2em;
+        padding: 1em;
+        text-align: center;
+        background-color: transparentize(#fff , 0.5);
+        }
+}
+
 
 
 

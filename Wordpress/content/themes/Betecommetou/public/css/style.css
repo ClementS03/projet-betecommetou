@@ -2621,7 +2621,7 @@ a {
       .main__articles__content {
         height: 80vh; } }
     .main__articles__content__title {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
       font-weight: bold;
       padding: 1rem;
@@ -2672,6 +2672,15 @@ a {
           .main__articles__content__archive a {
             margin-top: 20em;
             width: 30%; } }
+  .main__articles p {
+    border-radius: 30px;
+    color: #792e00;
+    font-weight: bold;
+    line-height: 1.2em;
+    margin: 2em;
+    padding: 1em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); }
 
 .footer__newsletter {
   width: 50%; }
