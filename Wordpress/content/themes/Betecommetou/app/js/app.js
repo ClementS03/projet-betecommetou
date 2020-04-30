@@ -78,6 +78,7 @@ init: function() {
     })
     .then(function(){
       document.querySelector('.account_contact_utils').reset();
+      document.location.reload(true);
     })
 
   },
@@ -189,7 +190,7 @@ init: function() {
     .then(function() {
 
       localStorage.setItem('ID of animal' , " ");
-      document.location.reload(true);
+      
 
     })   
   },
