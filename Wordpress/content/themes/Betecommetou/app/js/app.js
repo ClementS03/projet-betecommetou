@@ -80,9 +80,7 @@ init: function() {
       document.location.reload(true);
       document.querySelector('.account_contact_utils').reset();
     })
-    .then(response => {
-      console.log (response)
-    })
+
       
     
 
