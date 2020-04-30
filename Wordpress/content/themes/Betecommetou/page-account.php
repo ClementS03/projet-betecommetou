@@ -165,10 +165,10 @@ $query = new WP_Query($args);
     </form>
 </div>
     <script>
-    // let token = localStorage.getItem('token');
-    // if (token === null) {
-    //     location.href = "<?= wp_logout_url(); ?>";
-    // }
+    let token = localStorage.getItem('token');
+    if (token === null) {
+        location.href = "<?= wp_logout_url(); ?>";
+    }
     </script>
 
 <?php get_footer(); ?>
