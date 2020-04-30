@@ -78,7 +78,7 @@ init: function() {
     })
     .then(function(){
       document.querySelector('.account_contact_utils').reset();
-      document.location.reload(true);
+      window.location.reload(forcedReload);
     })
 
 
@@ -109,7 +109,7 @@ init: function() {
     .then(function(){
       document.querySelector('.modalDelete').style.visibility="hidden";
       localStorage.setItem('ID to delete'," ");
-      document.location.reload(true);
+      window.location.reload(forcedReload);
     })
   },
   // Open burger menu in header in mobile 
@@ -191,7 +191,7 @@ init: function() {
     .then(function() {
 
       localStorage.setItem('ID of animal' , " ");
-      document.location.reload(true);
+      window.location.reload(forcedReload);
       
 
     })   
