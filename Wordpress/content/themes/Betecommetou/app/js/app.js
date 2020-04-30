@@ -189,6 +189,7 @@ init: function() {
     .then(function() {
 
       localStorage.setItem('ID of animal' , " ");
+      window.location.reload();
 
     })   
   },
