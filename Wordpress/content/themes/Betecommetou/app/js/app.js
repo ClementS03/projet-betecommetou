@@ -78,8 +78,9 @@ init: function() {
     })
     .then(function(){
       document.querySelector('.account_contact_utils').reset();
-      
+      document.location.reload(true);
     })
+
 
   },
   // Display Modal when click on Delete button
@@ -190,7 +191,7 @@ init: function() {
     .then(function() {
 
       localStorage.setItem('ID of animal' , " ");
-      document.location.reload(true);
+      
       
 
     })   
