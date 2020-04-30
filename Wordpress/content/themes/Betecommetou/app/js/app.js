@@ -77,7 +77,7 @@ init: function() {
       params: newAnimalName
     })
     .then(function(){
-      window.location.reload(true);
+      document.location.reload();
       document.querySelector('.account_contact_utils').reset();
     })
 
@@ -108,7 +108,7 @@ init: function() {
     })
     .then(function(){
       document.querySelector('.modalDelete').style.visibility="hidden";
-      window.location.reload(true);
+      document.location.reload();
       localStorage.setItem('ID to delete'," ");
     })
   },
@@ -190,7 +190,7 @@ init: function() {
     })
     .then(function() {
 
-      window.location.reload(true);
+      document.location.reload();
       localStorage.setItem('ID of animal' , " ");
       
 
