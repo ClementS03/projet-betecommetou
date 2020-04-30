@@ -78,6 +78,9 @@ init: function() {
     })
     .then(function(){
       document.querySelector('.account_contact_utils').reset();
+      
+    })
+    .then(function() {
       document.location.reload(true);
     })
 
