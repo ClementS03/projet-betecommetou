@@ -77,8 +77,8 @@ init: function() {
       params: newAnimalName
     })
     .then(function(){
+      window.location.reload(true);
       document.querySelector('.account_contact_utils').reset();
-      window.location.reload(forcedReload);
     })
 
 
@@ -108,8 +108,8 @@ init: function() {
     })
     .then(function(){
       document.querySelector('.modalDelete').style.visibility="hidden";
+      window.location.reload(true);
       localStorage.setItem('ID to delete'," ");
-      window.location.reload(forcedReload);
     })
   },
   // Open burger menu in header in mobile 
@@ -190,8 +190,8 @@ init: function() {
     })
     .then(function() {
 
+      window.location.reload(true);
       localStorage.setItem('ID of animal' , " ");
-      window.location.reload(forcedReload);
       
 
     })   
