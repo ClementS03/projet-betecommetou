@@ -57,13 +57,26 @@
         margin: 1rem;
         border-radius: 30px;
         border: 2px solid $blue-light;
-        width: 90%;
         outline: none;
         resize: none;
+        width: 90%;
+        height: 3em;
+
     }
-    &__select{
-        @extend .contact-form__input;
+    &__select {
+        font-family: $fonts-family-title;
+        font-weight: bold;
+        background-color: white;
+        padding: 0.7rem;
+        margin: 1rem;
+        border-radius: 30px;
+        border: 2px solid $blue-light;
+        width: 90%;
+        height: 3em;
+        outline: none;
+
     }
+
 
 }
 .account_contact_utils {

@@ -1,8 +1,8 @@
 var app = {
 
   // URL and endpoints for request to API
-  baseUri: "http://ec2-52-90-30-182.compute-1.amazonaws.com/projet-betecommetou/Wordpress/",
-  //baseUri: "http://localhost/APOTHEOSE/projet-betecommetou/Wordpress/",
+  baseUri: "http://3.213.90.111/projet-betecommetou/Wordpress/",
+  //baseUri: "http://localhost/Projet/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
@@ -74,11 +74,16 @@ init: function() {
       method: 'post',
       url: app.baseUri + app.jsonUrl + 'healthbook',
       headers: { Authorization: 'Bearer ' + app.getToken() },
-      params: newAnimalName
+      data: newAnimalName
     })
     .then(function(){
+      document.location.reload(true);
       document.querySelector('.account_contact_utils').reset();
     })
+
+      
+    
+
 
   },
   // Display Modal when click on Delete button
@@ -106,6 +111,7 @@ init: function() {
     })
     .then(function(){
       document.querySelector('.modalDelete').style.visibility="hidden";
+      document.location.reload(true);
       localStorage.setItem('ID to delete'," ");
     })
   },
@@ -143,7 +149,7 @@ init: function() {
     const userFormData = new FormData(userForm);
     const userID = document.querySelector('#userForm');
     const userIdDataSet = userID.dataset.userId;
-    console.log(userIdDataSet);
+   // console.log(userIdDataSet);
     userInfos = {};
     userInfos.nickname = userFormData.get('nickname');
     userInfos.first_name = userFormData.get('firstname');
@@ -187,7 +193,9 @@ init: function() {
     })
     .then(function() {
 
+      document.location.reload(true);
       localStorage.setItem('ID of animal' , " ");
+      
 
     })   
   },

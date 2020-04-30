@@ -6,10 +6,18 @@
 
 <article class="main__articles__content__archive" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
     <h3 class="main__articles__content__title"><?php the_title(); ?></h3>
+<<<<<<< HEAD
         <?php the_content(); ?>     
         <a   href="<?= the_permalink(); ?>">En savoir plus !</a>    
 </article>
 
+=======
+        <?php the_content(); ?>   
+        <a   href="<?= the_permalink(); ?>">En savoir plus !</a>       
+</article>
+    
+    <?php endwhile; endif; ?>
+>>>>>>> master
 
     <?php endwhile; endif; ?>
     
