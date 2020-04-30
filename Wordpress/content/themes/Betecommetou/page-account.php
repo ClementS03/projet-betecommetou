@@ -5,6 +5,7 @@ Template Name: Account
 ?>
 <?php get_header(); ?>
 <?php $user = wp_get_current_user(); ?>
+<?php clean_user_cache($user->ID); ?>
 <?php $args = array(
     'post_type' => 'healthbook',
     'author' => $user->ID,
