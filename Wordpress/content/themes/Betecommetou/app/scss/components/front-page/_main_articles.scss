@@ -12,6 +12,7 @@
         align-items: center;
         justify-content: space-around;
         height: 50vh; 
+        line-height: 1.2em;
         position: relative;
         background-position: center;
         background-size: cover;
@@ -61,6 +62,26 @@
                     z-index:10;
                     background-repeat: no-repeat;
                     width: 100%;
+
+                    a{
+                        display: inline-block;
+                                color: $orange-brown;
+                                font-weight: bold;
+                                margin-top:  8em;
+                                padding: 0.5rem;
+                                border: 2px solid $orange-brown; 
+                                background-color: transparentize($orange-light, 0.2);
+                                
+                                border-radius: 30px;
+                                &:hover{
+                                    background-color: $blue-light;}
+                                
+                                    @media(min-width: $breakpoint-large) {
+                                        margin-top:  20em; 
+                                        width: 30%;   
+                                                }
+                                
+                    }
                 }
     }
     }
