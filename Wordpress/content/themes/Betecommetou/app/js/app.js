@@ -143,7 +143,7 @@ init: function() {
     const userFormData = new FormData(userForm);
     const userID = document.querySelector('#userForm');
     const userIdDataSet = userID.dataset.userId;
-    console.log(userIdDataSet);
+   // console.log(userIdDataSet);
     userInfos = {};
     userInfos.nickname = userFormData.get('nickname');
     userInfos.first_name = userFormData.get('firstname');
