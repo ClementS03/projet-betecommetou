@@ -74,7 +74,7 @@ init: function() {
       method: 'post',
       url: app.baseUri + app.jsonUrl + 'healthbook',
       headers: { Authorization: 'Bearer ' + app.getToken() },
-      params: newAnimalName
+      data: newAnimalName
     })
     .then(function(){
       document.location.reload(true);
