@@ -190,7 +190,7 @@ init: function() {
     })
     .then(function() {
 
-      document.location.reload();
+      document.location.reload(true);
       localStorage.setItem('ID of animal' , " ");
       
 
