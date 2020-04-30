@@ -80,7 +80,7 @@ $query = new WP_Query($args);
                 </label>
                 <label for="stérilisé"> Stérilisé ?
                 <select name="sterilized" class="contact-form__input" >
-                    <option value="">Suis je Stérilisé ?</option>
+                    <option value="">Stérilisé </option>
                     <option value="Oui">Oui</option>
                     <option value="Non">Non</option>
                 </select>
