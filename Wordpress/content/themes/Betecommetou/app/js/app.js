@@ -80,9 +80,6 @@ init: function() {
       document.querySelector('.account_contact_utils').reset();
       
     })
-    .then(function() {
-      document.location.reload(true);
-    })
 
   },
   // Display Modal when click on Delete button
