@@ -30,7 +30,7 @@ $query = new WP_Query($args);
         <option value="">Choisissez le carnet de santé</option>
 
 <?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-            <option value="<?=get_the_ID();?>" ><?=get_post_field('nom_de_lanimal');?></option>
+            <option value="<?=get_the_ID();?>" ><?=the_title();?></option>
 <?php endwhile; endif;?>
         </select>
 
