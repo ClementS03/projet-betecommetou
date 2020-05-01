@@ -67,21 +67,21 @@ $query = new WP_Query($args);
                 </label>
                 <label for="sexe"> Sexe
                 <select name="Sex" class="contact-form__input" >
-                    <option value="">Male / Femelle ?</option>
+                    <option value="">Sexe de l'animal ?</option>
                     <option value="Male">Male</option>
                     <option value="Femelle">Femelle</option>
                 </select>
                 </label>
-                <label for="stérilisé"> Stérilisé ?
+                <label for="stérilisé"> Stérilisation
                 <select name="sterilized" class="contact-form__input" >
                     <option value="">Est-il stérilisé ?</option>
                     <option value="Oui">Oui</option>
                     <option value="Non">Non</option>
                 </select>
                 </label>
-                <label for="assurance"> Assuré ?
+                <label for="assurance"> Assurance 
                 <select name="Insured" class="contact-form__input" >
-                    <option value="">Est il assuré ?</option>
+                    <option value="">Est-il assuré ?</option>
                     <option value="Oui">Oui</option>
                     <option value="Non">Non</option>
                 </select>
@@ -92,9 +92,9 @@ $query = new WP_Query($args);
                 <label for="robe"> Robe
                 <input type="text" name="Color" class="contact-form__input" placeholder="Robe">
                 </label>
-                <label for="pedigree"> Pedigree ?
+                <label for="pedigree"> Pedigree
                 <select name="LOF" class="contact-form__input" >
-                    <option value="">LOF ?</option>
+                    <option value="">Est-il LOF ?</option>
                     <option value="Oui">Oui</option>
                     <option value="Non">Non</option>
                 </select>
