@@ -6,10 +6,10 @@ Template Post Type: page
 ?>
 <?php get_header(); ?>
 
-
+<h2 class="title"><?php the_title() ?></h2>
 
 <section class="presentation">
-<h2 class="presentation__title"><?php the_title() ?></h2>
+
 
     <div class="presentation__person">
     <h3 class="presentation__person__title">Floriane</h3>    
@@ -29,7 +29,7 @@ Template Post Type: page
 
     <div class="presentation__person">
     <h3 class="presentation__person__title">Pierre François</h3>    
-    <img class="presentation__person__picturepef" src="<?php bloginfo('template_url'); ?>/public/images/pef.png" alt="flo">    
+    <img class="presentation__person__picture" src="<?php bloginfo('template_url'); ?>/public/images/pef.png" alt="flo">    
     <p class="presentation__person__text"> Pef, notre fidèle référent technique est un fin limier, qui a traqué avec bravoure les nombreuses embuches qui ont parsemé notre projet. Chasseur hors pair, les bugs tremblent désormais devant lui. Ses imposantes compétences techniques, sa patience et sa pédagogie ont permis à toute l'équipe de progresser dans une ambiance bienveillante.
     </p>
     <a href="https://www.linkedin.com/in/pierre-francois-paoletti/"><i class="fa fa-linkedin-square"></a></i>
