@@ -26,6 +26,7 @@ $query = new WP_Query($args);
         <img class="account_animal_image" src="" alt="">
 
         <select name="pets" id="pet-select" class="contact-form__input">
+            <option value="">Veuillez selectioner un animal</option>
         </select>
 
         <!-- Modal -->
@@ -76,7 +77,7 @@ $query = new WP_Query($args);
                 </label>
                 <label for="stérilisé"> Stérilisé ?
                 <select name="sterilized" class="contact-form__input" >
-                    <option value="">Suis je Stérilisé ?</option>
+                    <option value="">Est-il stérilisé ?</option>
                     <option value="Oui">Oui</option>
                     <option value="Non">Non</option>
                 </select>
