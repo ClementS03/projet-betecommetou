@@ -2,12 +2,14 @@ var app = {
 
   // URL and endpoints for request to API
   baseUri: "http://3.213.90.111/projet-betecommetou/Wordpress/",
-  //baseUri: "http://localhost/Projet/projet-betecommetou/Wordpress/",
+  //baseUri: "http://localhost/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
 init: function() {
-  app.initEventListener();      
+  app.initEventListener();
+  app.loadingOptionsInSelect();   
+  app.loadingOptionsInSelectToDelete();
 },
 // All selct and Events Listener
   initEventListener:function() {
@@ -21,7 +23,7 @@ init: function() {
     if (userForm!=null) { userForm.addEventListener('submit', app.handleSubmitUserForm)};
     let animalForm = document.querySelector('#animalForm');
     if (animalForm!=null) { animalForm.addEventListener('submit', app.handleSubmitAnimalForm)};
-    let healthBookSelect = document.querySelector('#pet-select');
+    let healthBookSelect = document.querySelector('#pet-select');    
     if(healthBookSelect!=null) {healthBookSelect.addEventListener('change', app.handleChangeSelection)};    
     let addButton = document.querySelector('#add');
     if(addButton != null) {addButton.addEventListener('click', app.handleShowModalOnButtonAddClick)};
@@ -38,24 +40,68 @@ init: function() {
     let closeDeleteModal = document.querySelector('.deleteSpan');
     if (closeDeleteModal != null){closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal)};
   },
+  loadingOptionsInSelect:function() {
+    let select = document.getElementById('pet-select');
+    axios({
+      method: 'get',
+      url: app.baseUri + app.jsonUrl + 'healthbook',
+      headers: { Authorization: 'Bearer ' + app.getToken() },
+      params: {
+        status: 'any'
+      }
+    })
+    .then(function(response){
+      let data = response.data;
+      data.forEach(element => {
+        let options = document.createElement('option');
+        let id = element.id;
+        let name = element.meta.nom_de_lanimal;
+        options.value = id;
+        options.textContent = name;
+        select.appendChild(options);       
+      });
+    })
+
+  },
+  loadingOptionsInSelectToDelete:function() {
+    let select = document.getElementById('pet-select-deletemodal');
+    axios({
+      method: 'get',
+      url: app.baseUri + app.jsonUrl + 'healthbook',
+      headers: { Authorization: 'Bearer ' + app.getToken() },
+      params: {
+        status: 'any'
+      }
+    })
+    .then(function(response){
+      let data = response.data;
+      data.forEach(element => {
+        let options = document.createElement('option');
+        let id = element.id;
+        let name = element.meta.nom_de_lanimal;
+        options.value = id;
+        options.textContent = name;
+        select.appendChild(options);       
+      });
+    })
+
+  },
   // Display modal with click on Add button 
   handleShowModalOnButtonAddClick:function () {
-    console.log('clicked');
+    //console.log('clicked');
     let modal = document.querySelector('.modal');
-    modal.style.visibility="visible";
-  
+    modal.style.visibility="visible";  
   },
 //function to close add modal
   handleCloseAddModal: function() {
-  console.log('span add');
+  //console.log('span add');
   let modal = document.querySelector('.modal');
   
-  modal.style.visibility = "hidden";
-  
+  modal.style.visibility = "hidden";  
   },
   //function to close delete modal
   handleCloseDeleteModal: function() {
-    console.log('deleteSpan');
+    //console.log('deleteSpan');
     let modalDelete = document.querySelector('.modalDelete');
   
     modalDelete.style.visibility = "hidden";
@@ -80,11 +126,6 @@ init: function() {
       document.location.reload(true);
       document.querySelector('.account_contact_utils').reset();
     })
-
-      
-    
-
-
   },
   // Display Modal when click on Delete button
   handleShowModalOnButtonDeleteClick: function(){
@@ -100,7 +141,7 @@ init: function() {
   //axios request for remove an animal
   handleModalFormToDelete: function (event) {
     let animaltoDelete = event.currentTarget;
-    console.log(localStorage.getItem('ID to delete'))
+    //console.log(localStorage.getItem('ID to delete'))
       axios({
         method: 'delete',
         url: app.baseUri + app.jsonUrl + 'healthbook/' + localStorage.getItem('ID to delete'),
@@ -226,6 +267,7 @@ init: function() {
     })
     .then(function(response){
       let metas = response.data.meta;
+      //console.log (metas);
       if (metas) {   
         let fields = document.querySelectorAll('.contact-form__input');
         fields.forEach(element => {
@@ -260,7 +302,7 @@ init: function() {
         if (metas.veterinaire) {document.querySelector('input[name=veterinary]').value = metas.veterinaire;}
         else{metas.veterinaire = " "};
       } else {
-        console.log('il faut selectioner une valeur')
+        //console.log('il faut selectioner une valeur')
       }      
     })
     

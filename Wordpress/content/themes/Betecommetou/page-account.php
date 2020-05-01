@@ -5,7 +5,6 @@ Template Name: Account
 ?>
 <?php get_header(); ?>
 <?php $user = wp_get_current_user(); ?>
-<?php clean_user_cache($user->ID); ?>
 <?php $args = array(
     'post_type' => 'healthbook',
     'author' => $user->ID,
@@ -27,13 +26,7 @@ $query = new WP_Query($args);
         <img class="account_animal_image" src="" alt="">
 
         <select name="pets" id="pet-select" class="contact-form__select">
-
-        <option value="">Choisissez le carnet de santé</option>
-
-<?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-        <?php clean_user_cache($user->ID); ?>
-            <option value="<?=get_the_ID();?>" ><?=the_title();?></option>
-<?php endwhile; endif;?>
+            <option value=" ">Veuillez selectioner un animal</option>
         </select>
 
         <!-- Modal -->
@@ -55,9 +48,6 @@ $query = new WP_Query($args);
                 <h2 class="modal-title">Choisissez un animal a supprimer</h2>
                 <select name="petsdeletemodal" id="pet-select-deletemodal" class="contact-form__select">
                 <option value="">Choisissez votre animal à supprimer</option>
-                    <?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-                        <option value="<?=get_the_ID(); ?>" ><?= the_title(); ?></option>
-                    <?php endwhile; endif;?>
                 </select>
                 <button class="account__form__button deleteButton">Supprimer</button>
             </form>
