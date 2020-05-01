@@ -1,11 +1,11 @@
 .footer__newsletter {
     width: 50%;
-
+    
+}
+.links {
+    & li {
+        display: block;
+        font-size: 1.5rem;
+        padding: 1rem;
     }
-    .links {
-        & li {
-            display: block;
-            font-size: 1.5rem;
-            padding: 1rem;
-        }
 }

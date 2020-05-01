@@ -61,7 +61,7 @@
         resize: none;
         width: 90%;
         height: 3em;
-
+        
     }
     &__select {
         font-family: $fonts-family-title;
@@ -74,10 +74,10 @@
         width: 90%;
         height: 3em;
         outline: none;
-
+        
     }
-
-
+    
+    
 }
 .account_contact_utils {
     display: flex;
@@ -92,11 +92,11 @@
 #select-buttons{
     display: flex;
     justify-content: center;
-
+    
     button {
         
         width: 20%;
     }
-
-
+    
+    
 }

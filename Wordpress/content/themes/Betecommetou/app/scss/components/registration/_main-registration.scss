@@ -4,7 +4,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-
+    
     input{
         
         display: flex;
@@ -36,23 +36,23 @@
         text-align: center;
     }
     select{
-    display: block;
-    background-color: white !important;
-    padding: 0.7rem;
-    border: 2px solid $blue-light;
-    border-radius: 30px !important;  
+        display: block;
+        background-color: white !important;
+        padding: 0.7rem;
+        border: 2px solid $blue-light;
+        border-radius: 30px !important;  
     }
     
-
+    
 }
 /*  Title "Mon animal"*/
 .user-registration {
-
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    
     .animal_title{
         font-family: $fonts-family-title;
         font-weight: bold;
@@ -66,7 +66,7 @@
         margin-bottom: 1em;
         text-align: center;
     }
-
+    
     button {
         font-family: $fonts-family-title;
         font-weight: bold;
@@ -78,7 +78,7 @@
         box-shadow: 0px 2px 2px black;
         width: 100%; 
     }
-
+    
 }
 /*  Title of page registration*/
 .title_registration {
