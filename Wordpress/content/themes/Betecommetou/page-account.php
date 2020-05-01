@@ -25,8 +25,8 @@ $query = new WP_Query($args);
         <h2>Mon carnet de santé</h2>
         <img class="account_animal_image" src="" alt="">
 
-        <select name="pets" id="pet-select" class="contact-form__input">
-            <option value="">Veuillez selectioner un animal</option>
+        <select name="pets" id="pet-select" class="contact-form__select">
+            <option value=" ">Veuillez selectioner un animal</option>
         </select>
 
         <!-- Modal -->
@@ -46,11 +46,8 @@ $query = new WP_Query($args);
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </span>
                 <h2 class="modal-title">Choisissez un animal a supprimer</h2>
-                <select name="petsdeletemodal" id="pet-select-deletemodal" class="contact-form__input">
+                <select name="petsdeletemodal" id="pet-select-deletemodal" class="contact-form__select">
                 <option value="">Choisissez votre animal à supprimer</option>
-                    <?php if($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-                        <option value="<?=get_the_ID(); ?>" ><?= get_post_field('nom_de_lanimal'); ?></option>
-                    <?php endwhile; endif;?>
                 </select>
                 <button class="account__form__button deleteButton">Supprimer</button>
             </form>
@@ -70,7 +67,7 @@ $query = new WP_Query($args);
                 </label>
                 <label for="sexe"> Sexe
                 <select name="Sex" class="contact-form__input" >
-                    <option value="">Que suis je ?</option>
+                    <option value="">Male / Femelle ?</option>
                     <option value="Male">Male</option>
                     <option value="Femelle">Femelle</option>
                 </select>
@@ -84,7 +81,7 @@ $query = new WP_Query($args);
                 </label>
                 <label for="assurance"> Assuré ?
                 <select name="Insured" class="contact-form__input" >
-                    <option value="">Suis je assuré ?</option>
+                    <option value="">Est il assuré ?</option>
                     <option value="Oui">Oui</option>
                     <option value="Non">Non</option>
                 </select>
@@ -97,7 +94,7 @@ $query = new WP_Query($args);
                 </label>
                 <label for="pedigree"> Pedigree ?
                 <select name="LOF" class="contact-form__input" >
-                    <option value="">Mon pedigree ?</option>
+                    <option value="">LOF ?</option>
                     <option value="Oui">Oui</option>
                     <option value="Non">Non</option>
                 </select>
