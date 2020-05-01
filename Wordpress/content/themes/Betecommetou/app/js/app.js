@@ -1,8 +1,8 @@
 var app = {
 
   // URL and endpoints for request to API
-  baseUri: "http://3.213.90.111/projet-betecommetou/Wordpress/",
-  //baseUri: "http://localhost/Projet/projet-betecommetou/Wordpress/",
+  //baseUri: "http://3.213.90.111/projet-betecommetou/Wordpress/",
+  baseUri: "http://localhost/Projet/projet-betecommetou/Wordpress/",
   jsonUrl:"wp-json/wp/v2/",
   jwtUrl: "wp-json/jwt-auth/v1/",
 
