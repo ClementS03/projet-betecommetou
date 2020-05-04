@@ -42,8 +42,9 @@ var app = {
   },
   loadingOptionsInSelect:function() {
     let select = document.getElementById('pet-select');
-    let userID = select.dataset.Id;
-    console.log(userID);
+    const userID = document.querySelector('#userForm');
+      const userIdDataSet = userID.dataset.userId;
+      console.log(userIdDataSet);
     axios({
       method: 'get',
       url: app.baseUri + app.jsonUrl + 'healthbook',
