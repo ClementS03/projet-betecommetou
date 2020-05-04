@@ -143,9 +143,6 @@ var app = {
       headers: { Authorization: 'Bearer ' + app.getToken() },
       data: newAnimalName
     })
-    .then(function(){
-      document.querySelector('.account_contact_utils').reset();
-    })
   },
   // Display Modal when click on Delete button
   handleShowModalOnButtonDeleteClick: function(){
