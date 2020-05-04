@@ -25,7 +25,7 @@ $query = new WP_Query($args);
         <h2>Mon carnet de santé</h2>
         <img class="account_animal_image" src="" alt="">
 
-        <select name="pets" id="pet-select" class="contact-form__select">
+        <select name="pets" id="pet-select" class="contact-form__select" data-id="<?php $user->ID;?>">
             <option value=" ">Veuillez selectioner un animal</option>
         </select>
 
