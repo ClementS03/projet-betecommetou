@@ -42,10 +42,10 @@ var app = {
     if (closeDeleteModal != null){closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal)};
   },
   loadingOptionsInSelect:function() {
-    const userID = window.querySelector('#userForm');
+    const userID = document.querySelector('#userForm');
     const userIdDataSet = userID.dataset.userId;
     console.log(userIdDataSet);
-    let select = window.getElementById('pet-select');
+    let select = document.getElementById('pet-select');
         axios({
         method: 'get',
         url: app.baseUri + app.jsonUrl + 'healthbook',
@@ -58,7 +58,7 @@ var app = {
       .then(function(response){
         let data = response.data;
         data.forEach(element => {
-          let options = window.createElement('option');
+          let options = document.createElement('option');
           let id = element.id;
           let name = element.meta.nom_de_lanimal;
           options.value = id;
@@ -74,10 +74,10 @@ var app = {
       .catch(console.log('erreur'));
   },
   loadingOptionsInSelectToDelete:function() {
-    const userID = window.querySelector('#userForm');
+    const userID = document.querySelector('#userForm');
     const userIdDataSet = userID.dataset.userId;
     console.log(userIdDataSet);
-    let select = window.getElementById('pet-select-deletemodal');
+    let select = document.getElementById('pet-select-deletemodal');
 
       axios({
         method: 'get',
@@ -91,7 +91,7 @@ var app = {
       .then(function(response){
         let data = response.data;
         data.forEach(element => {
-          let options = window.createElement('option');
+          let options = document.createElement('option');
           let id = element.id;
           let name = element.meta.nom_de_lanimal;
           options.value = id;
