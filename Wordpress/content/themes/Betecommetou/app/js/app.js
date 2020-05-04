@@ -283,9 +283,9 @@ var app = {
         //console.log (metas);
         if (metas) {   
           let fields = document.querySelectorAll('.contact-form__input');
-          // fields.forEach(element => {
-          //   element.value = "";
-          // });
+          fields.forEach(element => {
+            element.value = "";
+          });
           document.querySelector('input[name=animal_name]').value = metas.nom_de_lanimal;
           if(metas.age_de_lanimal)
           {document.querySelector('input[name=DateofBirth]').value = metas.age_de_lanimal;}
