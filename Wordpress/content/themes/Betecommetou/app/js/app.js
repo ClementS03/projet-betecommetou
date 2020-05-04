@@ -73,6 +73,7 @@ var app = {
           }
         });
       })
+      .catch(console.log('erreur'));
   },
   loadingOptionsInSelectToDelete:function() {
     const userID = document.querySelector('#userForm');
@@ -105,6 +106,7 @@ var app = {
             }
         });
       })
+      .catch(console.log('erreur'));
     
   },
   // Display modal with click on Add button 
