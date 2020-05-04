@@ -11,9 +11,10 @@
 
         <a   href="<?= the_permalink(); ?>">En savoir plus !</a>       
 </article>
-    
-    <?php endwhile; endif; ?>
 
+
+    <?php endwhile; endif; ?>
+    
 </section>
 
 <?php get_footer(); ?>

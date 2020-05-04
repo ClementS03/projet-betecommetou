@@ -1,5 +1,5 @@
    .modal {
-
+      
       visibility: hidden;
       position: fixed;
       top: 25%;
@@ -14,31 +14,31 @@
       justify-content: center;
       border: 3px solid $orange-light;
       border-radius: 30px;
-
+      
       h2{
          margin-bottom: 1em;
       }
-
+      
       input{
          display: block;
          width: 100%;
          margin-bottom: 1em;
       }
-
+      
       i{
          color: $orange-brown;
          position: absolute;
          font-size: 1.5em;
          top: .5em;
          right: .5em;
-
+         
       }
-
+      
    }
    .modalDelete {
-   @extend .modal;
+      @extend .modal;
    }
-
+   
    .close{
-   @extend .modal;
+      @extend .modal;
    }
