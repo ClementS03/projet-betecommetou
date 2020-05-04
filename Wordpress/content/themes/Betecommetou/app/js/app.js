@@ -13,9 +13,6 @@ var app = {
   },
   // All selct and Events Listener
   initEventListener:function() {
-    const userID = document.querySelector('#userForm');
-    const userIdDataSet = userID.dataset.userId;
-    console.log(userIdDataSet);
     let burgerMenuOpenButton = document.querySelector('.open-menu');
     let burgerMenuCloseButton = document.querySelector('.close-menu');
     burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu);
@@ -44,11 +41,14 @@ var app = {
     if (closeDeleteModal != null){closeDeleteModal.addEventListener('click', app.handleCloseDeleteModal)};
   },
   loadingOptionsInSelect:function() {
+    const userID = document.querySelector('#userForm');
+    const userIdDataSet = userID.dataset.userId;
+    console.log(userIdDataSet);
     let select = document.getElementById('pet-select');
 
     axios({
       method: 'get',
-      url: app.baseUri + app.jsonUrl + 'healthbook',
+      url: app.baseUri + app.jsonUrl + 'healthbook' + '?author=' + userIdDataSet,
       headers: { Authorization: 'Bearer ' + app.getToken() },
       params: {
         status: 'any'
@@ -68,10 +68,13 @@ var app = {
     
   },
   loadingOptionsInSelectToDelete:function() {
+    const userID = document.querySelector('#userForm');
+    const userIdDataSet = userID.dataset.userId;
+    console.log(userIdDataSet);
     let select = document.getElementById('pet-select-deletemodal');
     axios({
       method: 'get',
-      url: app.baseUri + app.jsonUrl + 'healthbook',
+      url: app.baseUri + app.jsonUrl + 'healthbook' + '?author=' + userIdDataSet ,
       headers: { Authorization: 'Bearer ' + app.getToken() },
       params: {
         status: 'any'
