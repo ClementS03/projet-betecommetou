@@ -45,52 +45,57 @@ var app = {
     const userIdDataSet = userID.dataset.userId;
     console.log(userIdDataSet);
     let select = document.getElementById('pet-select');
+    if (select!=null){
 
-    axios({
-      method: 'get',
-      url: app.baseUri + app.jsonUrl + 'healthbook' + '?author=' + userIdDataSet,
-      headers: { Authorization: 'Bearer ' + app.getToken() },
-      params: {
-        status: 'any'
-      }
-    })
-    .then(function(response){
-      let data = response.data;
-      data.forEach(element => {
-        let options = document.createElement('option');
-        let id = element.id;
-        let name = element.meta.nom_de_lanimal;
-        options.value = id;
-        options.textContent = name;
-        select.appendChild(options);       
-      });
-    })
-    
+      axios({
+        method: 'get',
+        url: app.baseUri + app.jsonUrl + 'healthbook',
+        headers: { Authorization: 'Bearer ' + app.getToken() },
+        params: {
+          status: 'any',
+          author: userIdDataSet,
+        }
+      })
+      .then(function(response){
+        let data = response.data;
+        data.forEach(element => {
+          let options = document.createElement('option');
+          let id = element.id;
+          let name = element.meta.nom_de_lanimal;
+          options.value = id;
+          options.textContent = name;
+          select.appendChild(options);       
+        });
+      })
+    }
   },
   loadingOptionsInSelectToDelete:function() {
     const userID = document.querySelector('#userForm');
     const userIdDataSet = userID.dataset.userId;
     console.log(userIdDataSet);
     let select = document.getElementById('pet-select-deletemodal');
-    axios({
-      method: 'get',
-      url: app.baseUri + app.jsonUrl + 'healthbook' + '?author=' + userIdDataSet ,
-      headers: { Authorization: 'Bearer ' + app.getToken() },
-      params: {
-        status: 'any'
-      }
-    })
-    .then(function(response){
-      let data = response.data;
-      data.forEach(element => {
-        let options = document.createElement('option');
-        let id = element.id;
-        let name = element.meta.nom_de_lanimal;
-        options.value = id;
-        options.textContent = name;
-        select.appendChild(options);       
-      });
-    })
+    if (select!=null) {  
+      axios({
+        method: 'get',
+        url: app.baseUri + app.jsonUrl + 'healthbook',
+        headers: { Authorization: 'Bearer ' + app.getToken() },
+        params: {
+          status: 'any',
+          author: userIdDataSet,
+        }
+      })
+      .then(function(response){
+        let data = response.data;
+        data.forEach(element => {
+          let options = document.createElement('option');
+          let id = element.id;
+          let name = element.meta.nom_de_lanimal;
+          options.value = id;
+          options.textContent = name;
+          select.appendChild(options);       
+        });
+      })
+    }
     
   },
   // Display modal with click on Add button 
