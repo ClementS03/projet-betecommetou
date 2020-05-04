@@ -65,7 +65,7 @@ var app = {
           let name = element.meta.nom_de_lanimal;
           options.value = id;
           options.textContent = name;
-          if (select != null) {
+          if (select != null && options != null) {
           select.appendChild(options);  
           }
           else {
@@ -97,7 +97,7 @@ var app = {
           let name = element.meta.nom_de_lanimal;
           options.value = id;
           options.textContent = name;
-          if (select != null) {
+          if (select != null && options != null ) {
             select.appendChild(options);  
             }   
             else {
