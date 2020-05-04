@@ -6,36 +6,36 @@
 }
 
 .presentation {
-    display: flex;
+display: flex;
+flex-direction: column;
+
+@media(min-width: $breakpoint-large) {
     flex-direction: column;
-    
-    @media(min-width: $breakpoint-large) {
-        flex-direction: column;
-    }
-    @media(min-width: $breakpoint-xlarge) {
-        flex-flow: nowrap;
-    }
-    
-    &__person{
+}
+@media(min-width: $breakpoint-xlarge) {
+    flex-flow: nowrap;
+}
+
+        &__person{
         
-        &__title{
-            font-family: $fonts-family-title;
-            font-weight: bold;
-            font-size: 20px;
-            border-radius: 30px;
-            background-color: $blue-light;
-            box-shadow: 0px 2px 2px black;
-            padding: 0.7em;
-            width: 70%;
-            text-align: center; 
-            margin: auto;  
-            @media(min-width: $breakpoint-large) {
+            &__title{
+                font-family: $fonts-family-title;
+                font-weight: bold;
+                font-size: 20px;
+                border-radius: 30px;
+                background-color: $blue-light;
+                box-shadow: 0px 2px 2px black;
+                padding: 0.7em;
+                width: 70%;
+                text-align: center; 
+                margin: auto;  
+                @media(min-width: $breakpoint-large) {
                 font-size: 24px;
                 width: 70%;
             }
-        }
-        
-        &__picture{
+            }
+
+            &__picture{
             width: 50%;
             display: block;  
             margin: auto; 
@@ -45,19 +45,19 @@
                 width: 200px;
                 height: 250px;    
             }
-        }
-        
-        
-        
-        &__text{
-            margin-bottom: 2em;
-            text-align: center;
-            color: $orange-darken;
-            font-weight: bold;
-            font-family: $normal-font-family;
-            line-height: 1.2em;
-            height: 45%;
-            @media(min-width: $breakpoint-large) {
+            }
+
+         
+
+            &__text{
+                margin-bottom: 2em;
+                text-align: center;
+                color: $orange-darken;
+                font-weight: bold;
+                font-family: $normal-font-family;
+                line-height: 1.2em;
+                height: 45%;
+                @media(min-width: $breakpoint-large) {
                 padding-right: 40px;
                 padding-left: 40px;}
                 
@@ -65,7 +65,6 @@
             
             
         }
-        
         .fa {
             
             font-size: 2em;
@@ -73,8 +72,9 @@
             margin-bottom: 1em;
             margin-left: 48%;
             @media(min-width: $breakpoint-large) {
-                
+               
                 display: block;
             }
         }
-    }
+}
+
