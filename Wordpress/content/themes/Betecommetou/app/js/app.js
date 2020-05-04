@@ -44,7 +44,7 @@ var app = {
   loadingOptionsInSelect:function() {
     const userID = document.querySelector('#userForm');
     const userIdDataSet = userID.dataset.userId;
-    console.log(userIdDataSet);
+    //console.log(userIdDataSet);
     let select = document.getElementById('pet-select');
         axios({
         method: 'get',
@@ -67,16 +67,16 @@ var app = {
           select.appendChild(options);  
           }
           else {
-            console.log ('probleme avec le select')
+            //console.log ('probleme avec le select')
           }
         });
       })
-      .catch(console.log('erreur'));
+      //.catch(console.log('erreur'));
   },
   loadingOptionsInSelectToDelete:function() {
     const userID = document.querySelector('#userForm');
     const userIdDataSet = userID.dataset.userId;
-    console.log(userIdDataSet);
+    //console.log(userIdDataSet);
     let select = document.getElementById('pet-select-deletemodal');
 
       axios({
@@ -100,11 +100,11 @@ var app = {
             select.appendChild(options);  
             }   
             else {
-              console.log ('probleme avec le select')
+              //console.log ('probleme avec le select')
             }
         });
       })
-      .catch(console.log('erreur'));
+      //.catch(console.log('erreur'));
     
   },
   // Display modal with click on Add button 
