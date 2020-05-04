@@ -67,7 +67,10 @@ var app = {
           options.textContent = name;
           if (select != null) {
           select.appendChild(options);  
-          }     
+          }
+          else {
+            console.log ('probleme avec le select')
+          }
         });
       })
   },
@@ -97,6 +100,9 @@ var app = {
           if (select != null) {
             select.appendChild(options);  
             }   
+            else {
+              console.log ('probleme avec le select')
+            }
         });
       })
     
