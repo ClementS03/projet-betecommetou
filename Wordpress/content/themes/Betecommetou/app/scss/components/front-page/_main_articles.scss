@@ -47,6 +47,9 @@
                 border: 2px solid $orange-brown; 
                 background-color: transparentize($orange-light, 0.2);
                 border-radius: 30px;
+                margin-top:  13em;
+                position: absolute;
+                bottom: 1em;
                 &:hover{
                     background-color: $blue-light;}
                 @media(min-width: $breakpoint-large) {
