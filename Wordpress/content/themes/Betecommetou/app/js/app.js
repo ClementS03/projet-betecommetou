@@ -42,7 +42,7 @@ var app = {
   },
   loadingOptionsInSelect:function() {
     let select = document.getElementById('pet-select');
-    let userID = select.dataset.id;
+    let userID = select.dataset.Id;
     console.log(userID);
     axios({
       method: 'get',
