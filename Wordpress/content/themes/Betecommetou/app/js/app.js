@@ -126,7 +126,6 @@ var app = {
       data: newAnimalName
     })
     .then(function(){
-      document.location.reload(true);
       document.querySelector('.account_contact_utils').reset();
     })
   },
@@ -155,7 +154,6 @@ var app = {
     })
     .then(function(){
       document.querySelector('.modalDelete').style.visibility="hidden";
-      document.location.reload(true);
       localStorage.setItem('ID to delete'," ");
     })
   },
@@ -237,10 +235,7 @@ var app = {
       })
       .then(function() {
         
-        document.location.reload(true);
         localStorage.setItem('ID of animal' , " ");
-        
-        
       })   
     },
     // Return token response 
