@@ -105,7 +105,7 @@ $query = new WP_Query($args);
                 <label for="id number"> Numéro d'identification électronique
                 <input type="text" name="identification" class="contact-form__input" placeholder="Numéro d'identification électronique">
                 </label>
-                <label for="diseases"> Maladies / Alergies
+                <label for="diseases"> Maladies / Allergies
                 <textarea type="text" name="diseases" class="contact-form__input" placeholder="Maladies / Allergies"></textarea>
                 </label>
                 <label for="vaccins"> Vaccins
