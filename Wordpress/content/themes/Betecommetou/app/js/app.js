@@ -46,7 +46,7 @@ var app = {
     const userIdDataSet = userID.dataset.userId;
     console.log(userIdDataSet);
     let select = document.getElementById('pet-select');
-    if (select!=null){
+    
 
       axios({
         method: 'get',
@@ -65,17 +65,18 @@ var app = {
           let name = element.meta.nom_de_lanimal;
           options.value = id;
           options.textContent = name;
-          select.appendChild(options);       
+          if (select != null) {
+          select.appendChild(options);  
+          }     
         });
       })
-    }
   },
   loadingOptionsInSelectToDelete:function() {
     const userID = document.querySelector('#userForm');
     const userIdDataSet = userID.dataset.userId;
     console.log(userIdDataSet);
     let select = document.getElementById('pet-select-deletemodal');
-    if (select!=null) {  
+
       axios({
         method: 'get',
         url: app.baseUri + app.jsonUrl + 'healthbook',
@@ -93,10 +94,11 @@ var app = {
           let name = element.meta.nom_de_lanimal;
           options.value = id;
           options.textContent = name;
-          select.appendChild(options);       
+          if (select != null) {
+            select.appendChild(options);  
+            }   
         });
       })
-    }
     
   },
   // Display modal with click on Add button 
