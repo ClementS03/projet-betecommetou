@@ -13,6 +13,9 @@ var app = {
   },
   // All selct and Events Listener
   initEventListener:function() {
+    const userID = document.querySelector('#userForm');
+    const userIdDataSet = userID.dataset.userId;
+    console.log(userIdDataSet);
     let burgerMenuOpenButton = document.querySelector('.open-menu');
     let burgerMenuCloseButton = document.querySelector('.close-menu');
     burgerMenuCloseButton.addEventListener('click', app.handleCloseFrontPageMenu);
@@ -42,9 +45,7 @@ var app = {
   },
   loadingOptionsInSelect:function() {
     let select = document.getElementById('pet-select');
-    const userID = document.querySelector('#userForm');
-      const userIdDataSet = userID.dataset.userId;
-      console.log(userIdDataSet);
+
     axios({
       method: 'get',
       url: app.baseUri + app.jsonUrl + 'healthbook',
