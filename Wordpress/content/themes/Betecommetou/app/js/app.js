@@ -7,6 +7,7 @@ var app = {
   jwtUrl: "wp-json/jwt-auth/v1/",
   
   init: function() {
+    console.log('init');
     app.initEventListener();
     app.loadingOptionsInSelect();   
     app.loadingOptionsInSelectToDelete();
