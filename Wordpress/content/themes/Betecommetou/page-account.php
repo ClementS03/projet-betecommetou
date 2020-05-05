@@ -26,7 +26,7 @@ $query = new WP_Query($args);
         <img class="account_animal_image" src="" alt="">
 
         <select name="pets" id="pet-select" class="contact-form__select" data-id="<?= $user->ID;?>">
-            <option value=" ">Veuillez selectioner un animal</option>
+            <option value=" ">Veuillez selectionner un animal</option>
         </select>
 
         <!-- Modal -->
