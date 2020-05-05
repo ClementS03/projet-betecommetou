@@ -249,7 +249,7 @@ var app = {
         params: animalInfos
       })
       .then(function() {
-        
+        document.location.reload(true);
         localStorage.setItem('ID of animal' , " ");
       })   
     },
