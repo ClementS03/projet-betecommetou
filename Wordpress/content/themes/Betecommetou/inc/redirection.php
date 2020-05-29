@@ -28,4 +28,14 @@ function redirect_from_login_if_user_is_logged() {
 }
 add_action('template_redirect', 'redirect_from_login_if_user_is_logged');
 
+function redirectFromnewsletter() {
+    if ($_COOKIE['newsletter']) {
+        wp_safe_redirect(home_url());
+        $_COOKIE['newsletter'] = '';
+        exit;
+    }
+    
+}
+add_action('template_redirect', 'redirectFromnewsletter')
+
 ?> 

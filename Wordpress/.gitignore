@@ -3,6 +3,7 @@
 /wp-config.php
 /content/plugins/*
 !/content/plugins/betecommetou-plugin
+!/content/plugins/betecommetou-newsletter
 /content/themes/*
 /content/languages
 /content/upgrade
